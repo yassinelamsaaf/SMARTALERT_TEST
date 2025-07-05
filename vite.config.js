@@ -4,7 +4,7 @@ import path from 'path'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/smartalert', // Set this to the subfolder path
+  base: '/', // Set this to the subfolder path
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
