@@ -1,4 +1,5 @@
 import AppBlock from "../../block/AppBlock";
+import { getImgPath } from "../../../utils/imageUtils";
 
 const AppBanner = () => {
   return (
@@ -14,7 +15,7 @@ const AppBanner = () => {
           {/* End .col */}
 
           <div className="col-lg-6">
-            <img src="/img/app/1.png" alt="image" />
+            <img src={getImgPath("app/1.png")} alt="image" />
           </div>
           {/* End .col */}
         </div>

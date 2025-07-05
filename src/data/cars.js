@@ -1,8 +1,9 @@
+import { getImgPath } from "../utils/imageUtils";
 const cars = [
   {
     id: 1,
     tag: "",
-    slideImg: ["/img/cars/1.png"],
+    slideImg: [getImgPath("cars/1.png")],
     title: "Mercedes-Benz E-Class",
     location: "Heathrow Airport",
     type: "LUXURY",
@@ -18,7 +19,7 @@ const cars = [
   {
     id: 2,
     tag: "",
-    slideImg: ["/img/cars/2.png", "/img/cars/1.png", "/img/cars/3.png"],
+    slideImg: [getImgPath("cars/2.png"), getImgPath("cars/1.png"), getImgPath("cars/3.png")],
     title: "Jaguar F-Pace",
     location: "Heathrow Airport",
     type: "SUV",
@@ -34,7 +35,7 @@ const cars = [
   {
     id: 3,
     tag: "best seller",
-    slideImg: ["/img/cars/3.png"],
+    slideImg: [getImgPath("cars/3.png")],
     title: "Volvo XC90",
     location: "Heathrow Airport",
     type: "SUV",
@@ -50,7 +51,7 @@ const cars = [
   {
     id: 4,
     tag: "",
-    slideImg: ["/img/cars/4.png"],
+    slideImg: [getImgPath("cars/4.png")],
     title: "BMW 5 Series",
     location: "Heathrow Airport",
     type: "LUXURY",
@@ -66,7 +67,7 @@ const cars = [
   {
     id: 5,
     tag: "",
-    slideImg: ["/img/cars/1.png"],
+    slideImg: [getImgPath("cars/1.png")],
     title: "Mercedes-Benz E-Class",
     location: "Heathrow Airport",
     type: "LUXURY",
@@ -82,7 +83,7 @@ const cars = [
   {
     id: 6,
     tag: "",
-    slideImg: ["/img/cars/2.png", "/img/cars/1.png", "/img/cars/3.png"],
+    slideImg: [getImgPath("cars/2.png"), getImgPath("cars/1.png"), getImgPath("cars/3.png")],
     title: "Jaguar F-Pace",
     location: "Heathrow Airport",
     type: "SUV",
@@ -98,7 +99,7 @@ const cars = [
   {
     id: 7,
     tag: "",
-    slideImg: ["/img/cars/1.png"],
+    slideImg: [getImgPath("cars/1.png")],
     title: "Mercedes-Benz E-Class",
     location: "Heathrow Airport",
     type: "LUXURY",
@@ -114,7 +115,7 @@ const cars = [
   {
     id: 8,
     tag: "",
-    slideImg: ["/img/cars/2.png", "/img/cars/1.png", "/img/cars/3.png"],
+    slideImg: [getImgPath("cars/2.png"), getImgPath("cars/1.png"), getImgPath("cars/3.png")],
     title: "Jaguar F-Pace",
     location: "Heathrow Airport",
     type: "SUV",
@@ -131,7 +132,7 @@ const cars = [
   {
     id: 9,
     tag: "best seller",
-    slideImg: ["/img/cars/3.png"],
+    slideImg: [getImgPath("cars/3.png")],
     title: "Volvo XC90",
     location: "Heathrow Airport",
     type: "SUV",
@@ -147,7 +148,7 @@ const cars = [
   {
     id: 10,
     tag: "",
-    slideImg: ["/img/cars/4.png"],
+    slideImg: [getImgPath("cars/4.png")],
     title: "BMW 5 Series",
     location: "Heathrow Airport",
     type: "LUXURY",
@@ -163,7 +164,7 @@ const cars = [
   {
     id: 11,
     tag: "",
-    slideImg: ["/img/cars/1.png"],
+    slideImg: [getImgPath("cars/1.png")],
     title: "Mercedes-Benz E-Class",
     location: "Heathrow Airport",
     type: "LUXURY",
@@ -179,7 +180,7 @@ const cars = [
   {
     id: 12,
     tag: "",
-    slideImg: ["/img/cars/2.png", "/img/cars/1.png", "/img/cars/3.png"],
+    slideImg: [getImgPath("cars/2.png"), getImgPath("cars/1.png"), getImgPath("cars/3.png")],
     title: "Jaguar F-Pace",
     location: "Heathrow Airport",
     type: "SUV",
@@ -196,7 +197,7 @@ const cars = [
   {
     id: 13,
     tag: "best seller",
-    slideImg: ["/img/cars/3.png"],
+    slideImg: [getImgPath("cars/3.png")],
     title: "Volvo XC90",
     location: "Heathrow Airport",
     type: "SUV",
@@ -212,7 +213,7 @@ const cars = [
   {
     id: 14,
     tag: "",
-    slideImg: ["/img/cars/4.png"],
+    slideImg: [getImgPath("cars/4.png")],
     title: "BMW 5 Series",
     location: "Heathrow Airport",
     type: "LUXURY",
@@ -228,7 +229,7 @@ const cars = [
   {
     id: 15,
     tag: "",
-    slideImg: ["/img/cars/1.png"],
+    slideImg: [getImgPath("cars/1.png")],
     title: "Mercedes-Benz E-Class",
     location: "Heathrow Airport",
     type: "LUXURY",

@@ -1,22 +1,23 @@
+import { getImgPath } from "../../utils/imageUtils";
 const BlockGuide = () => {
   const blockContent = [
     {
       id: 1,
-      icon: "/img/featureIcons/1/1.svg",
+      icon: getImgPath("featureIcons/1/1.svg"),
       title: "Best Price Guarantee",
       text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
       delayAnim: "100",
     },
     {
       id: 2,
-      icon: "/img/featureIcons/1/2.svg",
+      icon: getImgPath("featureIcons/1/2.svg"),
       title: "Easy & Quick Booking",
       text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
       delayAnim: "200",
     },
     {
       id: 3,
-      icon: "/img/featureIcons/1/3.svg",
+      icon: getImgPath("featureIcons/1/3.svg"),
       title: "Customer Care 24/7",
       text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
       delayAnim: "300",

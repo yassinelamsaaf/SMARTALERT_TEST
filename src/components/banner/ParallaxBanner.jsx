@@ -1,11 +1,12 @@
 import { Parallax } from "react-parallax";
 import { Link } from "react-router-dom";
+import { getImgPath } from "../../utils/imageUtils";
 
 const ParallaxBanner = () => {
   return (
     <Parallax
       strength={200}
-      bgImage="/img/backgrounds/4.png"
+      bgImage=getImgPath("backgrounds/4.png")
       bgImageAlt="amazing place"
       bgClassName="object-fit-cover"
     >

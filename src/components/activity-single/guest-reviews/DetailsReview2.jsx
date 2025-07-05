@@ -1,4 +1,5 @@
 import ReviewGallery from "./ReviewGallery";
+import { getImgPath } from "../../../utils/imageUtils";
 
 const DetailsReview2 = () => {
   return (
@@ -6,7 +7,7 @@ const DetailsReview2 = () => {
       <div className="col-lg-12">
         <div className="row x-gap-20 y-gap-20 items-center">
           <div className="col-auto">
-            <img src="/img/avatars/2.png" alt="image" />
+            <img src={getImgPath("avatars/2.png")} alt="image" />
           </div>
           <div className="col-auto">
             <div className="fw-500 lh-15">Tonko</div>
@@ -40,7 +41,7 @@ const DetailsReview2 = () => {
       <div className="col-lg-12">
         <div className="row x-gap-20 y-gap-20 items-center">
           <div className="col-auto">
-            <img src="/img/avatars/2.png" alt="image" />
+            <img src={getImgPath("avatars/2.png")} alt="image" />
           </div>
           <div className="col-auto">
             <div className="fw-500 lh-15">Tonko</div>
@@ -73,7 +74,7 @@ const DetailsReview2 = () => {
       <div className="col-lg-12">
         <div className="row x-gap-20 y-gap-20 items-center">
           <div className="col-auto">
-            <img src="/img/avatars/2.png" alt="image" />
+            <img src={getImgPath("avatars/2.png")} alt="image" />
           </div>
           <div className="col-auto">
             <div className="fw-500 lh-15">Tonko</div>
@@ -104,7 +105,7 @@ const DetailsReview2 = () => {
       <div className="col-lg-12">
         <div className="row x-gap-20 y-gap-20 items-center">
           <div className="col-auto">
-            <img src="/img/avatars/2.png" alt="image" />
+            <img src={getImgPath("avatars/2.png")} alt="image" />
           </div>
           <div className="col-auto">
             <div className="fw-500 lh-15">Tonko</div>

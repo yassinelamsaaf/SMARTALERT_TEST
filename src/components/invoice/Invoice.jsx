@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { getImgPath } from "../../utils/imageUtils";
 export default function InvoiceComponent() {
   const contactData = [
     { url: "#", text: "www.gotirp.com" },
@@ -41,7 +42,7 @@ export default function InvoiceComponent() {
               <div className="layout-pt-lg layout-pb-lg px-50">
                 <div className="row justify-between">
                   <div className="col-auto">
-                    <img src="/img/general/logo-dark.svg" alt="logo icon" />
+                    <img src={getImgPath("general/logo-dark.svg")} alt="logo icon" />
                   </div>
                   <div className="col-xl-4">
                     <div className="row justify-between items-center">

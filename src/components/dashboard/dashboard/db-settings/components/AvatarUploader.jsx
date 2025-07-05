@@ -1,3 +1,4 @@
+import { getImgPath } from "../../../../../utils/imageUtils";
 import React, { useState } from "react";
 
 const AvatarUploader = () => {
@@ -54,7 +55,7 @@ const AvatarUploader = () => {
         ) : (
           <div className="d-flex ratio ratio-1:1 w-200">
             <img
-              src="/img/misc/avatar-1.png"
+              src={getImgPath("misc/avatar-1.png")}
               alt="image"
               className="img-ratio rounded-4"
             />

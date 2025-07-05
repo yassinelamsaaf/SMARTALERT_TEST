@@ -1,3 +1,4 @@
+import { getImgPath } from "../../utils/imageUtils";
 module.exports = [
   {
     id: 1,
@@ -8,7 +9,7 @@ module.exports = [
     flightList: [
       {
         id: 1,
-        avatar: "/img/flightIcons/1.png",
+        avatar: getImgPath("flightIcons/1.png"),
         arrivalAirport: "SAW",
         departureAirport: "STN",
         departureTime: "14:00",
@@ -17,7 +18,7 @@ module.exports = [
       },
       {
         id: 2,
-        avatar: "/img/flightIcons/2.png",
+        avatar: getImgPath("flightIcons/2.png"),
         arrivalAirport: "SAW",
         departureAirport: "STN",
         departureTime: "14:00",
@@ -35,7 +36,7 @@ module.exports = [
     flightList: [
       {
         id: 1,
-        avatar: "/img/flightIcons/1.png",
+        avatar: getImgPath("flightIcons/1.png"),
         arrivalAirport: "SAW",
         departureAirport: "STN",
         departureTime: "14:00",
@@ -44,7 +45,7 @@ module.exports = [
       },
       {
         id: 2,
-        avatar: "/img/flightIcons/2.png",
+        avatar: getImgPath("flightIcons/2.png"),
         arrivalAirport: "SAW",
         departureAirport: "STN",
         departureTime: "14:00",
@@ -62,7 +63,7 @@ module.exports = [
     flightList: [
       {
         id: 1,
-        avatar: "/img/flightIcons/1.png",
+        avatar: getImgPath("flightIcons/1.png"),
         arrivalAirport: "SAW",
         departureAirport: "STN",
         departureTime: "14:00",
@@ -71,7 +72,7 @@ module.exports = [
       },
       {
         id: 2,
-        avatar: "/img/flightIcons/2.png",
+        avatar: getImgPath("flightIcons/2.png"),
         arrivalAirport: "SAW",
         departureAirport: "STN",
         departureTime: "14:00",
@@ -89,7 +90,7 @@ module.exports = [
     flightList: [
       {
         id: 1,
-        avatar: "/img/flightIcons/1.png",
+        avatar: getImgPath("flightIcons/1.png"),
         arrivalAirport: "SAW",
         departureAirport: "STN",
         departureTime: "14:00",
@@ -98,7 +99,7 @@ module.exports = [
       },
       {
         id: 2,
-        avatar: "/img/flightIcons/2.png",
+        avatar: getImgPath("flightIcons/2.png"),
         arrivalAirport: "SAW",
         departureAirport: "STN",
         departureTime: "14:00",
@@ -116,7 +117,7 @@ module.exports = [
     flightList: [
       {
         id: 1,
-        avatar: "/img/flightIcons/1.png",
+        avatar: getImgPath("flightIcons/1.png"),
         arrivalAirport: "SAW",
         departureAirport: "STN",
         departureTime: "14:00",
@@ -125,7 +126,7 @@ module.exports = [
       },
       {
         id: 2,
-        avatar: "/img/flightIcons/2.png",
+        avatar: getImgPath("flightIcons/2.png"),
         arrivalAirport: "SAW",
         departureAirport: "STN",
         departureTime: "14:00",
@@ -143,7 +144,7 @@ module.exports = [
     flightList: [
       {
         id: 1,
-        avatar: "/img/flightIcons/1.png",
+        avatar: getImgPath("flightIcons/1.png"),
         arrivalAirport: "SAW",
         departureAirport: "STN",
         departureTime: "14:00",
@@ -152,7 +153,7 @@ module.exports = [
       },
       {
         id: 2,
-        avatar: "/img/flightIcons/2.png",
+        avatar: getImgPath("flightIcons/2.png"),
         arrivalAirport: "SAW",
         departureAirport: "STN",
         departureTime: "14:00",

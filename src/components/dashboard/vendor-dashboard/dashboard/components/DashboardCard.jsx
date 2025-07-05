@@ -1,27 +1,28 @@
+import { getImgPath } from "../../../../../utils/imageUtils";
 const data = [
   {
     title: "Pending",
     amount: "$12,800",
     description: "Total pending",
-    icon: "/img/dashboard/icons/1.svg",
+    icon: getImgPath("dashboard/icons/1.svg"),
   },
   {
     title: "Earnings",
     amount: "$14,200",
     description: "Total earnings",
-    icon: "/img/dashboard/icons/2.svg",
+    icon: getImgPath("dashboard/icons/2.svg"),
   },
   {
     title: "Bookings",
     amount: "$8,100",
     description: "Total hotel bookings",
-    icon: "/img/dashboard/icons/3.svg",
+    icon: getImgPath("dashboard/icons/3.svg"),
   },
   {
     title: "Services",
     amount: "22,786",
     description: "Total bookable services",
-    icon: "/img/dashboard/icons/4.svg",
+    icon: getImgPath("dashboard/icons/4.svg"),
   },
 ];
 

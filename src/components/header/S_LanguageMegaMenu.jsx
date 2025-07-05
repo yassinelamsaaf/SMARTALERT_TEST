@@ -1,6 +1,7 @@
 import { LanguageContext } from "@/i18n/LanguageProvider";
 import t from "@/i18n/t";
 import { useContext, useState } from "react";
+import { getImgPath } from "@/utils/imageUtils";
 
 const LanguageMegaMenu = ({ textClass }) => {
   const { lang, setLang } = useContext(LanguageContext);
@@ -15,27 +16,29 @@ const LanguageMegaMenu = ({ textClass }) => {
         fr: "France",
         ar: "فرنسا",
       },
-      img: `${import.meta.env.BASE_URL}/img/general/fr.png`
+      img: getImgPath("general/fr.png"),
     },
     {
       id: 2,
       language: "العربية",
       country: {
         fr: "Maroc",
-        ar: "المغرب"
+        ar: "المغرب",
       },
-      img: `${import.meta.env.BASE_URL}/img/general/ar.png`
+      img: getImgPath("general/ar.png"),
     },
   ];
-  const [selectedCurrency, setSelectedCurrency] = useState(languageContent[lang == "ar" ? 1 : 0]);
+  const [selectedCurrency, setSelectedCurrency] = useState(
+    languageContent[lang == "ar" ? 1 : 0]
+  );
 
   const handleItemClick = (item) => {
     if (selectedCurrency.id != item.id) {
       setSelectedCurrency(item);
       let newLang = item.id == 2 ? "ar" : "fr";
-      setLang(newLang)
+      setLang(newLang);
 
-      document.location.reload()
+      document.location.reload();
     }
     setClick(false);
   };
@@ -65,7 +68,9 @@ const LanguageMegaMenu = ({ textClass }) => {
         <div className="currencyMenu__bg" onClick={handleCurrency}></div>
         <div className="langMenu__content bg-white rounded-4">
           <div className="d-flex items-center justify-between px-30 py-20 sm:px-15 border-bottom-light">
-            <div className="text-20 fw-500 lh-15">{t[lang].header.selectLanguage}</div>
+            <div className="text-20 fw-500 lh-15">
+              {t[lang].header.selectLanguage}
+            </div>
             {/* End title */}
             <button className="pointer" onClick={handleCurrency}>
               <i className="icon-close" />
@@ -76,8 +81,11 @@ const LanguageMegaMenu = ({ textClass }) => {
           <ul className="modalGrid px-30 py-30 sm:px-15 sm:py-15">
             {languageContent.map((item) => (
               <li
-                className={`modalGrid__item js-item ${selectedCurrency.country[lang] === item.country[lang] ? "active" : ""
-                  }`}
+                className={`modalGrid__item js-item ${
+                  selectedCurrency.country[lang] === item.country[lang]
+                    ? "active"
+                    : ""
+                }`}
                 key={item.id}
                 onClick={() => handleItemClick(item)}
               >

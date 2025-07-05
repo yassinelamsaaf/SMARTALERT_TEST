@@ -1,6 +1,7 @@
 import Social2 from "../../common/social/Social2";
 import blogsData from "../../../data/blogs";
 import { Link } from "react-router-dom";
+import { getImgPath } from "../../../utils/imageUtils";
 
 const DetailsContent = () => {
   return (
@@ -31,7 +32,7 @@ const DetailsContent = () => {
       <div className="quote mt-30 mb-30">
         <div className="quote__line bg-blue-1" />
         <div className="quote__icon">
-          <img src="/img/misc/quote-light.svg" alt="icon" />
+          <img src={getImgPath("misc/quote-light.svg")} alt="icon" />
         </div>
         <div className="text-18 fw-500">
           “Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida. Diam
@@ -62,13 +63,13 @@ const DetailsContent = () => {
 
       <div className="row y-gap-30 pt-30">
         <div className="col-md-6">
-          <img src="/img/blog/single/2.png" alt="image" className="rounded-4" />
+          <img src={getImgPath("blog/single/2.png")} alt="image" className="rounded-4" />
           <div className="text-15 mt-10">
             Donec purus posuere nullam lacus aliquam.
           </div>
         </div>
         <div className="col-md-6">
-          <img src="/img/blog/single/3.png" alt="image" className="rounded-4" />
+          <img src={getImgPath("blog/single/3.png")} alt="image" className="rounded-4" />
           <div className="text-15 mt-10">
             Donec purus posuere nullam lacus aliquam.
           </div>

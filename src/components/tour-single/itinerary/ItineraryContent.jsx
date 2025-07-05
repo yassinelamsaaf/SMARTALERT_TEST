@@ -1,3 +1,4 @@
+import { getImgPath } from "../../../utils/imageUtils";
 const ItineraryContent = () => {
   const itineraryContent = [
     {
@@ -5,7 +6,7 @@ const ItineraryContent = () => {
       targetCollapse: "item_1",
       itemNo: "1",
       title: "Windsor Castle",
-      img: "/img/tours/list.png",
+      img: getImgPath("tours/list.png"),
       content: `Our first stop is Windsor Castle, the ancestral home of the British Royal family for more than 900 years and the largest, continuously occupied castle in Europe.`,
       classShowHide: "",
     },
@@ -14,7 +15,7 @@ const ItineraryContent = () => {
       targetCollapse: "item_2",
       itemNo: "2",
       title: "St. George's Chapel",
-      img: "/img/tours/list.png",
+      img: getImgPath("tours/list.png"),
       content: `Our first stop is Windsor Castle, the ancestral home of the British Royal family for more than 900 years and the largest, continuously occupied castle in Europe.`,
       classShowHide: "show",
     },
@@ -23,7 +24,7 @@ const ItineraryContent = () => {
       targetCollapse: "item_3",
       itemNo: "3",
       title: "The Roman Baths",
-      img: "/img/tours/list.png",
+      img: getImgPath("tours/list.png"),
       content: `Our first stop is Windsor Castle, the ancestral home of the British Royal family for more than 900 years and the largest, continuously occupied castle in Europe.`,
       classShowHide: "",
     },
@@ -32,7 +33,7 @@ const ItineraryContent = () => {
       targetCollapse: "item_4",
       itemNo: "4",
       title: "Stonehenge",
-      img: "/img/tours/list.png",
+      img: getImgPath("tours/list.png"),
       content: `Our first stop is Windsor Castle, the ancestral home of the British Royal family for more than 900 years and the largest, continuously occupied castle in Europe.`,
       classShowHide: "",
     },

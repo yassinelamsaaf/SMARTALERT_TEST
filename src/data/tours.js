@@ -1,8 +1,9 @@
+import { getImgPath } from "../utils/imageUtils";
 const tours = [
   {
     id: 1,
     tag: "LIKELY TO SELL OUT*",
-    slideImg: ["/img/tours/1.png"],
+    slideImg: [getImgPath("tours/1.png")],
     title: "Stonehenge, Windsor Castle and Bath with Pub Lunch in Lacock",
     location: "Westminster Borough, London",
     duration: "16",
@@ -14,7 +15,7 @@ const tours = [
   {
     id: 2,
     tag: "",
-    slideImg: ["/img/tours/2.png", "/img/tours/1.png", "/img/tours/3.png"],
+    slideImg: [getImgPath("tours/2.png"), getImgPath("tours/1.png"), getImgPath("tours/3.png")],
     title: "Westminster Walking Tour & Westminster Abbey Entry",
     location: "Ciutat Vella, Barcelona",
     duration: "14",
@@ -27,7 +28,7 @@ const tours = [
   {
     id: 3,
     tag: "best seller",
-    slideImg: ["/img/tours/3.png"],
+    slideImg: [getImgPath("tours/3.png")],
     title: "High-Speed Thames River RIB Cruise in London",
     location: "Manhattan, New York",
     duration: "18",
@@ -39,7 +40,7 @@ const tours = [
   {
     id: 4,
     tag: "top rated",
-    slideImg: ["/img/tours/4.png"],
+    slideImg: [getImgPath("tours/4.png")],
     title: "Edinburgh Darkside Walking Tour: Mysteries, Murder and Legends",
     location: "Vaticano Prati, Rome",
     duration: "20",
@@ -51,7 +52,7 @@ const tours = [
   {
     id: 5,
     tag: "LIKELY TO SELL OUT*",
-    slideImg: ["/img/tours/5.png"],
+    slideImg: [getImgPath("tours/5.png")],
     title: "Stonehenge, Windsor Castle and Bath with Pub Lunch in Lacock",
     location: "Westminster Borough, London",
     duration: "16",
@@ -63,7 +64,7 @@ const tours = [
   {
     id: 6,
     tag: "",
-    slideImg: ["/img/tours/6.png", "/img/tours/7.png", "/img/tours/8.png"],
+    slideImg: [getImgPath("tours/6.png"), getImgPath("tours/7.png"), getImgPath("tours/8.png")],
     title: "Westminster Walking Tour & Westminster Abbey Entry",
     location: "Ciutat Vella, Barcelona",
     duration: "14",
@@ -75,7 +76,7 @@ const tours = [
   {
     id: 7,
     tag: "best seller",
-    slideImg: ["/img/tours/7.png"],
+    slideImg: [getImgPath("tours/7.png")],
     title: "High-Speed Thames River RIB Cruise in London",
     location: "Manhattan, New York",
     duration: "18",
@@ -87,7 +88,7 @@ const tours = [
   {
     id: 8,
     tag: "top rated",
-    slideImg: ["/img/tours/8.png"],
+    slideImg: [getImgPath("tours/8.png")],
     title: "Edinburgh Darkside Walking Tour: Mysteries, Murder and Legends",
     location: "Vaticano Prati, Rome",
     duration: "20",
@@ -99,7 +100,7 @@ const tours = [
   {
     id: 9,
     tag: "best seller",
-    slideImg: ["/img/tours/9.png"],
+    slideImg: [getImgPath("tours/9.png")],
     title: "High-Speed Thames River RIB Cruise in London",
     location: "Manhattan, New York",
     duration: "18",

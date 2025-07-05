@@ -1,4 +1,5 @@
 import { Gallery, Item } from "react-photoswipe-gallery";
+import { getImgPath } from "../../utils/imageUtils";
 
 const SlideGallery = ({ rental }) => {
   return (
@@ -7,14 +8,14 @@ const SlideGallery = ({ rental }) => {
         <div className="galleryGrid -type-1 relative">
           <div className="galleryGrid__item">
             <Item
-              original="/img/rentals/single/1.png"
-              thumbnail="/img/rentals/single/1.png"
+              original=getImgPath("rentals/single/1.png")
+              thumbnail=getImgPath("rentals/single/1.png")
               width={1006}
               height={765}
             >
               {({ ref, open }) => (
                 <img
-                  src="/img/rentals/single/1.png"
+                  src={getImgPath("rentals/single/1.png")}
                   ref={ref}
                   onClick={open}
                   alt="image"
@@ -28,8 +29,8 @@ const SlideGallery = ({ rental }) => {
 
           <div className="galleryGrid__item">
             <Item
-              original="/img/rentals/single/2.png"
-              thumbnail="/img/rentals/single/2.png"
+              original=getImgPath("rentals/single/2.png")
+              thumbnail=getImgPath("rentals/single/2.png")
               width={450}
               height={375}
             >
@@ -37,7 +38,7 @@ const SlideGallery = ({ rental }) => {
                 <img
                   ref={ref}
                   onClick={open}
-                  src="/img/rentals/single/2.png"
+                  src={getImgPath("rentals/single/2.png")}
                   alt="image"
                   className="rounded-4"
                   role="button"
@@ -49,8 +50,8 @@ const SlideGallery = ({ rental }) => {
 
           <div className="galleryGrid__item">
             <Item
-              original="/img/rentals/single/3.png"
-              thumbnail="/img/rentals/single/3.png"
+              original=getImgPath("rentals/single/3.png")
+              thumbnail=getImgPath("rentals/single/3.png")
               width={450}
               height={375}
             >
@@ -60,7 +61,7 @@ const SlideGallery = ({ rental }) => {
                   height={375}
                   ref={ref}
                   onClick={open}
-                  src="/img/rentals/single/3.png"
+                  src={getImgPath("rentals/single/3.png")}
                   alt="image"
                   className="rounded-4"
                   role="button"
@@ -72,8 +73,8 @@ const SlideGallery = ({ rental }) => {
 
           <div className="galleryGrid__item">
             <Item
-              original="/img/rentals/single/4.png"
-              thumbnail="/img/rentals/single/4.png"
+              original=getImgPath("rentals/single/4.png")
+              thumbnail=getImgPath("rentals/single/4.png")
               width={450}
               height={375}
             >
@@ -81,7 +82,7 @@ const SlideGallery = ({ rental }) => {
                 <img
                   ref={ref}
                   onClick={open}
-                  src="/img/rentals/single/4.png"
+                  src={getImgPath("rentals/single/4.png")}
                   alt="image"
                   className="rounded-4"
                   role="button"
@@ -93,14 +94,14 @@ const SlideGallery = ({ rental }) => {
 
           <div className="galleryGrid__item relative">
             <img
-              src="/img/rentals/single/5.png"
+              src={getImgPath("rentals/single/5.png")}
               alt="image"
               className="rounded-4"
             />
             <div className="absolute h-full col-12 z-2 px-20 py-20 d-flex justify-end items-end bottom-0 end-0">
               <Item
-                original="/img/rentals/single/5.png"
-                thumbnail="/img/rentals/single/5.png"
+                original=getImgPath("rentals/single/5.png")
+                thumbnail=getImgPath("rentals/single/5.png")
                 width={450}
                 height={375}
               >

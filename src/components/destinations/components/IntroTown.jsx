@@ -1,3 +1,4 @@
+import { getImgPath } from "../../../utils/imageUtils";
 const IntroTown = () => {
   return (
     <>
@@ -33,7 +34,7 @@ const IntroTown = () => {
       <div className="col-xl-4">
         <div className="relative d-flex ml-35 xl:ml-0">
           <img
-            src="/img/pages/destinations/map.png"
+            src={getImgPath("pages/destinations/map.png")}
             alt="image"
             className="col-12 rounded-4"
           />

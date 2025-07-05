@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import MainMenu from "../MainMenu";
 import MobileMenu from "../MobileMenu";
+import { getImgPath } from "../../../utils/imageUtils";
 
 const Header1 = () => {
   const [navbar, setNavbar] = useState(false);
@@ -32,8 +33,8 @@ const Header1 = () => {
             <div className="col-auto">
               <div className="d-flex items-center">
                 <Link to="/" className="header-logo mr-50">
-                  <img src="/img/general/logo-light.svg" alt="logo icon" />
-                  <img src="/img/general/logo-dark.svg" alt="logo icon" />
+                  <img src={getImgPath("general/logo-light.svg")} alt="logo icon" />
+                  <img src={getImgPath("general/logo-dark.svg")} alt="logo icon" />
                 </Link>
                 {/* End logo */}
               </div>

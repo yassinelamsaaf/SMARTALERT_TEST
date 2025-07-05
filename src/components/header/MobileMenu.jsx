@@ -17,6 +17,7 @@ import { useEffect, useState, useContext } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { LanguageContext } from "../../i18n/LanguageProvider";
 import t from "../../i18n/t";
+import { getImgPath } from "../../utils/imageUtils";
 
 const MobileMenu = () => {
   const { pathname } = useLocation();
@@ -128,7 +129,7 @@ const MobileMenu = () => {
     <>
       <div className="pro-header d-flex align-items-center justify-between border-bottom-light">
         <Link to="/">
-          <img src="/img/general/logo-dark.svg" alt="brand" />
+          <img src={getImgPath("general/logo-dark.svg")} alt="brand" />
         </Link>
         {/* End logo */}
 

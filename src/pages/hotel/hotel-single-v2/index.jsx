@@ -22,6 +22,7 @@ import GalleryTwo from "@/components/hotel-single/GalleryTwo";
 import { useParams } from "react-router-dom";
 
 import MetaComponent from "@/components/common/MetaComponent";
+import { getImgPath } from "../../../utils/imageUtils";
 
 const metadata = {
   title: "Hotel Single v2 || GoTrip - Travel & Tour ReactJs Template",
@@ -180,7 +181,7 @@ const HotelSingleV2Dynamic = () => {
                 <div className="row x-gap-20 y-gap-20 items-center">
                   <div className="col-auto">
                     <div className="flex-center size-60 rounded-full bg-white">
-                      <img src="/img/icons/health.svg" alt="icon" />
+                      <img src={getImgPath("icons/health.svg")} alt="icon" />
                     </div>
                   </div>
                   <div className="col-auto">

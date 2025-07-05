@@ -1,5 +1,6 @@
 import { LanguageContext } from "@/i18n/LanguageProvider";
 import t from "@/i18n/t";
+import { getImgPath } from "../../utils/imageUtils";
 import { useContext } from "react";
 
 const BlockGuide = () => {
@@ -8,21 +9,21 @@ const BlockGuide = () => {
   const blockContent = [
     {
       id: 1,
-      icon: `${import.meta.env.BASE_URL}/img/featureIcons/1/1.svg`,
+      icon: `getImgPath('featureIcons/1/1.svg')`,
       title: t[lang].about.whyUs.bloc_1.title,
       text: t[lang].about.whyUs.bloc_1.text,
       delayAnim: "100",
     },
     {
       id: 2,
-      icon: `${import.meta.env.BASE_URL}/img/featureIcons/1/2.svg`,
+      icon: `getImgPath('featureIcons/1/2.svg')`,
       title: t[lang].about.whyUs.bloc_2.title,
       text: t[lang].about.whyUs.bloc_2.text,
       delayAnim: "200",
     },
     {
       id: 3,
-      icon: `${import.meta.env.BASE_URL}/img/featureIcons/1/3.svg`,
+      icon: `getImgPath('featureIcons/1/3.svg')`,
       title: t[lang].about.whyUs.bloc_3.title,
       text: t[lang].about.whyUs.bloc_3.text,
       delayAnim: "300",

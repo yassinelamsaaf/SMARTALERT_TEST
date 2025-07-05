@@ -7,6 +7,7 @@ import HotelProperties from "@/components/hotel-list/hotel-list-v5/HotelProperti
 import DropdownSelelctBar from "@/components/hotel-list/common/DropdownSelelctBar";
 
 import MetaComponent from "@/components/common/MetaComponent";
+import { getImgPath } from "../../../utils/imageUtils";
 
 const metadata = {
   title: "Hotel List v5 || GoTrip - Travel & Tour ReactJs Template",
@@ -28,7 +29,7 @@ const HotelListPage5 = () => {
       <section className="section-bg pt-40 pb-40 relative z-5">
         <div className="section-bg__item col-12">
           <img
-            src="/img/misc/bg-1.png"
+            src={getImgPath("misc/bg-1.png")}
             alt="image"
             className="w-full h-full object-cover"
           />

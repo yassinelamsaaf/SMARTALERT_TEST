@@ -1,10 +1,11 @@
 import { Link } from "react-router-dom";
+import { getImgPath } from "../../utils/imageUtils";
 
 const AddBanner = () => {
   const addContent = [
     {
       id: 1,
-      img: "/img/backgrounds/1.png",
+      img: getImgPath("backgrounds/1.png"),
       title: (
         <>
           Things To Do On
@@ -17,7 +18,7 @@ const AddBanner = () => {
     },
     {
       id: 2,
-      img: "/img/backgrounds/2.png",
+      img: getImgPath("backgrounds/2.png"),
       title: "Up to 70% Discount!",
       meta: "Enjoy Summer Deals",
       routerPath: "/",

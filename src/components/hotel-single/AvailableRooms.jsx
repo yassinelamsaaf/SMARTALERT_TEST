@@ -1,3 +1,4 @@
+import { getImgPath } from "../../utils/imageUtils";
 const AvailableRooms = ({ hotel }) => {
   return (
     <>
@@ -20,7 +21,7 @@ const AvailableRooms = ({ hotel }) => {
                 <div>
                   <div className="ratio ratio-1:1">
                     <img
-                      src="/img/backgrounds/1.png"
+                      src={getImgPath("backgrounds/1.png")}
                       alt="image"
                       className="img-ratio rounded-4"
                     />
@@ -272,7 +273,7 @@ const AvailableRooms = ({ hotel }) => {
                 <div>
                   <div className="ratio ratio-1:1">
                     <img
-                      src="/img/backgrounds/1.png"
+                      src={getImgPath("backgrounds/1.png")}
                       alt="image"
                       className="img-ratio rounded-4"
                     />

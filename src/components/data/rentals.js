@@ -1,8 +1,9 @@
+import { getImgPath } from "../../utils/imageUtils";
 module.exports = [
   {
     id: 1,
     tag: "",
-    slideImg: ["/img/rentals/1.png"],
+    slideImg: [getImgPath("rentals/1.png")],
     title: "Luxury New Apartment With Private Garden",
     location: "Westminster Borough, London",
     ratings: "4.8",
@@ -17,9 +18,9 @@ module.exports = [
     id: 2,
     tag: "",
     slideImg: [
-      "/img/rentals/2.png",
-      "/img/rentals/5.png",
-      "/img/rentals/6.png",
+      getImgPath("rentals/2.png"),
+      getImgPath("rentals/5.png"),
+      getImgPath("rentals/6.png"),
     ],
     title: "Premium One Bedroom Luxury Living in the Heart of Mayfair",
     location: "Ciutat Vella, Barcelona",
@@ -35,7 +36,7 @@ module.exports = [
   {
     id: 3,
     tag: "best seller",
-    slideImg: ["/img/rentals/3.png"],
+    slideImg: [getImgPath("rentals/3.png")],
     title: "Style, Charm & Comfort in Camberwell",
     location: "Manhattan, New York",
     ratings: "4.5",
@@ -49,7 +50,7 @@ module.exports = [
   {
     id: 4,
     tag: "top rated",
-    slideImg: ["/img/rentals/4.png"],
+    slideImg: [getImgPath("rentals/4.png")],
     title: "Marylebone - Oxford Street 1 bed apt with WiFi",
     location: "Vaticano Prati, Rome",
     ratings: "4.8",
@@ -63,7 +64,7 @@ module.exports = [
   {
     id: 5,
     tag: "",
-    slideImg: ["/img/rentals/5.png"],
+    slideImg: [getImgPath("rentals/5.png")],
     title: "Luxury New Apartment With Private Garden",
     location: "Westminster Borough, London",
     ratings: "4.9",
@@ -78,9 +79,9 @@ module.exports = [
     id: 6,
     tag: "",
     slideImg: [
-      "/img/rentals/6.png",
-      "/img/rentals/7.png",
-      "/img/rentals/8.png",
+      getImgPath("rentals/6.png"),
+      getImgPath("rentals/7.png"),
+      getImgPath("rentals/8.png"),
     ],
     title: "Premium One Bedroom Luxury Living in the Heart of Mayfair",
     location: "Ciutat Vella, Barcelona",
@@ -96,7 +97,7 @@ module.exports = [
   {
     id: 7,
     tag: "best seller",
-    slideImg: ["/img/rentals/7.png"],
+    slideImg: [getImgPath("rentals/7.png")],
     title: "Style, Charm & Comfort in Camberwell",
     location: "Manhattan, New York",
     ratings: "4.65",
@@ -110,7 +111,7 @@ module.exports = [
   {
     id: 8,
     tag: "top rated",
-    slideImg: ["/img/rentals/8.png"],
+    slideImg: [getImgPath("rentals/8.png")],
     title: "Marylebone - Oxford Street 1 bed apt with WiFi",
     location: "Vaticano Prati, Rome",
     ratings: "4.8",
@@ -124,7 +125,7 @@ module.exports = [
   {
     id: 9,
     tag: "",
-    slideImg: ["/img/rentals/9.png"],
+    slideImg: [getImgPath("rentals/9.png")],
     title: "Luxury New Apartment With Private Garden",
     location: "Westminster Borough, London",
     ratings: "4.7",

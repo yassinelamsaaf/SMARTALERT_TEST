@@ -1,8 +1,9 @@
+import { getImgPath } from "../utils/imageUtils";
 const cruise = [
   {
     id: 1,
     tag: "cruise only",
-    slideImg: ["/img/cruises/1.png"],
+    slideImg: [getImgPath("cruises/1.png")],
     title: "7 Night Cruise to the Western Mediterranean",
     ship: "Norwegian Getaway",
     date: "18/05/23",
@@ -18,9 +19,9 @@ const cruise = [
     id: 2,
     tag: "",
     slideImg: [
-      "/img/cruises/2.png",
-      "/img/cruises/1.png",
-      "/img/cruises/3.png",
+      getImgPath("cruises/2.png"),
+      getImgPath("cruises/1.png"),
+      getImgPath("cruises/3.png"),
     ],
     title: "12 Night Cruise to the British Isles & Western Europe",
     ship: "Norwegian Getaway",
@@ -37,7 +38,7 @@ const cruise = [
   {
     id: 3,
     tag: "best seller",
-    slideImg: ["/img/cruises/3.png"],
+    slideImg: [getImgPath("cruises/3.png")],
     title: "11 Night Cruise to the Eastern Mediterranean",
     ship: "Norwegian Getaway",
     date: "18/03/23",
@@ -52,7 +53,7 @@ const cruise = [
   {
     id: 4,
     tag: "top rated",
-    slideImg: ["/img/cruises/4.png"],
+    slideImg: [getImgPath("cruises/4.png")],
     title: "13 Night Cruise to the Baltic Sea Western Europe",
     ship: "Norwegian Getaway",
     date: "18/04/23",
@@ -67,7 +68,7 @@ const cruise = [
   {
     id: 5,
     tag: "cruise only",
-    slideImg: ["/img/cruises/5.png"],
+    slideImg: [getImgPath("cruises/5.png")],
     title: "7 Night Cruise to the Western Mediterranean",
     ship: "Norwegian Getaway",
     date: "18/05/23",
@@ -83,9 +84,9 @@ const cruise = [
     id: 6,
     tag: "",
     slideImg: [
-      "/img/cruises/2.png",
-      "/img/cruises/1.png",
-      "/img/cruises/3.png",
+      getImgPath("cruises/2.png"),
+      getImgPath("cruises/1.png"),
+      getImgPath("cruises/3.png"),
     ],
     title: "12 Night Cruise to the British Isles & Western Europe",
     ship: "Norwegian Getaway",
@@ -102,7 +103,7 @@ const cruise = [
   {
     id: 7,
     tag: "best seller",
-    slideImg: ["/img/cruises/3.png"],
+    slideImg: [getImgPath("cruises/3.png")],
     title: "11 Night Cruise to the Eastern Mediterranean",
     ship: "Norwegian Getaway",
     date: "18/03/23",
@@ -117,7 +118,7 @@ const cruise = [
   {
     id: 8,
     tag: "top rated",
-    slideImg: ["/img/cruises/4.png"],
+    slideImg: [getImgPath("cruises/4.png")],
     title: "13 Night Cruise to the Baltic Sea Western Europe",
     ship: "Norwegian Getaway",
     date: "18/04/23",
@@ -132,7 +133,7 @@ const cruise = [
   {
     id: 9,
     tag: "cruise only",
-    slideImg: ["/img/cruises/5.png"],
+    slideImg: [getImgPath("cruises/5.png")],
     title: "7 Night Cruise to the Western Mediterranean",
     ship: "Norwegian Getaway",
     date: "18/05/23",

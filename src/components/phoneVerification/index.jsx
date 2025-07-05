@@ -5,6 +5,7 @@ import Header1 from "@/components/header/header-1/index";
 import Footer2 from "@/components/footer/footer-2";
 import { LanguageContext } from "@/i18n/LanguageProvider";
 import t from "@/i18n/t";
+import { getImgPath } from "../../utils/imageUtils";
 
 const metadata = {
   title: "Phone Verification || SMARTALERT",
@@ -321,7 +322,7 @@ const PhoneVerification = () => {
           <div className="phone-verification__header" />
           <div className="phone-verification__body">
             <img
-              src="./img/Annonces/phone-illustration.svg"
+              src={getImgPath("Annonces/phone-illustration.svg")}
               alt={t[lang].PhoneVerification.title}
               className="phone-verification__image"
             />

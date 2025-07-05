@@ -1,12 +1,13 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Thumbs, Mousewheel } from "swiper";
+import { getImgPath } from "../../utils/imageUtils";
 import { useState, useEffect } from "react";
 
 // const slides = [
-//   "/img/cars/slides/1.png",
-//   "/img/cars/slides/2.png",
-//   "/img/cars/slides/3.png",
-//   "/img/cars/slides/4.png",
+//   getImgPath("cars/slides/1.png"),
+//   getImgPath("cars/slides/2.png"),
+//   getImgPath("cars/slides/3.png"),
+//   getImgPath("cars/slides/4.png"),
 // ];
 
 export default function SlideGallery({ slides }) {

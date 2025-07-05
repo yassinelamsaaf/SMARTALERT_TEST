@@ -1,10 +1,11 @@
 import MainFilterSearchBox from "./MainFilterSearchBox";
+import { getImgPath } from "../../../utils/imageUtils";
 
 const index = () => {
   return (
     <section className="masthead -type-1 z-5">
       <div className="masthead__bg">
-        <img alt="image" src="/img/masthead/1/bg.webp" className="js-lazy" />
+        <img alt="image" src={getImgPath("masthead/1/bg.webp")} className="js-lazy" />
       </div>
       <div className="container">
         <div className="row justify-center">

@@ -13,6 +13,7 @@ import Cruise3 from "@/components/cruise/Cruise3";
 import SearchBoxContent from "@/components/hero/hero-9/SearchBoxContent";
 
 import MetaComponent from "@/components/common/MetaComponent";
+import { getImgPath } from "../../../utils/imageUtils";
 
 const metadata = {
   title: "Home-9 || GoTrip - Travel & Tour ReactJs Template",
@@ -180,7 +181,7 @@ const Home_9 = () => {
 
       <section className="section-bg layout-pt-lg layout-pb-lg bg-light-2">
         <div className="section-bg__item col-12">
-          <img src="/img/backgrounds/11.png" alt="image" />
+          <img src={getImgPath("backgrounds/11.png")} alt="image" />
         </div>
         {/* End section bg */}
 

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import MainMenu from "../MainMenu";
 import MobileMenu from "../MobileMenu";
+import { getImgPath } from "../../../utils/imageUtils";
 
 const HeaderDashBoard = () => {
   const [navbar, setNavbar] = useState(false);
@@ -37,7 +38,7 @@ const HeaderDashBoard = () => {
         <div className="header__container px-30 sm:px-20">
           <div className="-left-side">
             <Link to="/" className="header-logo">
-              <img src="/img/general/logo-dark.svg" alt="logo icon" />
+              <img src={getImgPath("general/logo-dark.svg")} alt="logo icon" />
             </Link>
             {/* End logo */}
           </div>
@@ -92,7 +93,7 @@ const HeaderDashBoard = () => {
 
                 <div className="pl-15">
                   <img
-                    src="/img/avatars/3.png"
+                    src={getImgPath("avatars/3.png")}
                     alt="image"
                     className="size-50 rounded-22 object-cover"
                   />

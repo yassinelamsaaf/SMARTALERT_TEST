@@ -7,6 +7,7 @@ import ModalVideo from "react-modal-video";
 import SidebarRight2 from "@/components/hotel-single/SidebarRight2";
 import RatingBox from "@/components/hotel-single/RatingBox";
 import PropertyHighlights2 from "@/components/hotel-single/PropertyHighlights2";
+import { getImgPath } from "../../utils/imageUtils";
 
 export default function GalleryTwo({ hotel }) {
   const [isOpen, setOpen] = useState(false);
@@ -53,8 +54,8 @@ export default function GalleryTwo({ hotel }) {
 
                   <div className="galleryGrid__item">
                     <Item
-                      original="/img/gallery/1/2.png"
-                      thumbnail="/img/gallery/1/2.png"
+                      original=getImgPath("gallery/1/2.png")
+                      thumbnail=getImgPath("gallery/1/2.png")
                       width={450}
                       height={375}
                     >
@@ -62,7 +63,7 @@ export default function GalleryTwo({ hotel }) {
                         <img
                           ref={ref}
                           onClick={open}
-                          src="/img/gallery/1/2.png"
+                          src={getImgPath("gallery/1/2.png")}
                           alt="image"
                           className="rounded-4"
                           role="button"
@@ -74,8 +75,8 @@ export default function GalleryTwo({ hotel }) {
 
                   <div className="galleryGrid__item">
                     <Item
-                      original="/img/gallery/1/3.png"
-                      thumbnail="/img/gallery/1/3.png"
+                      original=getImgPath("gallery/1/3.png")
+                      thumbnail=getImgPath("gallery/1/3.png")
                       width={450}
                       height={375}
                     >
@@ -83,7 +84,7 @@ export default function GalleryTwo({ hotel }) {
                         <img
                           ref={ref}
                           onClick={open}
-                          src="/img/gallery/1/3.png"
+                          src={getImgPath("gallery/1/3.png")}
                           alt="image"
                           className="rounded-4"
                           role="button"
@@ -95,14 +96,14 @@ export default function GalleryTwo({ hotel }) {
 
                   <div className="galleryGrid__item relative d-flex justify-end items-end">
                     <img
-                      src="/img/gallery/1/4.png"
+                      src={getImgPath("gallery/1/4.png")}
                       alt="image"
                       className="rounded-4"
                     />
                     <div className="absolute px-10 py-10 col-12 h-full d-flex justify-end items-end">
                       <Item
-                        original="/img/gallery/1/4.png"
-                        thumbnail="/img/gallery/1/4.png"
+                        original=getImgPath("gallery/1/4.png")
+                        thumbnail=getImgPath("gallery/1/4.png")
                         width={362}
                         height={302}
                       >

@@ -4,8 +4,9 @@ import { Gallery, Item } from "react-photoswipe-gallery";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Thumbs, Navigation } from "swiper";
 import "swiper/css/thumbs";
+import { getImgPath } from "../../utils/imageUtils";
 
-const GalleryCruiseSlider = ({ slides = [`${import.meta.env.BASE_URL}/img/cars/no-car.png`] }) => {
+const GalleryCruiseSlider = ({ slides = [`getImgPath('cars/no-car.png')`] }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   return (

@@ -1,8 +1,9 @@
+import { getImgPath } from "../utils/imageUtils";
 const activity = [
   {
     id: 1,
     tag: "LIKELY TO SELL OUT*",
-    slideImg: ["/img/activities/1.png"],
+    slideImg: [getImgPath("activities/1.png")],
     title: "Stonehenge, Windsor Castle and Bath with Pub Lunch in Lacock",
     location: "Westminster Borough, London",
     duration: "16",
@@ -15,9 +16,9 @@ const activity = [
     id: 2,
     tag: "",
     slideImg: [
-      "/img/activities/2.png",
-      "/img/activities/1.png",
-      "/img/activities/3.png",
+      getImgPath("activities/2.png"),
+      getImgPath("activities/1.png"),
+      getImgPath("activities/3.png"),
     ],
     title: "Westminster Walking Tour & Westminster Abbey Entry",
     location: "Ciutat Vella, Barcelona",
@@ -31,7 +32,7 @@ const activity = [
   {
     id: 3,
     tag: "best seller",
-    slideImg: ["/img/activities/3.png"],
+    slideImg: [getImgPath("activities/3.png")],
     title: "High-Speed Thames River RIB Cruise in London",
     location: "Manhattan, New York",
     duration: "18",
@@ -43,7 +44,7 @@ const activity = [
   {
     id: 4,
     tag: "top rated",
-    slideImg: ["/img/activities/4.png"],
+    slideImg: [getImgPath("activities/4.png")],
     title: "Edinburgh Darkside Walking Tour: Mysteries, Murder and Legends",
     location: "Vaticano Prati, Rome",
     duration: "20",
@@ -55,7 +56,7 @@ const activity = [
   {
     id: 5,
     tag: "LIKELY TO SELL OUT*",
-    slideImg: ["/img/activities/5.png"],
+    slideImg: [getImgPath("activities/5.png")],
     title: "Stonehenge, Windsor Castle and Bath with Pub Lunch in Lacock",
     location: "Westminster Borough, London",
     duration: "16",
@@ -67,7 +68,7 @@ const activity = [
   {
     id: 6,
     tag: "LIKELY TO SELL OUT*",
-    slideImg: ["/img/activities/6.png"],
+    slideImg: [getImgPath("activities/6.png")],
     title: "Stonehenge, Windsor Castle and Bath with Pub Lunch in Lacock",
     location: "Westminster Borough, London",
     duration: "16",
@@ -80,9 +81,9 @@ const activity = [
     id: 7,
     tag: "",
     slideImg: [
-      "/img/activities/7.png",
-      "/img/activities/8.png",
-      "/img/activities/9.png",
+      getImgPath("activities/7.png"),
+      getImgPath("activities/8.png"),
+      getImgPath("activities/9.png"),
     ],
     title: "Westminster Walking Tour & Westminster Abbey Entry",
     location: "Ciutat Vella, Barcelona",
@@ -96,7 +97,7 @@ const activity = [
   {
     id: 8,
     tag: "best seller",
-    slideImg: ["/img/activities/8.png"],
+    slideImg: [getImgPath("activities/8.png")],
     title: "High-Speed Thames River RIB Cruise in London",
     location: "Manhattan, New York",
     duration: "18",
@@ -108,7 +109,7 @@ const activity = [
   {
     id: 9,
     tag: "top rated",
-    slideImg: ["/img/activities/9.png"],
+    slideImg: [getImgPath("activities/9.png")],
     title: "Edinburgh Darkside Walking Tour: Mysteries, Murder and Legends",
     location: "Vaticano Prati, Rome",
     duration: "20",

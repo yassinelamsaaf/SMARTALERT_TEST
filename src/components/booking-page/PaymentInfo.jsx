@@ -4,6 +4,7 @@ import PricingSummary from "./sidebar/PricingSummary";
 import PaymentSchedule from "./sidebar/PaymentSchedule";
 import PromoCode from "./sidebar/PromoCode";
 import RatingInfo from "./RatingInfo";
+import { getImgPath } from "../../utils/imageUtils";
 
 const PaymentInfo = () => {
   const [itemsTabs, setItemsTabs] = useState(1);
@@ -91,7 +92,7 @@ const PaymentInfo = () => {
                 {/* End col */}
                 <div className="col-md-6">
                   <img
-                    src="/img/booking-pages/card.png"
+                    src={getImgPath("booking-pages/card.png")}
                     alt="image"
                     className="h-full"
                   />

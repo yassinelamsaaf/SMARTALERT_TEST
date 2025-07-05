@@ -38,7 +38,7 @@ const Index = () => {
               <div className="masthead__images relative-1">
                 <div data-aos="fade" data-aos-delay="400">
                   <img
-                    src={`${import.meta.env.BASE_URL}/img/masthead/2/01.jpg`}
+                    src={getImgPath("masthead/2/01.jpg")}
                     alt="image"
                     className="js-mouse-move"
                   />
@@ -47,7 +47,7 @@ const Index = () => {
 
                 <div data-aos="fade" data-aos-delay="600">
                   <img
-                    src={`${import.meta.env.BASE_URL}/img/masthead/2/02.jpg`}
+                    src={getImgPath("masthead/2/02.jpg")}
                     alt="image"
                     className="js-mouse-move"
                   />
@@ -56,7 +56,7 @@ const Index = () => {
 
                 <div data-aos="fade" data-aos-delay="800">
                   <img
-                    src={`${import.meta.env.BASE_URL}/img/masthead/2/03.jpg`}
+                    src={getImgPath("masthead/2/03.jpg")}
                     alt="image"
                     className="js-mouse-move"
                   />

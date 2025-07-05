@@ -1,3 +1,4 @@
+import { getImgPath } from "../../../utils/imageUtils";
 const BookingDetails = () => {
   return (
     <div className="px-30 py-30 border-light rounded-4">
@@ -5,7 +6,7 @@ const BookingDetails = () => {
       <div className="row x-gap-15 y-gap-20">
         <div className="col-auto">
           <img
-            src="/img/backgrounds/1.png"
+            src={getImgPath("backgrounds/1.png")}
             alt="image"
             className="size-140 rounded-4 object-cover"
           />

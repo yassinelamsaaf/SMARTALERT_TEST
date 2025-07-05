@@ -1,3 +1,4 @@
+import { getImgPath } from "../../utils/imageUtils";
 export const homeItems = [
   {
     name: "Home 01",
@@ -137,7 +138,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/7.png",
+        megaBanner: getImgPath("backgrounds/7.png"),
         title: "Things to do on your hotel",
         btnText: "See Hotel",
         btnRoute: "/hotel-list-v1",
@@ -201,7 +202,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/8.png",
+        megaBanner: getImgPath("backgrounds/8.png"),
         title: "Things to do on your tour",
         btnText: "See Tour",
         btnRoute: "/tour-list-v1",
@@ -243,7 +244,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/9.png",
+        megaBanner: getImgPath("backgrounds/9.png"),
         title: "Things to do on your activity",
         btnText: "See Activity",
         btnRoute: "/activity-list-v1",
@@ -286,7 +287,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/10.png",
+        megaBanner: getImgPath("backgrounds/10.png"),
         title: "Things to do on your rentals",
         btnText: "See Rental",
         btnRoute: "/rental-list-v1",
@@ -328,7 +329,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/5.png",
+        megaBanner: getImgPath("backgrounds/5.png"),
         title: "Things to do on your Next Car",
         btnText: "See Car",
         btnRoute: "/car-list-v1",
@@ -371,7 +372,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/1.png",
+        megaBanner: getImgPath("backgrounds/1.png"),
         title: "Things to do on your Cruise",
         btnText: "See Cruise",
         btnRoute: "/cruise-list-v1",
@@ -413,7 +414,7 @@ export const categorieMegaMenuItems = [
     menuCol: [
       {
         id: 1,
-        megaBanner: "/img/backgrounds/2.png",
+        megaBanner: getImgPath("backgrounds/2.png"),
         title: "Things to do on your flights",
         btnText: "See Flights",
         btnRoute: "/flight-list-v1",

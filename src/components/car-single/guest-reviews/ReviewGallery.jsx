@@ -1,12 +1,13 @@
 import "photoswipe/dist/photoswipe.css";
 import { Gallery, Item } from "react-photoswipe-gallery";
+import { getImgPath } from "../../../utils/imageUtils";
 
 const ReviewGallery = () => {
   const reviewGalleryImg = [
-    "/img/testimonials/1/1.png",
-    "/img/testimonials/1/2.png",
-    "/img/testimonials/1/3.png",
-    "/img/testimonials/1/4.png",
+    getImgPath("testimonials/1/1.png"),
+    getImgPath("testimonials/1/2.png"),
+    getImgPath("testimonials/1/3.png"),
+    getImgPath("testimonials/1/4.png"),
   ];
   return (
     <Gallery>

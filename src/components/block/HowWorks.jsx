@@ -1,26 +1,27 @@
+import { getImgPath } from "../../utils/imageUtils";
 import React from "react";
 
 const HowWorks = () => {
   const blockContent = [
     {
       id: 1,
-      icon: "/img/pages/become-expert/icons/1.svg",
+      icon: getImgPath("pages/become-expert/icons/1.svg"),
       no: "01",
       title: "Sign up",
-      lineIcon: "/img/pages/become-expert/lines/1.svg",
+      lineIcon: getImgPath("pages/become-expert/lines/1.svg"),
       isLineIcon: "yes",
     },
     {
       id: 2,
-      icon: "/img/pages/become-expert/icons/2.svg",
+      icon: getImgPath("pages/become-expert/icons/2.svg"),
       no: "02",
       title: "Add your services",
-      lineIcon: "/img/pages/become-expert/lines/2.svg",
+      lineIcon: getImgPath("pages/become-expert/lines/2.svg"),
       isLineIcon: "yes",
     },
     {
       id: 3,
-      icon: "/img/pages/become-expert/icons/3.svg",
+      icon: getImgPath("pages/become-expert/icons/3.svg"),
       no: "03",
       title: "Get bookings",
       lineIcon: "",

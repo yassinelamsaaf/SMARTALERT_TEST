@@ -11,6 +11,7 @@ import Rentals from "@/components/rentals/Rentals";
 import HotelTypes from "@/components/home/home-7/HotelTypes";
 
 import MetaComponent from "@/components/common/MetaComponent";
+import { getImgPath } from "../../../utils/imageUtils";
 
 const metadata = {
   title: "Home-7 || GoTrip - Travel & Tour ReactJs Template",
@@ -101,7 +102,7 @@ const Home_7 = () => {
       <section className="section-bg rounded-4 overflow-hidden">
         <div className="section-bg__item -left-100 -right-100 bg-blue-2" />
         <div className="section-bg__item col-4 -right-100 lg:d-none">
-          <img src="/img/backgrounds/10.png" alt="image" />
+          <img src={getImgPath("backgrounds/10.png")} alt="image" />
         </div>
         {/* End right bg image */}
 
