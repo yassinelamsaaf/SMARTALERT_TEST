@@ -7,6 +7,7 @@ import { LanguageContext } from "@/i18n/LanguageProvider";
 import { useContext } from "react";
 import t from "@/i18n/t";
 import { useAuthUser } from "../../utils/useAuthUser";
+import { getImgPath } from "../../utils/imageUtils";
 
 const MobileMenu = () => {
   const { pathname } = useLocation();
@@ -95,7 +96,7 @@ const MobileMenu = () => {
         <Link to="/">
           <img
             style={{ height: 39 }}
-            src={`${import.meta.env.BASE_URL}/img/general/logo-dark.png`}
+            src={getImgPath("general/logo-dark.png")}
             alt="brand"
           />
         </Link>

@@ -1,3 +1,4 @@
+import { getImgPath } from '../utils/imageUtils';
 
 export const testimonial = [
   {
@@ -6,7 +7,7 @@ export const testimonial = [
       fr: "Excellent !",
       ar: "ممتاز!",
     },
-    avatar: `${import.meta.env.BASE_URL}/img/avatars/testimonials/testimonial-1.jpg`,
+    avatar: getImgPath('avatars/testimonials/testimonial-1.jpg'),
     name: {
       fr: "Fatima",
       ar: "فاطمة"
@@ -34,7 +35,7 @@ export const testimonial = [
       fr: "Très utile !",
       ar: "مفيد جداً!",
     },
-    avatar: `${import.meta.env.BASE_URL}/img/avatars/testimonials/testimonial-2.jpg`,
+    avatar: getImgPath('avatars/testimonials/testimonial-2.jpg'),
     name: {
       fr: "Ahmed",
       ar: "أحمد",
@@ -61,7 +62,7 @@ export const testimonial = [
       fr: "Un must-have !",
       ar: "لا بد من اقتنائه!"
     },
-    avatar: `${import.meta.env.BASE_URL}/img/avatars/testimonials/testimonial-3.jpg`,
+    avatar: getImgPath('avatars/testimonials/testimonial-3.jpg'),
     name: {
       fr: "Leila",
       ar: "ليلى"
@@ -88,7 +89,7 @@ export const testimonial = [
       fr: "Pratique.",
       ar: "عملي."
     },
-    avatar: `${import.meta.env.BASE_URL}/img/avatars/testimonials/testimonial-4.jpg`,
+    avatar: getImgPath('avatars/testimonials/testimonial-4.jpg'),
     name: {
       fr: "Karim",
       ar: "كريم"

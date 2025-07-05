@@ -1,14 +1,19 @@
 import { LanguageContext } from "@/i18n/LanguageProvider";
 import t from "@/i18n/t";
 import { useContext } from "react";
+import { getImgPath } from "@/utils/imageUtils";
 
 const Index = () => {
-    const { lang } = useContext(LanguageContext);
-  
+  const { lang } = useContext(LanguageContext);
+
   return (
     <section className="masthead -type-2 z-2 mt-60">
       <div className="masthead__bg bg-dark-3">
-        <img alt="image" src={`${import.meta.env.BASE_URL}/img/masthead/2/bg.png`} className="js-lazy" />
+        <img
+          alt="image"
+          src={getImgPath("masthead/2/bg.png")}
+          className="js-lazy"
+        />
       </div>
       {/* End bg image */}
 

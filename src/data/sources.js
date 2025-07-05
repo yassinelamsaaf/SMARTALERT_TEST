@@ -1,27 +1,29 @@
+import { getImgPath } from '../utils/imageUtils';
+
 export const sources = [
   {
     id: 1,
-    img: `${import.meta.env.BASE_URL}/img/sources/Vivacar.png`,
+    img: getImgPath('sources/Vivacar.png'),
     title: "VivaCar",
   },
   {
     id: 2,
-    img: `${import.meta.env.BASE_URL}/img/sources/Avito.png`,
+    img: getImgPath('sources/Avito.png'),
     title: "Avito",
   },
   {
     id: 3,
-    img: `${import.meta.env.BASE_URL}/img/sources/Wandaloo.png`,
+    img: getImgPath('sources/Wandaloo.png'),
     title: "Wandaloo",
   },
   {
     id: 4,
-    img: `${import.meta.env.BASE_URL}/img/sources/Moteur ma.png`,
+    img: getImgPath('sources/Moteur ma.png'),
     title: "Moteur ma",
   },
   {
     id: 5,
-    img: `${import.meta.env.BASE_URL}/img/sources/Autocaz.png`,
+    img: getImgPath('sources/Autocaz.png'),
     title: "Autocaz",
   },
 ]

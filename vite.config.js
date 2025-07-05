@@ -16,6 +16,14 @@ export default defineConfig({
           router: ['react-router-dom'],
           redux: ['@reduxjs/toolkit', 'react-redux'],
         },
+        assetFileNames: (assetInfo) => {
+          const info = assetInfo.name.split('.');
+          const ext = info[info.length - 1];
+          if (/\.(png|jpe?g|svg|gif|tiff|bmp|ico)$/i.test(assetInfo.name)) {
+            return `img/[name].[hash][extname]`;
+          }
+          return `assets/[name].[hash][extname]`;
+        },
       },
     },
   },
@@ -36,4 +44,5 @@ export default defineConfig({
   define: {
     global: 'globalThis',
   },
+  assetsInclude: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.gif', '**/*.svg'],
 })
