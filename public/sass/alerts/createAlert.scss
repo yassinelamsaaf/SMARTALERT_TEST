@@ -1,0 +1,118 @@
+@import './mixins';
+@import './vars';
+
+
+
+$ine-grey: #333;
+
+.alert-listpage-next-btn-wrapper {
+  position: fixed;
+  right: 5vw;
+  bottom: 3vw;
+  z-index: 1000;
+} 
+
+
+.alert-listpage-back-btn-wrapper {
+  position: fixed;
+  left: 5vw;
+  bottom: 3vw;
+  z-index: 1000;
+} 
+
+
+
+.alert-filter-card {
+  padding: 2rem 1.5rem;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+  border: 2px solid var(--color-red-1);
+  background: linear-gradient(135deg, var(--color-red-3) 0%, #fff 100%);
+  color: var(--color-black);
+  transition: box-shadow 0.2s, border 0.2s;
+  position: relative;
+}
+
+.alert-listpage-next-btn-wrapper {
+  position: fixed;
+  right: 5vw;
+  bottom: 3vw;
+  z-index: 1000;
+}
+
+.alert-listpage-back-btn-wrapper {
+  position: fixed;
+  left: 5vw;
+  bottom: 3vw;
+  z-index: 1000;
+}
+
+@media (max-width: 768px) {
+  .alert-listpage-next-btn-wrapper {
+    right: 2vw;
+    bottom: 2vw;
+  }
+}
+
+// Form styles used in alert-filter-card
+.alert-filter-card .form-group label {
+  color: var(--color-red-2);
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+.alert-filter-card .form-control {
+  border: 1.5px solid var(--color-red-2);
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  color: var(--color-black);
+  background: var(--color-white);
+  margin-bottom: 0.5rem;
+  transition: border 0.2s;
+}
+
+.alert-filter-card .form-control:focus {
+  border-color: var(--color-red-1);
+  outline: none;
+}
+
+.alert-filter-card h4 {
+  color: var(--color-red-1);
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.5px;
+}
+
+.alert-filter-card .btn-primary {
+  background: var(--color-red-1);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(217,48,37,0.08);
+  transition: background 0.2s;
+}
+
+.alert-filter-card .btn-primary:hover {
+  background: var(--color-red-2);
+}
+
+.alert-filter-card .btn-light {
+  background: var(--color-border);
+  color: var(--color-black);
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  margin-right: 0.5rem;
+  transition: background 0.2s;
+}
+
+.alert-filter-card .btn-light:hover {
+  background: $ine-grey;
+}
+
+.alert-filter-card .d-flex {
+  margin-top: 1.5rem;
+}

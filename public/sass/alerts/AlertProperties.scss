@@ -1,0 +1,35 @@
+@import './mixins';
+@import './vars';
+@import './utilities';
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .alert-card {
+    min-width: 300px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0.75rem;
+    font-size: 0.95em;
+  }
+  .row.y-gap-20 {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  .col-12.col-md-6.col-lg-4 {
+    width: 100% !important;
+    min-width: 100px;
+    max-width: 100%;
+    margin-bottom: 1rem;
+  }
+  .alert-card__footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
+
+

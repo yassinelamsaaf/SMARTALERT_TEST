@@ -1,0 +1,122 @@
+@import './mixins';
+@import './vars';
+@import './utilities';
+
+.alert-info-container {
+  max-width: 600px;
+  margin: 6vh auto 0 auto;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 32px rgba(0,0,0,0.07);
+  padding: 2.5rem 2rem 3.5rem 2rem;
+  position: relative;
+  min-height: 60vh;
+}
+
+.alert-info-title {
+  font-size: 2rem;
+  font-weight: $bold;
+  color: var(--color-dark-4, #163c8c);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.alert-info-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.alert-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 1.08rem;
+}
+
+.alert-info-label {
+  font-weight: $bold;
+  color: var(--color-dark-1, #051036);
+}
+
+.alert-info-value {
+  color: var(--color-light-1, #697488);
+  font-weight: $regular;
+}
+
+.alert-info-chip {
+  display: inline-block;
+  background: var(--color-dark-4, #163c8c);
+  color: #fff;
+  border-radius: 12px;
+  padding: 2px 12px;
+  margin-right: 6px;
+  font-size: 0.98em;
+}
+
+.alert-info-remove-btn-wrapper {
+  @include place($left: 3vw, $bottom: 10vh);
+}
+
+.alert-info-navigate-btn-wrapper {
+  @include place($right: 3vw, $bottom: 10vh);
+}
+
+.alert-info-loading, .alert-info-notfound {
+  text-align: center;
+  font-size: 1.3rem;
+  color: var(--color-dark-4, #163c8c);
+  margin-top: 10vh;
+}
+
+.alert-info-any {
+  color: #e67e22;
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-left: 4px;
+  margin-right: 4px;
+}
+
+.alert-info-car-details {
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 1.5rem 1rem;
+  box-shadow: 0 2px 12px rgba(22,60,140,0.04);
+  margin-bottom: 2rem;
+}
+
+.alert-info-row-pair {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.alert-info-row-pair > div {
+  flex: 1 1 0;
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.alert-info-missing-fields {
+  margin: 1.5rem 0 0 0;
+  padding: 0.8rem 1rem;
+  background: #fff7e6;
+  border: 1px solid #ffe0b2;
+  border-radius: 8px;
+  font-size: 1.05em;
+  text-align: center;
+}
+
+@media (max-width: $media-maxw) {
+  .alert-info-container {
+    padding: 1.2rem 0.5rem 2.5rem 0.5rem;
+  }
+  .alert-info-remove-btn-wrapper {
+    @include place($left: 2vw, $bottom: 8vh);
+  }
+  .alert-info-navigate-btn-wrapper {
+    @include place($right: 2vw, $bottom: 8vh);
+  }
+}

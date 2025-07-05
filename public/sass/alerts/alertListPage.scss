@@ -1,0 +1,103 @@
+@import './mixins';
+@import './vars';
+@import './utilities';
+
+
+
+
+.alert-listpage-searchbar-row {
+  // used to turn the search bar to a row direction, thus the filter and delete button are placed next to it
+  @include centerDivs();
+}
+
+.alert-listpage-searchbar-col {
+  // applied only on the searchbar to let it expands and take all the space
+  justify-self: center;
+  flex-grow: 1;
+}
+
+
+.alert-listpage-filter-btn{
+  // the filter button style
+  @include filter-btn();
+
+  &--active{
+    // the active state of a filter button, it is used when there is a 
+    // filter applied on the searched alerts
+    @include filter-btn();
+    background: var(--color-red-2) !important;
+    color: #fff !important;
+    border-radius: 50%;
+    box-shadow: 0 2px 8px $filter-shadow-color;
+    transition: background 0.2s;
+  }
+
+}
+
+.btn-cont{
+  // the container of the two button (filter and delete), it uses a space-between
+  @include centerDivs($center: false);
+  // width: $space-filt-del-btn;
+  // height: 100%;
+  @include full($space-filt-del-btn);
+  display: flex;
+}
+
+
+.alert-listpage-content-row {
+  // a style for the container of alert cards, it is used to 
+  @include centerDivs();
+  min-height: $container_height;
+}
+
+.alert-listpage-content-col {
+  // for the column that contains the div for alerts and the pagination bar
+  // justify-content: space-between;  // to let the pagination bar in the bottom, remains inchanged
+  min-height: 80vh;
+  width: 100%;
+}
+
+.alert-listpage-pagination {
+  // to fix the pagination in the bottom of the page no matter what size the alerts card had
+  margin-top: auto;
+  position: relative;
+  bottom: 0;
+}
+
+.alert-listpage-create-btn-wrapper {
+  @include place($right: 5vw, $bottom: 12vh);
+} 
+
+
+
+
+// Responsive layout for search bar and buttons
+@media (max-width: $media-maxw) {
+  .alert-listpage-searchbar-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .alert-listpage-searchbar-col {
+    width: 100%;
+  }
+  .btn-cont {
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+    margin-bottom: .5rem;
+
+   
+  }
+  .alert-listpage-create-btn-wrapper {
+    @include place($right: 2vw, $bottom: 12vh);
+  }
+  .alert-listpage-content-row {
+    height: auto;
+  }
+  .btn-cont{
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+

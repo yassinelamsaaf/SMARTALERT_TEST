@@ -1,0 +1,158 @@
+.cardImage {
+  position: relative;
+  z-index: 0;
+  border-radius: inherit;
+  height: 100%;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: translateY(-2px);
+
+    .cardImage-slider__nav {
+      opacity: 1 !important;
+    }
+
+    .pagination__item {
+      opacity: 1 !important;
+    }
+
+    .cardImage__content > img {
+      transform: scale(1.02);
+    }
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    border-radius: inherit;
+    overflow: hidden;
+
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: inherit;
+      transition: transform 0.4s ease;
+    }
+  }
+
+  .cardImage-slider {
+    .swiper-wrapper {
+      position: relative;
+      z-index: 0;
+    }
+
+    &__pagination {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      color: rgba(white, 0.7);
+
+      &.-sm {
+        bottom: 15px;
+      }
+
+      > * + * {
+        margin-left: 7px;
+      }
+
+      .pagination__item {
+        height: 8px;
+        width: 8px;
+        border-radius: 100%;
+        background-color: currentColor;
+        transition: all 0.3s ease;
+        transform: scale(0.75);
+        opacity: 0;
+
+        &.is-active {
+          transform: scale(1);
+          background-color: var(--color-white);
+          opacity: 1;
+        }
+      }
+    }
+
+    &__nav {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: all 0.2s ease;
+      opacity: 0;
+      z-index: 2;
+
+      &:hover {
+        transform: translateY(-50%) scale(1.05);
+      }
+
+      &.-prev {
+        left: 20px;
+      }
+      &.-next {
+        right: 20px;
+      }
+    }
+  }
+
+  &__wishlist {
+    position: static;
+    top: auto;
+    right: auto;
+    left: auto;
+    display: inline-block;
+    margin-left: 20px;
+    vertical-align: middle;
+
+    button {
+      background: none;
+      border: none;
+      box-shadow: none;
+      padding: 4px;
+      width: auto;
+      height: auto;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+
+      i {
+        font-size: 22px;
+        transition: color 0.2s ease;
+      }
+
+      .text-danger,
+      .text-red-1 {
+        color: #e74c3c !important;
+      }
+    }
+
+    &.-sm {
+      top: auto;
+      right: auto;
+      margin-left: 4px;
+    }
+  }
+
+  &__leftBadge {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    transition: transform 0.2s ease;
+
+    &:hover {
+      transform: translateX(2px);
+    }
+  }
+}
