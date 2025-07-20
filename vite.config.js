@@ -5,7 +5,7 @@ import fs from 'fs'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/SMARTALERT_TEST', // Set this to the subfolder path
+  base: '/SMARTALERT_TEST/', // Set this to the subfolder path
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
