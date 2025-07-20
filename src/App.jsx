@@ -108,7 +108,7 @@ function App() {
 
               <Route path="favoris" element={<WishlistPage/>}/>
               <Route path="vitrine" element={<AnnoncePage/>}/>
-              {/* <Route path="notifications" element={<NotificationsPage/>}/> */}
+              {/* <Route path="notifications" element={<NotificationsPage/>}/>    */}
 
 
 
