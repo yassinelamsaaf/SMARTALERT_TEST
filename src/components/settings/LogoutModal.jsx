@@ -1,4 +1,5 @@
 import { useState, useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { LanguageContext } from "@/i18n/LanguageProvider";
 import t from "@/i18n/t";
 import { useAuthUser } from "@/utils/useAuthUser";
@@ -6,6 +7,7 @@ import { useAuthUser } from "@/utils/useAuthUser";
 const LogoutModal = () => {
   const { lang } = useContext(LanguageContext);
   const { handleLogout } = useAuthUser();
+  const navigate = useNavigate();
   const [show, setShow] = useState(false);
 
   useEffect(() => {
@@ -19,7 +21,7 @@ const LogoutModal = () => {
   const handleLogoutAndRedirect = () => {
     handleLogout();
     setShow(false);
-    window.location.href = "/";
+    navigate("/");
   };
 
   return (
