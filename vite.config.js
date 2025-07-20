@@ -6,6 +6,11 @@ import fs from 'fs'
 export default defineConfig({
   plugins: [react()],
   base: '/SMARTALERT_TEST/', // Set this to the subfolder path
+  build: {
+    outDir: 'dist',
+    assetsDir: 'assets',
+    emptyOutDir: true,
+  },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),

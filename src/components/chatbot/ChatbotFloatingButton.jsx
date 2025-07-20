@@ -53,7 +53,7 @@ const ChatbotFloatingButton = () => {
           onMouseLeave={() => setIsHovered(false)}
         >
           <img
-            src={isHovered ? "/img/icons/generalIcon/chatbot.png" : "/img/icons/generalIcon/chatbot-hovered.png"}
+            src={isHovered ? `${import.meta.env.BASE_URL}img/icons/generalIcon/chatbot.png` : `${import.meta.env.BASE_URL}img/icons/generalIcon/chatbot-hovered.png`}
             alt="Chatbot"
             className="chatbot-icon"
             style={{ width: 42, height: 42 }}
