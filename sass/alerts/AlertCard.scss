@@ -1,0 +1,93 @@
+@use './vars';
+@use './utilities';
+@use './mixins' as mx;
+
+// Pulse animation for notification badge
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 8px rgba(255, 71, 87, 0.3);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(255, 71, 87, 0.5);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 8px rgba(255, 71, 87, 0.3);
+  }
+}
+
+.alert-card {
+    border-radius: 16px;
+    
+    cursor: pointer;
+    position: relative;
+    transition: box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    &:hover {
+      box-shadow: 0 4px 16px rgba(0,0,0,0.40);
+    }
+    &__label {
+      color: #222;
+    }
+    &__tags {
+      margin-bottom: 16px;
+      //  d-flex gap-30 mb-16 flex-wrap rg-10 cg-10
+      display: flex;
+      flex-wrap: wrap;
+      margin: auto;
+      margin-left: 0;
+      gap: 10px;
+      // flex: wrap;
+    }
+    &__tag {
+      // margin-left: 10px;
+      // margin-bottom: 10px;
+      padding: 0 10px;
+    }
+    &__footer {
+      position: relative;
+      bottom: 0;
+      @include mx.centerDivs(false);
+      width: 100%;
+
+
+      //  mt-auto pt-10 w-100
+    
+    }
+    &__notification-badge {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background-color: #ff4757;
+      color: white;
+      border-radius: 50%;
+      width: 28px;
+      height: 28px;
+      padding: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: bold;
+      box-shadow: 0 4px 8px rgba(255, 71, 87, 0.3);
+      border: 2px solid white;
+      animation: pulse 2s infinite;
+      z-index: 10;
+      transition: all 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.15);
+        box-shadow: 0 8px 16px rgba(255, 71, 87, 0.4);
+      }
+    }
+  }
+
+.alert-card__quickinfo-bubble {
+  background: #fff4e5;
+  border-radius: 999px;
+  padding: 2px 4px;
+  box-shadow: 0 1px 4px rgba(255, 180, 80, 0.07);
+}
+  

@@ -1,0 +1,388 @@
+.phone-verification {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 20px;
+  background: var(--color-light, #f8f8fc);
+
+  &__card {
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    width: 400px;
+    max-width: 95vw;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(0, 0, 0, 0.12);
+    }
+  }
+
+  &__header {
+    background: linear-gradient(135deg, #ff7a59 0%, #ff5a36 100%);
+    height: 48px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.2);
+    }
+  }
+
+  &__body {
+    padding: 32px 24px 24px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fcf8fb;
+  }
+
+  &__image {
+    width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 18px;
+    color: #2d3748;
+    line-height: 1.4;
+
+    &--success {
+      color: #38a169;
+      font-size: 1.3rem;
+    }
+  }
+
+  &__subtitle {
+    font-size: 0.95rem;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #4a5568;
+    line-height: 1.5;
+    max-width: 280px;
+  }
+
+  &__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__input {
+    width: 85%;
+    padding: 12px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    outline: none;
+    transition: all 0.2s ease;
+    background: #fff;
+    color: #2d3748;
+
+    &:focus {
+      border-color: #ff7a59;
+      box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.1);
+    }
+
+    &--error {
+      border-color: #e53e3e;
+      
+      &:focus {
+        border-color: #e53e3e;
+        box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
+      }
+    }
+
+    &::placeholder {
+      color: #a0aec0;
+    }
+
+    &:disabled {
+      background-color: #f7fafc;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+
+  &__button {
+    background: linear-gradient(135deg, #ff7a59 0%, #ff5a36 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 32px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    min-width: 120px;
+
+    &:hover:not(:disabled) {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(255, 122, 89, 0.3);
+    }
+
+    &:active:not(:disabled) {
+      transform: translateY(0);
+    }
+
+    &:disabled {
+      background: #cbd5e0;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+      );
+      transition: left 0.5s;
+    }
+
+    &:hover:not(:disabled)::before {
+      left: 100%;
+    }
+  }
+
+  &__code-inputs {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    justify-content: center;
+    
+  }
+
+  &__code-input {
+    width: 44px;
+    height: 44px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    outline: none;
+    transition: all 0.2s ease;
+    background: #fff;
+    color: #2d3748;
+
+    &:focus {
+      border-color: #ff7a59;
+      box-shadow: 0 0 0 3px rgba(255, 122, 89, 0.1);
+      transform: scale(1.05);
+    }
+
+    &--error {
+      border-color: #e53e3e;
+      animation: shake 0.3s ease-in-out;
+      
+      &:focus {
+        border-color: #e53e3e;
+        box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
+      }
+    }
+
+    &:disabled {
+      background-color: #f7fafc;
+      cursor: not-allowed;
+      opacity: 0.6;
+    }
+  }
+
+  &__error {
+    color: #e53e3e;
+    font-size: 0.875rem;
+    margin-bottom: 12px;
+    text-align: center;
+    font-weight: 500;
+    animation: fadeIn 0.3s ease;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    margin-top: 8px;
+
+    &--horizontal {
+      flex-direction: column;
+      gap: 16px;
+    }
+  }
+
+  &__secondary-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+
+  &__resend {
+    text-align: center;
+  }
+
+  &__timer {
+    color: #718096;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  &__link {
+    background: none;
+    border: none;
+    color: #ff7a59;
+    font-size: 0.875rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+    padding: 4px;
+
+    &:hover:not(:disabled) {
+      color: #ff5a36;
+    }
+
+    &:disabled {
+      color: #cbd5e0;
+      cursor: not-allowed;
+      text-decoration: none;
+    }
+  }
+
+  // Animations
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-4px); }
+    75% { transform: translateX(4px); }
+  }
+
+  // Responsive design
+  @media (max-width: 480px) {
+    padding: 16px;
+
+    &__card {
+      width: 100%;
+    }
+
+    &__body {
+      padding: 24px 20px 20px 20px;
+    }
+
+    &__input {
+      width: 90%;
+      font-size: 16px; // Prevents zoom on iOS
+    }
+
+    &__code-inputs {
+      gap: 8px;
+    }
+
+    &__code-input {
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+    }
+
+    &__title {
+      font-size: 1.1rem;
+    }
+
+    &__subtitle {
+      font-size: 0.9rem;
+    }
+
+    &__secondary-actions {
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+
+  // Focus-visible for better accessibility
+  &__button:focus-visible,
+  &__link:focus-visible {
+    outline: 2px solid #ff7a59;
+    outline-offset: 2px;
+  }
+
+  &__input:focus-visible,
+  &__code-input:focus-visible {
+    outline: none; // Using box-shadow instead
+  }
+
+  // High contrast mode support
+  @media (prefers-contrast: high) {
+    &__input,
+    &__code-input {
+      border-width: 3px;
+    }
+
+    &__button {
+      border: 2px solid transparent;
+    }
+  }
+
+  // Reduced motion support
+  @media (prefers-reduced-motion: reduce) {
+    &__card,
+    &__button,
+    &__input,
+    &__code-input,
+    &__link {
+      transition: none;
+    }
+
+    &__button::before {
+      display: none;
+    }
+
+    &__error {
+      animation: none;
+    }
+
+    &__code-input--error {
+      animation: none;
+    }
+  }
+}

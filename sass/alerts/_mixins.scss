@@ -1,0 +1,35 @@
+@mixin centerDivs($center: true){
+    // a mixin for centring divs inside a div, or let them be space-between-ed 
+    display: flex;
+    align-items: center;
+    @if($center){
+      justify-content: center;
+    } 
+    @if(not $center){
+      justify-content: space-between
+  
+    }
+  }
+  
+  @mixin place($top: auto, $left: auto, $bottom: auto, $right: auto){
+    position: fixed;
+    z-index: $sur-plan;
+    top: $top;
+    bottom: $bottom;
+    left: $left;
+    right: $right;
+  }
+  
+  
+  
+  @mixin full($width: 100%, $height: 100%) {
+    width: $width;
+    height: $height;
+  }
+  
+  @mixin filter-btn {
+    margin: 4vw 0;
+  }
+  
+  
+  
