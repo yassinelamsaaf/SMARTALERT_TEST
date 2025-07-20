@@ -1,23 +1,22 @@
-import { getImgPath } from "../../../utils/imageUtils";
 const WhyChoose = () => {
   const blockContent = [
     {
       id: 1,
-      icon: getImgPath("featureIcons/3/1.svg"),
+      icon: "/img/featureIcons/3/1.svg",
       title: "Best Price Guarantee",
       text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
       delayAnimation: "100",
     },
     {
       id: 2,
-      icon: getImgPath("featureIcons/3/2.svg"),
+      icon: "/img/featureIcons/3/2.svg",
       title: "Easy & Quick Booking",
       text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
       delayAnimation: "200",
     },
     {
       id: 3,
-      icon: getImgPath("featureIcons/3/3.svg"),
+      icon: "/img/featureIcons/3/3.svg",
       title: "Customer Care 24/7",
       text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
       delayAnimation: "300",

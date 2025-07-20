@@ -2,13 +2,14 @@ import { useState, useContext } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { LanguageContext } from "@/i18n/LanguageProvider";
 import t from "@/i18n/t";
-import { login } from "@/apis/mockAPI/AuthApi";
+import { login } from "@/apis/AuthApi";
 import { setToken } from "@/utils/auth";
 
 const LoginForm = () => {
   const { lang } = useContext(LanguageContext);
-  const [email, setEmail] = useState("");
+  const [emailOrPhone, setEmailOrPhone] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -18,18 +19,27 @@ const LoginForm = () => {
     setError("");
     setLoading(true);
     try {
-      const data = await login(email, password);
-      // Store JWT token (adapt if backend returns it in a different property)
-      if (data && data.id_token) {
-        setToken(data.id_token);
+      let loginData;
+      // Check if input is a phone number (starts with 06 or 07, 10 digits, no @)
+      const isPhone =
+        !emailOrPhone.includes("@") &&
+        /^0[67][0-9]{8}$/.test(emailOrPhone.trim());
+
+      if (isPhone) {
+        // Call login API with phone number
+        loginData = await login(emailOrPhone.trim(), password );
+      } else {
+        // Call login API with email
+        loginData = await login(emailOrPhone, password);
+      }
+      if (loginData && loginData.id_token) {
+        setToken(loginData.id_token);
         navigate("/");
       } else {
-        setError(t[lang].auth.loginError || "Erreur d'authentification.");
+        setError(t[lang].auth.loginError || "Identifiants invalides.");
       }
     } catch (err) {
-      setError(
-        err?.message || t[lang].auth.loginError || "Erreur d'authentification."
-      );
+      setError(t[lang].auth.loginError || "Identifiants invalides.");
     } finally {
       setLoading(false);
     }
@@ -54,21 +64,21 @@ const LoginForm = () => {
           <input
             type="text"
             required
-            value={email}
-            onChange={e => setEmail(e.target.value)}
+            value={emailOrPhone}
+            onChange={e => setEmailOrPhone(e.target.value)}
             autoComplete="username"
           />
           <label className="lh-1 text-14 text-light-1">
-            {t[lang].auth.email}
+            {t[lang].auth.emailOrPhone || t[lang].auth.email}
           </label>
         </div>
       </div>
       {/* End .col */}
 
       <div className="col-12">
-        <div className="form-input ">
+        <div className="form-input" style={{ position: 'relative' }}>
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             required
             value={password}
             onChange={e => setPassword(e.target.value)}
@@ -77,22 +87,39 @@ const LoginForm = () => {
           <label className="lh-1 text-14 text-light-1">
             {t[lang].auth.password}
           </label>
+          <span
+            onClick={() => setShowPassword(v => !v)}
+            style={{
+              position: 'absolute',
+              ...(lang === 'ar' ? { left: 12 } : { right: 12 }),
+              top: '50%',
+              transform: 'translateY(-50%)',
+              cursor: 'pointer',
+              fontSize: 18,
+              color: '#aaa',
+              userSelect: 'none',
+              zIndex: 2
+            }}
+            title={showPassword ? 'Masquer' : 'Afficher'}
+          >
+            <i className={!showPassword ? 'bi bi-eye-slash' : 'bi bi-eye'}></i>
+          </span>
         </div>
       </div>
       {/* End .col */}
 
       <div className="col-12">
-        <a
-          href="#"
+        <Link
+          to="/forgot-password"
           className="text-14 fw-500"
           style={{ color: "var(--color-dark-3)" }}
         >
           {t[lang].auth.forgot}
-        </a>
+        </Link>
       </div>
       {/* End .col */}
       {error && (
-        <div className="alert alert-danger mt-10">{error}</div>
+        <div className="alert alert-danger mt-10 warning-error">{error}</div>
       )}
       <div className="col-12">
         <button

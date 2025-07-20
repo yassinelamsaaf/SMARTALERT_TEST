@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 
 import { isActiveLink } from "@/utils/linkActiveChecker";
 import { useLocation } from "react-router-dom";
-import { getImgPath } from "../../../../utils/imageUtils";
 
 const Sidebar = () => {
   const { pathname } = useLocation();
@@ -10,31 +9,31 @@ const Sidebar = () => {
   const sidebarContent = [
     {
       id: 1,
-      icon: getImgPath("dashboard/sidebar/compass.svg"),
+      icon: "/img/dashboard/sidebar/compass.svg",
       name: "Dashboard",
       routePath: "/dashboard/db-dashboard",
     },
     {
       id: 2,
-      icon: getImgPath("dashboard/sidebar/booking.svg"),
+      icon: "/img/dashboard/sidebar/booking.svg",
       name: " Booking History",
       routePath: "/dashboard/db-booking",
     },
     {
       id: 3,
-      icon: getImgPath("dashboard/sidebar/bookmark.svg"),
+      icon: "/img/dashboard/sidebar/bookmark.svg",
       name: "Wishlist",
       routePath: "/dashboard/db-wishlist",
     },
     {
       id: 4,
-      icon: getImgPath("dashboard/sidebar/gear.svg"),
+      icon: "/img/dashboard/sidebar/gear.svg",
       name: " Settings",
       routePath: "/dashboard/db-settings",
     },
     {
       id: 5,
-      icon: getImgPath("dashboard/sidebar/log-out.svg"),
+      icon: "/img/dashboard/sidebar/log-out.svg",
       name: " Logout",
       routePath: "/login",
     },

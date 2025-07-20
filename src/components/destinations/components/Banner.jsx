@@ -1,10 +1,9 @@
-import { getImgPath } from "../../../utils/imageUtils";
 const Banner = () => {
   return (
     <div className="col-12">
       <div className="relative d-flex">
         <img
-          src={getImgPath("pages/destinations/1.png")}
+          src="/img/pages/destinations/1.png"
           alt="image"
           className="col-12 rounded-4"
           style={{ minHeight: " 300px" }}

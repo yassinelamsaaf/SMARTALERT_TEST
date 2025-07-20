@@ -23,7 +23,7 @@ $ine-grey: #333;
 
 
 .alert-filter-card {
-  padding: 2rem 1.5rem;
+  padding: 2rem 2rem;
   border-radius: 18px;
   box-shadow: 0 8px 32px rgba(0,0,0,0.18);
   border: 2px solid var(--color-red-1);
@@ -65,7 +65,7 @@ $ine-grey: #333;
   border: 1.5px solid var(--color-red-2);
   border-radius: 8px;
   padding: 0.5rem 0.75rem;
-  color: var(--color-black);
+  color: var(--color-dark-3);
   background: var(--color-white);
   margin-bottom: 0.5rem;
   transition: border 0.2s;
@@ -113,6 +113,98 @@ $ine-grey: #333;
   background: $ine-grey;
 }
 
-.alert-filter-card .d-flex {
-  margin-top: 1.5rem;
+.alert-filter-card .btn-outline-secondary {
+  border: 1.5px solid var(--color-red-2);
+  color: var(--color-red-2);
+  background: transparent;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.alert-filter-card .btn-outline-secondary:hover {
+  background: var(--color-red-2);
+  color: #fff;
+  border-color: var(--color-red-2);
+}
+
+.alert-filter-card .btn-success {
+  background: #28a745;
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 0.5rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(40,167,69,0.08);
+  transition: background 0.2s;
+}
+
+.alert-filter-card .btn-success:hover {
+  background: #218838;
+}
+
+
+
+// Custom InputRange styles to match app theme
+.alert-filter-card .input-range {
+  $height: 6px;
+  &__track {
+    background: #e0e0e0;
+    height: $height;
+    border-radius: 3px;
+  }
+  
+  &__track--active {
+    background: var(--color-dark-3);
+  }
+  
+  &__slider {
+    background: var(--color-dark-3);
+    border: none;
+    border-radius: 3px;
+    height: 28px;
+    width: 6px;
+    margin-top: -14px - $height/2;
+    margin-left: -3px;
+    box-shadow: 0 2px 8px rgba(217,48,37,0.10);
+    transition: transform 0.2s, box-shadow 0.2s;
+    
+    &:hover {
+      transform: scaleY(1.1);
+      box-shadow: 0 4px 12px rgba(217,48,37,0.18);
+    }
+    
+    &:active {
+      transform: scaleY(1.2);
+    }
+  }
+  
+  .input-range__label {
+    display: none;
+  }
+}
+
+// Override react-input-range styles for orange theme
+.input-range__track {
+  background: var(--color-dark-3) !important; // Orange for the track
+}
+
+.input-range__track--active {
+  background: var(--color-dark-3) !important; // Orange for the selected range
+}
+
+.input-range__slider {
+  background: var(--color-dark-3) !important; // Orange for the thumb
+  border: 2px solid var(--color-dark-3) !important;
+  box-shadow: 0 0 2px var(--color-dark-3);
+}
+
+.input-range__label-container {
+  color: var(--color-dark-3) !important; // Optional: label color
+}
+
+
+.rg-c *{
+    color: var(--color-dark-3)
 }

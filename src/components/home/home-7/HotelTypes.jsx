@@ -1,40 +1,39 @@
 import { Link } from "react-router-dom";
 import Slider from "react-slick";
-import { getImgPath } from "../../../utils/imageUtils";
 
 const HotelTypes = () => {
   const hotelTypeContent = [
     {
       id: 1,
-      img: getImgPath("stays/1/1.png"),
+      img: "/img/stays/1/1.png",
       type: "Apartments",
       numberOfProperties: "4090",
       delayAnimation: "100",
     },
     {
       id: 2,
-      img: getImgPath("stays/1/2.png"),
+      img: "/img/stays/1/2.png",
       type: "Resort",
       numberOfProperties: "4090",
       delayAnimation: "200",
     },
     {
       id: 3,
-      img: getImgPath("stays/1/3.png"),
+      img: "/img/stays/1/3.png",
       type: "Villas",
       numberOfProperties: "4090",
       delayAnimation: "300",
     },
     {
       id: 4,
-      img: getImgPath("stays/1/4.png"),
+      img: "/img/stays/1/4.png",
       type: "Cabins",
       numberOfProperties: "4090",
       delayAnimation: "400",
     },
     {
       id: 5,
-      img: getImgPath("stays/1/5.png"),
+      img: "/img/stays/1/5.png",
       type: "Tiny Houses",
       numberOfProperties: "4090",
       delayAnimation: "500",

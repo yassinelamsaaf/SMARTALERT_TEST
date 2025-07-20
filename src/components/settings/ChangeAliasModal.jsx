@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import t from "@/i18n/t";
 import { LanguageContext } from "@/i18n/LanguageProvider";
-import { getCurrentUser } from "@/apis/mockAPI/CurrentUserApi";
-import { updateAccount } from "@/apis/mockAPI/UserApi";
+import { getCurrentUser } from "@/apis/CurrentUserApi";
+import { updateAccount } from "@/apis/UserApi";
 
 const ChangeAliasModal = () => {
   const { lang } = useContext(LanguageContext);

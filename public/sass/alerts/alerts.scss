@@ -1,0 +1,374 @@
+// Color variables - adjust these to match your var(--color-dark-3)
+$primary-color: #ff6b35; // Orange color from the image
+$primary-color-light: rgba(255, 107, 53, 0.1);
+$primary-color-hover: rgba(255, 107, 53, 0.2);
+$text-primary: #333333;
+$text-secondary: #666666;
+$text-muted: #999999;
+$background-light: #f8f9fa;
+$white: #ffffff;
+$border-color: #e9ecef;
+$red-color: #dc3545;
+$red-light: rgba(220, 53, 69, 0.1);
+
+.alerts-page {
+  min-height: 100vh;
+  background-color: $background-light;
+
+  .alerts-header {
+    background-color: $white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid $border-color;
+
+    .header-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+
+      @media (min-width: 768px) {
+        padding: 0 1.5rem;
+      }
+
+      @media (min-width: 1024px) {
+        padding: 0 2rem;
+      }
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 0;
+    }
+
+    .header-info {
+      .page-title {
+        font-size: 2rem;
+        font-weight: 700;
+        color: $text-primary;
+        margin: 0;
+      }
+
+      .alert-count {
+        font-size: 0.875rem;
+        color: $text-secondary;
+        margin: 0.25rem 0 0 0;
+      }
+    }
+  }
+
+  .alerts-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+
+    @media (min-width: 768px) {
+      padding: 2rem 1.5rem;
+    }
+
+    @media (min-width: 1024px) {
+      padding: 2rem 2rem;
+    }
+  }
+
+  .alerts-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .alert-card {
+    background-color: $white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 0; // Sharp edges as requested
+    overflow: hidden;
+
+    .alert-header {
+      cursor: pointer;
+      background-color: $primary-color-light;
+      transition: background-color 0.2s ease;
+      padding: 1rem 1.5rem;
+
+      &:hover {
+        background-color: $primary-color-hover;
+      }
+
+      &.expanded {
+        background-color: $primary-color-hover;
+      }
+    }
+
+    .alert-header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .alert-main-info {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      gap: 0.75rem;
+      flex: 1;
+    }
+
+    .chevron-icon {
+      color: $primary-color;
+      font-size: 1.25rem;
+      transition: transform 0.2s ease;
+
+      i {
+        display: block;
+      }
+    }
+
+    .alert-summary {
+      .alert-name {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: $text-primary;
+        margin: 0;
+      }
+
+      .alert-quick-info {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 0.25rem;
+
+        .info-item {
+          font-size: 0.875rem;
+          color: $text-secondary;
+
+          &.brand {
+            font-weight: 500;
+          }
+        }
+      }
+    }
+
+    .alert-actions-section {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+
+      .created-date {
+        font-size: 0.875rem;
+        color: $text-muted;
+        white-space: nowrap;
+      }
+
+      .alert-actions {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+
+    .btn-action {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 2rem;
+      height: 2rem;
+      border: none;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      font-size: 1rem;
+
+      &.btn-search {
+        background-color: transparent;
+        color: $primary-color;
+
+        &:hover {
+          background-color: $primary-color-hover;
+        }
+      }
+
+      &.btn-delete {
+        background-color: transparent;
+        color: $red-color;
+
+        &:hover {
+          background-color: $red-light;
+        }
+      }
+    }
+
+    .alert-details {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.4s cubic-bezier(0.4, 0, 0.2, 1), border-top 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      padding: 0 1.5rem;
+      border-top: none;
+    }
+    &.expanded {
+      .alert-details {
+        max-height: 1000px;
+        padding: 1.5rem;
+        border-top: 1px solid $border-color;
+      }
+    }
+
+    .details-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (min-width: 1024px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      & h4 { 
+        color: var(--color-dark-3);
+      }
+    }
+
+    .detail-section {
+      .section-title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--color-dark-3);
+        margin: 0 0 0.5rem 0;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid $border-color;
+      }
+
+      .detail-items {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .detail-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .detail-label {
+          font-size: 0.875rem;
+          color: $text-secondary;
+        }
+
+        .detail-value {
+          font-size: 0.875rem;
+          font-weight: 500;
+          color: $text-primary;
+        }
+      }
+    }
+  }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-decoration: none;
+
+    &.btn-add {
+      background-color: $primary-color;
+      color: $white;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+        transform: translateY(-1px);
+      }
+
+      i {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .empty-state {
+    text-align: center;
+    padding: 3rem 1rem;
+
+    .empty-icon {
+      color: $text-muted;
+      margin-bottom: 1rem;
+
+      i {
+        font-size: 3rem;
+      }
+    }
+
+    .empty-title {
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: $text-primary;
+      margin: 0 0 0.5rem 0;
+    }
+
+    .empty-description {
+      color: $text-muted;
+      margin: 0 0 1rem 0;
+    }
+  }
+}
+
+.adding-alerts-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px; // adjust as needed
+  cursor: pointer;
+  background: $background-light;
+  border: 2px dashed $border-color;
+  transition: background 0.2s;
+  &:hover {
+    background: $primary-color-light;
+  }
+}
+
+.add-plus-icon {
+  font-size: 2.5rem;
+  color: $primary-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Responsive adjustments
+@media (max-width: 767px) {
+  .alerts-page {
+    
+    .alert-header-content {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .alert-actions-section {
+      align-self: stretch;
+      justify-content: space-between;
+    }
+
+    .details-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+}
+
+
+.btn-list {
+  button {
+    margin: 0 12px;
+  }
+}
+
+.sep {
+  opacity: 0;
+}

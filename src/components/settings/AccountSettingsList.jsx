@@ -7,6 +7,7 @@ import "@/../public/sass/components/settings.scss";
 const AccountSettingsList = () => {
   const { lang } = useContext(LanguageContext);
   const navigate = useNavigate();
+  
   const accountSettings = [
     {
       icon: <i className="bi bi-person-circle me-2 text-orange" />,
@@ -21,7 +22,7 @@ const AccountSettingsList = () => {
     {
       icon: <i className="bi bi-bell me-2 text-orange" />,
       label: t[lang].settings.notifications,
-      onClick: () => navigate("/settings/notifications"),
+      onClick: () => window.dispatchEvent(new CustomEvent("openNotificationsSettings")),
     },
     {
       icon: <i className="bi bi-translate me-2 text-orange" />,

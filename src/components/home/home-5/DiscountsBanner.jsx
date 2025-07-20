@@ -1,4 +1,3 @@
-import { getImgPath } from "../../../utils/imageUtils";
 const DiscountsBanner = () => {
   return (
     <div
@@ -9,7 +8,7 @@ const DiscountsBanner = () => {
       <div className="ctaCard__image ratio ratio-63:55">
         <img
           className="img-ratio js-lazy"
-          src={getImgPath("backgrounds/6.png")}
+          src="/img/backgrounds/6.png"
           alt="image"
         />
       </div>

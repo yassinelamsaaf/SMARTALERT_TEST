@@ -1,5 +1,5 @@
 .annonce-form {
-  --primary-color: #e86c1a;
+  --primary-color: var(--color-dark-3) ;
   --photo-border: 1.5px solid #dee2e6;
 
   // ---- Section principale ----
@@ -13,7 +13,7 @@
 
     .form-control-lg {
       border-radius: 0.5rem;
-      border: 1.5px solid #dee2e6;
+      border: 2px solid var(--primary-color);
       padding: 0.75rem 1rem;
       font-size: 1rem;
 
@@ -23,12 +23,37 @@
       }
     }
 
+
+
     .btn-check:checked + .btn {
       background-color: var(--primary-color);
       border-color: var(--primary-color);
       color: white;
     }
   }
+  .form-wrapper {
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: 1rem;
+  box-shadow: 0 0px 8px var(--primary-color );
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  max-width: 600px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  @media (max-width: 768px) {
+    padding: 2rem;
+    border-radius: 0.75rem;
+  }
+
+  @media (max-width: 576px) {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+}
 
   // ---- Header ----
   .form-header {
@@ -110,57 +135,107 @@
   }
 
   // ---- Sliders / Range ----
-  .range-wrapper {
-    .form-range {
-      accent-color: var(--primary-color);
+ .range-wrapper {
+  .form-label {
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .form-range {
+    width: 100%;
+    accent-color: var(--primary-color);
+    height: 6px;
+    border-radius: 5px;
+    background-color: #dee2e6;
+    cursor: pointer;
+    margin-top: 0.5rem;
+
+    &::-webkit-slider-thumb {
+      background-color: var(--primary-color);
+      border: 2px solid white;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.2s;
     }
 
-    .badge {
-      font-size: 0.9rem;
+    &::-moz-range-thumb {
+      background-color: var(--primary-color);
+      border: 2px solid white;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
     }
   }
 
-  // ---- Radios (custom layout) ----
-  .radio-group {
-  .radio-options {
-    gap: 1rem;
-
-    .custom-radio {
-      display: flex;
-      align-items: center;
-
-      .form-check-input {
-        width: 1rem;
-        height: 1rem;
-        accent-color: var(--primary-color);
-        margin-top: 0;
-      }
-
-      .form-check-label {
-        font-weight: 500;
-        cursor: pointer;
-      }
-    }
-  }
-
-  &.vertical .radio-options {
-    flex-direction: column;
-  }
-
-  &.horizontal .radio-options {
-    flex-direction: row;
-    flex-wrap: wrap;
+  .badge {
+    font-size: 1rem;
+    background-color: var(--primary-color);
+    color: white;
   }
 }
 
+.option-selector {
+  margin-bottom: 2rem;
+
+  &__label {
+    display: block;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+  }
+
+  &__group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &__btn {
+    display: inline-block;
+    padding: 0.6rem 1.25rem;
+    font-weight: 500;
+    border: 1.5px solid #dee2e6;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border-color: var(--primary-color);
+      color: var(--primary-color);
+    }
+
+    &.active {
+      background-color: var(--primary-color);
+      color: #fff;
+      border-color: var(--primary-color);
+    }
+  }
+}
+
+ 
 
   // ---- Step Title ----
-  .step-labels {
-    font-size: 1.2rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-  }
+.step-labels {
+  display: flex;
+  gap: 1rem; // Adjust the space as needed
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
 
   // ---- Step Indicator ----
   .step-indicator {
@@ -180,7 +255,7 @@
     }
 
     .step-line {
-      width: 60px;
+      width: 5rem;
       height: 2px;
       background-color: #f8f9fa;
       transition: background-color 0.3s ease;
@@ -192,25 +267,36 @@
   }
 
   // ---- Navigation (retour / suivant / publier) ----
-  .form-navigation {
+   .form-navigation {
     margin-top: 2rem;
     display: flex;
     justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
 
-    .btn-outline-secondary {
+    button {
+      background: #fff;
+      color: var(--primary-color);
+      border: 1.5px solid var(--primary-color);
       border-radius: 0.5rem;
-      padding: 0.5rem 1.25rem;
-    }
-
-    .btn-danger {
-      background-color: var(--primary-color);
-      border-color: var(--primary-color);
-      color: white;
       padding: 0.5rem 1.5rem;
-      border-radius: 0.5rem;
       font-weight: 500;
+      font-size: 1rem;
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+      box-shadow: none;
 
-     
+      &:hover, &:focus {
+        background: var(--color-dark-3);
+        
+        border-color: var(--color-dark-3);
+      }
+
+      &:disabled {
+        background: #f8f9fa;
+        color: #ccc;
+        border-color: #eee;
+        cursor: not-allowed;
+      }
     }
   }
 }

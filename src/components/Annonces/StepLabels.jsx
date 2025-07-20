@@ -7,7 +7,7 @@ const StepLabels = ({ currentStep }) => {
   const labels = t[lang].stepLabels;
 
   return (
-    <div className="step-labels d-flex justify-content-between text-center mb-4">
+    <div className="step-labels d-flex justify-content-between text-center ">
       {labels.map((label, index) => {
         const step = index + 1;
         const isActive = step === currentStep;

@@ -4,7 +4,6 @@ import Copyright from "./Copyright";
 import FooterContent from "./FooterContent";
 import Social from "../../common/social/Social";
 import Subscribe from "./Subscribe";
-import { getImgPath } from "../../../utils/imageUtils";
 
 const index = () => {
   return (
@@ -13,7 +12,7 @@ const index = () => {
         <div className="pt-60 pb-60">
           <div className="row y-gap-40 justify-between xl:justify-start">
             <div className="col-xl-4 col-lg-6">
-              <img src={getImgPath("general/logo-dark.svg")} alt="image" />
+              <img src="/img/general/logo-dark.svg" alt="image" />
               <div className="row y-gap-30 justify-between pt-30">
                 <ContactInfo />
               </div>

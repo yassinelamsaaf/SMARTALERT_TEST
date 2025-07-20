@@ -1,0 +1,83 @@
+// AccountActions.scss
+
+.account-actions-panel {
+  display: flex;
+  min-height: 400px;
+  flex-direction: row;
+  &.rtl {
+    flex-direction: row-reverse;
+  }
+}
+
+.account-actions-menu {
+  background: #fafbfc;
+  min-width: 260px;
+  padding: 0;
+  border-radius: 0;
+  border: 1.5px solid #eaeaea;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  z-index: 2;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .account-action-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fafbfc;
+    color: #222;
+    font-weight: 400;
+    border-radius: 0;
+    margin: 8px 0;
+    padding: 16px 24px;
+    box-shadow: none;
+    border: 1.5px solid transparent;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s, box-shadow 0.2s, border 0.2s;
+    &.selected {
+      background: var(--color-dark-3);
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      border: 1.5px solid var(--color-dark-3);
+    }
+    .bi {
+      opacity: 0.4;
+      &.selected {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.account-actions-content {
+  flex-grow: 1;
+  padding: 1.5rem;
+  background: #f6f9ff;
+  border-radius: 0;
+  min-height: 400px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  z-index: 1;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+// Animation for content panel
+@keyframes fadeInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.account-actions-anim {
+  animation-duration: 0.35s;
+  animation-timing-function: cubic-bezier(.4,0,.2,1);
+  animation-fill-mode: both;
+}

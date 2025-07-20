@@ -1,15 +1,21 @@
+
 import AvatarUploader from "./AvatarUploader";
+import ChangeAliasModal from "@/components/settings/ChangeAliasModal";
+import DeleteAccountModal from "@/components/settings/DeleteAccountModal";
+import LogoutModal from "@/components/settings/LogoutModal";
+import { useNavigate } from "react-router-dom";
 
 const PersonalInfo = () => {
+  const navigate = useNavigate();
   return (
     <>
-      <form>
-        <AvatarUploader />
-        {/* End AvatarUploader*/}
+      {/* <form> */}
+        {/* <AvatarUploader />
+        End AvatarUploader */}
 
         <div className="border-top-light mt-30 mb-30" />
 
-        <div className="col-xl-9">
+        {/* <div className="col-xl-9">
           <div className="row x-gap-20 y-gap-20">
             <div className="col-12">
               <div className="form-input ">
@@ -19,14 +25,12 @@ const PersonalInfo = () => {
                 </label>
               </div>
             </div>
-            {/* End col-12 */}
             <div className="col-12">
               <div className="form-input ">
                 <input type="text" required />
                 <label className="lh-1 text-16 text-light-1">User Name</label>
               </div>
             </div>
-            {/* End col-12 */}
 
             <div className="col-md-6">
               <div className="form-input ">
@@ -34,7 +38,6 @@ const PersonalInfo = () => {
                 <label className="lh-1 text-16 text-light-1">First Name</label>
               </div>
             </div>
-            {/* End col-6 */}
 
             <div className="col-md-6">
               <div className="form-input ">
@@ -42,7 +45,6 @@ const PersonalInfo = () => {
                 <label className="lh-1 text-16 text-light-1">Last Name</label>
               </div>
             </div>
-            {/* End col-6 */}
 
             <div className="col-md-6">
               <div className="form-input ">
@@ -50,7 +52,6 @@ const PersonalInfo = () => {
                 <label className="lh-1 text-16 text-light-1">Email</label>
               </div>
             </div>
-            {/* End col-6 */}
 
             <div className="col-md-6">
               <div className="form-input ">
@@ -60,7 +61,6 @@ const PersonalInfo = () => {
                 </label>
               </div>
             </div>
-            {/* End col-6 */}
 
             <div className="col-12">
               <div className="form-input ">
@@ -68,7 +68,6 @@ const PersonalInfo = () => {
                 <label className="lh-1 text-16 text-light-1">Birthday</label>
               </div>
             </div>
-            {/* End col-6 */}
 
             <div className="col-12">
               <div className="form-input ">
@@ -79,18 +78,28 @@ const PersonalInfo = () => {
               </div>
             </div>
           </div>
-        </div>
-        {/* End col-xl-9 */}
+        </div> */}
 
-        <div className="d-inline-block pt-30">
-          <button
-            type="submit"
-            className="button h-50 px-24 -dark-1 bg-blue-1 text-white"
-          >
-            Save Changes <div className="icon-arrow-top-right ml-15" />
+        <div className="d-flex flex-wrap gap-3 pt-30">
+          <button type="button" className="btn btn-outline-primary" onClick={() => window.dispatchEvent(new Event("openAliasModal"))}>
+            Change Alias
+          </button>
+          <button type="button" className="btn btn-outline-danger" onClick={() => window.dispatchEvent(new Event("openDeleteModal"))}>
+            Delete Account
+          </button>
+          <button type="button" className="btn btn-outline-secondary" onClick={() => window.dispatchEvent(new Event("openLogoutModal"))}>
+            Logout
+          </button>
+          <button type="button" className="btn btn-outline-success" onClick={() => navigate("/PhoneVerification")}> 
+            Add Phone
           </button>
         </div>
-      </form>
+
+      {/* </form> */}
+      {/* Modals rendered globally so they can be triggered by events */}
+      <ChangeAliasModal />
+      <DeleteAccountModal />
+      <LogoutModal />
     </>
   );
 };

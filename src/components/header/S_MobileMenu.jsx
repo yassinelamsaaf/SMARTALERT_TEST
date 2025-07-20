@@ -7,7 +7,8 @@ import { LanguageContext } from "@/i18n/LanguageProvider";
 import { useContext } from "react";
 import t from "@/i18n/t";
 import { useAuthUser } from "../../utils/useAuthUser";
-import { getImgPath } from "../../utils/imageUtils";
+import NotificationCard from "@/components/notifications/notificationCard";
+import { useState, useRef, useEffect } from "react";
 
 const MobileMenu = () => {
   const { pathname } = useLocation();
@@ -15,6 +16,25 @@ const MobileMenu = () => {
   const navigate = useNavigate();
 
   const { user, setUser, handleLogout } = useAuthUser();
+  const [showNotifications, setShowNotifications] = useState(false);
+  const notifIconRef = useRef(null);
+
+  // Close notification card when clicking outside
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (notifIconRef.current && !notifIconRef.current.contains(event.target)) {
+        setShowNotifications(false);
+      }
+    }
+    if (showNotifications) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showNotifications]);
 
   // Helper: render user menu items for mobile
   const renderUserMenuItems = (closeOnClick = false) => [
@@ -96,18 +116,33 @@ const MobileMenu = () => {
         <Link to="/">
           <img
             style={{ height: 39 }}
-            src={getImgPath("general/logo-dark.png")}
+            src={`${import.meta.env.BASE_URL}/img/general/logo-dark.png`}
             alt="brand"
           />
         </Link>
         {/* End logo */}
 
-        <div
-          className="fix-icon"
-          data-bs-dismiss="offcanvas"
-          aria-label="Close"
-        >
-          <i className="icon icon-close"></i>
+        <div className="d-flex align-items-center gap-2">
+          <div ref={notifIconRef} style={{ position: 'relative' }}>
+            <i
+              className="bi bi-bell "
+              style={{ fontSize: 22, cursor: 'pointer', color: 'var(--color-dark-3)', marginRight: '12px'}}
+              onClick={() => setShowNotifications((v) => !v)}
+              aria-label="Notifications"
+            />
+            {showNotifications && (
+              <div style={{ position: 'absolute', top: '120%', right: 0, zIndex: 2000, marginRight: '-72%'}}>
+                <NotificationCard />
+              </div>
+            )}
+          </div>
+          <div
+            className="fix-icon"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          >
+            <i className="icon icon-close"></i>
+          </div>
         </div>
         {/* icon close */}
       </div>

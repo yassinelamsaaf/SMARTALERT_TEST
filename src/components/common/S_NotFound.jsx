@@ -2,13 +2,12 @@ import { LanguageContext } from "@/i18n/LanguageProvider";
 import t from "@/i18n/t";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import { getImgPath } from "../../utils/imageUtils";
 
 const NotFound = () => {
   const { lang } = useContext(LanguageContext);
 
   const data = {
-    imageSrc: `getImgPath('general/404.svg')`,
+    imageSrc: `${import.meta.env.BASE_URL}/img/general/404.svg`,
     title: t[lang].notFound.title,
     description: t[lang].notFound.description,
     buttonLabel: t[lang].notFound.buttonLabel,

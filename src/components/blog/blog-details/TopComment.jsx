@@ -1,10 +1,9 @@
-import { getImgPath } from "../../../utils/imageUtils";
 const TopComment = () => {
   return (
     <div className="row y-gap-30">
       <div className="col-auto">
         <img
-          src={getImgPath("avatars/4.png")}
+          src="/img/avatars/4.png"
           alt="image"
           className="size-70 rounded-full"
         />

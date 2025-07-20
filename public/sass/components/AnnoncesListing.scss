@@ -24,91 +24,73 @@
     margin: 0;
   }
 
-  .add-btn {
+ .add-btn {
     padding: 0.75rem 1.5rem;
-    background-color: #e86c1a;
+    background-color: var(--color-dark-3);
+    border: 1.5px solid transparent; // Match empty-state button
     color: white;
-    border: none;
     border-radius: 8px;
     cursor: pointer;
     font-size: 1rem;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: background 0.2s, color 0.2s, border-color 0.2s;
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 
-    &:hover:not(:disabled) {
-      background-color: #d15a14;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    &:hover, &:focus {
+      background: #fff;
+      color: var(--color-dark-3);
+      border-color: var(--color-dark-3);
     }
 
     &:disabled {
       background-color: #ccc;
+      color: #fff;
       cursor: not-allowed;
+      border-color: transparent;
     }
   }
 }
 
-.stats-bar {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  padding: 1rem;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  border: 1px solid #e9ecef;
 
-  .stat-item {
-    text-align: center;
-
-    .count {
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    .label {
-      font-size: 0.875rem;
-      color: #666;
-    }
-  }
-}
 .cards-container {
   display: flex; 
   flex-wrap: wrap  ;
   gap: 1rem;
   padding: 1rem;
 }
+.annonce-card {
+  position: relative;
 
-.delete-btn {
-     position: absolute;
-    top: 1rem;
-     right: 1rem; // 
-      z-index: 2;
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      background-color: #dc3545;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-size: 1.4rem;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
-      opacity: 0.9;
-      transition: all 0.2s ease;
+  .delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: var(--color-dark-3);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
 
-      &:hover {
-        opacity: 1;
-        transform: scale(1.1);
-      }
+    i {
+      font-size: 18px;
     }
-  
 
+    &:hover {
+      background-color: #fff;
+      color: var(--color-dark-3);
+      border: 1.5px solid var(--color-dark-3);
+    }
+  }
+}
 
 
 @keyframes fadeInUp {
@@ -149,14 +131,20 @@
   }
 
   button {
-    padding: 0.75rem 1.5rem;
-    background-color: #e86c1a;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--color-dark-3);
+  border: 1.5px solid transparent; // Always present, transparent by default
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  &:hover, &:focus {
+    background: #fff;
+    color: var(--color-dark-3);
+    border-color: var(--color-dark-3); // Only color changes
   }
+}
 }
 

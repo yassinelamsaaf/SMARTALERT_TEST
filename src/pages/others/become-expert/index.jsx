@@ -8,7 +8,6 @@ import Faq from "@/components/faq/Faq";
 import { Link } from "react-router-dom";
 
 import MetaComponent from "@/components/common/MetaComponent";
-import { getImgPath } from "../../../utils/imageUtils";
 
 const metadata = {
   title: "Become Expert || GoTrip - Travel & Tour ReactJs Template",
@@ -26,7 +25,7 @@ const BecomeExpert = () => {
 
       <section className="section-bg layout-pt-lg layout-pb-lg">
         <div className="section-bg__item col-12">
-          <img src={getImgPath("pages/about/1.png")} alt="image" />
+          <img src="/img/pages/about/1.png" alt="image" />
         </div>
         {/* End section-bg__item */}
 

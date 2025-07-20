@@ -1,7 +1,6 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import { testimonial3 } from "../../../data/testimonialData";
-import { getImgPath } from "../../../utils/imageUtils";
 
 const Testimonial = () => {
   return (
@@ -17,7 +16,7 @@ const Testimonial = () => {
         {testimonial3.slice(0, 4).map((item) => (
           <SwiperSlide key={item.id}>
             <div className="testimonials -type-2 ">
-              <img src={getImgPath("misc/quote.svg")} alt="quote" className="mb-35" />
+              <img src="/img/misc/quote.svg" alt="quote" className="mb-35" />
               <div className="text-22 md:text-18 fw-600 text-dark-1">
                 {item.text}
               </div>

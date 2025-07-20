@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
-import { getImgPath } from "../../../../utils/imageUtils";
 
 const Sidebar = () => {
   const sidebarData = [
     {
-      icon: getImgPath("dashboard/sidebar/booking.svg"),
+      icon: "/img/dashboard/sidebar/booking.svg",
       title: "Manage Hotel",
       links: [
         { title: "All Hotel", href: "#" },
@@ -13,7 +12,7 @@ const Sidebar = () => {
       ],
     },
     {
-      icon: getImgPath("dashboard/sidebar/map.svg"),
+      icon: "/img/dashboard/sidebar/map.svg",
       title: "Manage Tour",
       links: [
         { title: "All Tour", href: "#" },
@@ -22,7 +21,7 @@ const Sidebar = () => {
       ],
     },
     {
-      icon: getImgPath("dashboard/sidebar/sneakers.svg"),
+      icon: "/img/dashboard/sidebar/sneakers.svg",
       title: "Manage Activity",
       links: [
         { title: "All Activity", href: "#" },
@@ -31,7 +30,7 @@ const Sidebar = () => {
       ],
     },
     {
-      icon: getImgPath("dashboard/sidebar/house.svg"),
+      icon: "/img/dashboard/sidebar/house.svg",
       title: "Manage Holiday Rental",
       links: [
         {
@@ -49,7 +48,7 @@ const Sidebar = () => {
       ],
     },
     {
-      icon: getImgPath("dashboard/sidebar/taxi.svg"),
+      icon: "/img/dashboard/sidebar/taxi.svg",
       title: "Manage Car",
       links: [
         {
@@ -67,7 +66,7 @@ const Sidebar = () => {
       ],
     },
     {
-      icon: getImgPath("dashboard/sidebar/canoe.svg"),
+      icon: "/img/dashboard/sidebar/canoe.svg",
       title: "Manage Cruise",
       links: [
         {
@@ -85,7 +84,7 @@ const Sidebar = () => {
       ],
     },
     {
-      icon: getImgPath("dashboard/sidebar/airplane.svg"),
+      icon: "/img/dashboard/sidebar/airplane.svg",
       title: "Manage Flights",
       links: [
         {
@@ -113,7 +112,7 @@ const Sidebar = () => {
             className="sidebar__button d-flex items-center text-15 lh-1 fw-500"
           >
             <img
-              src={getImgPath("dashboard/sidebar/compass.svg")}
+              src="/img/dashboard/sidebar/compass.svg"
               alt="image"
               className="mr-15"
             />
@@ -128,7 +127,7 @@ const Sidebar = () => {
             className="sidebar__button d-flex items-center text-15 lh-1 fw-500"
           >
             <img
-              src={getImgPath("dashboard/sidebar/booking.svg")}
+              src="/img/dashboard/sidebar/booking.svg"
               alt="image"
               className="mr-15"
             />
@@ -180,7 +179,7 @@ const Sidebar = () => {
             className="sidebar__button d-flex items-center text-15 lh-1 fw-500"
           >
             <img
-              src={getImgPath("dashboard/sidebar/log-out.svg")}
+              src="/img/dashboard/sidebar/log-out.svg"
               alt="image"
               className="mr-15"
             />

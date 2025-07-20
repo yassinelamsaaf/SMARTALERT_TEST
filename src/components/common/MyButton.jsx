@@ -2,15 +2,16 @@ import React from "react";
 
 /**
  * MyButton component
- * @param {string} icon - Path to the icon relative to /img (e.g. 'dashboard/icons/1.svg')
+ * @param {string} icon - Path to the icon relative to /img (e.g. 'dashboard/icons/1.svg') OR icon class name (e.g. 'icon-plus')
  * @param {function} onClick - Click handler
  * @param {number} size - Width and height in px
- * @param {string} alt - Alt text for the icon
+ * @param {string} alt - Alt text for the icon (only used for image icons)
  * @param {string} title - Tooltip/title for the button
  * @param {object} style - Additional style
  * @param {string} className - Additional className
  * @param {boolean} disabled - Indicates if the button is disabled
  * @param {object} imgStyle - Additional style for the icon image
+ * @param {boolean} isIconClass - If true, treats icon as a CSS class name instead of image URL
  */
 const INEButton = ({
   icon,
@@ -22,8 +23,12 @@ const INEButton = ({
   className = "",
   disabled = false,
   imgStyle = {},
+  isIconClass = false,
+  color = 'white',
 }) => {
-  // Main color from project: var(--color-blue-1)
+  // Check if icon is a class name (starts with 'icon-' or contains no file extension)
+  const isIconClassName = isIconClass || icon.startsWith('icon-') || (!icon.includes('.') && !icon.startsWith('http'));
+
   return (
     <button
       className={`my-squared-btn my-squared-btn--scale ${className}`}
@@ -45,11 +50,22 @@ const INEButton = ({
         ...style,
       }}
     >
-      <img
-        src={`${icon}`}
-        alt={alt}
-        style={{ width: size * 0.6, height: size * 0.6, objectFit: "contain", ...imgStyle }}
-      />
+      {isIconClassName ? (
+        <i 
+          className={icon} 
+          style={{ 
+            fontSize: size * 0.6, 
+            color: color,
+            ...imgStyle 
+          }}
+        />
+      ) : (
+        <img
+          src={`${icon}`}
+          alt={alt}
+          style={{ width: size * 0.6, height: size * 0.6, objectFit: "contain", ...imgStyle }}
+        />
+      )}
     </button>
   );
 };

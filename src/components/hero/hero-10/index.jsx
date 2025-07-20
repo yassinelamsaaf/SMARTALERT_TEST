@@ -1,6 +1,5 @@
 import FilterSelect from "./FilterSelect";
 import MainFilterSearchBox from "./MainFilterSearchBox";
-import { getImgPath } from "../../../utils/imageUtils";
 
 const Index = () => {
   return (
@@ -43,7 +42,7 @@ const Index = () => {
           <div className="row y-gap-30 flex-nowrap">
             <div className="col-auto">
               <img
-                src={getImgPath("masthead/10/1.png")}
+                src="/img/masthead/10/1.png"
                 alt="image"
                 className="rounded-16"
               />
@@ -52,7 +51,7 @@ const Index = () => {
 
             <div className="col-auto">
               <img
-                src={getImgPath("masthead/10/2.png")}
+                src="/img/masthead/10/2.png"
                 alt="image"
                 className="rounded-16"
               />

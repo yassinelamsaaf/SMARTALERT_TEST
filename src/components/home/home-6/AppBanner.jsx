@@ -1,5 +1,4 @@
 import AppBlock from "../../block/AppBlock";
-import { getImgPath } from "../../../utils/imageUtils";
 
 const AppBanner = () => {
   return (
@@ -7,7 +6,7 @@ const AppBanner = () => {
       <div className="container">
         <div className="row y-gap-30 items-center justify-between">
           <div className="col-xl-6">
-            <img src={getImgPath("app/2.svg")} alt="image" />
+            <img src="/img/app/2.svg" alt="image" />
           </div>
           {/* End .col for image left */}
 

@@ -1,4 +1,3 @@
-import { getImgPath } from "../../utils/imageUtils";
 const Block1 = () => {
   return (
     <>
@@ -22,7 +21,7 @@ const Block1 = () => {
 
       <div className="col-lg-6">
         <img
-          src={getImgPath("pages/about/2.png")}
+          src="/img/pages/about/2.png"
           alt="image"
           className="rounded-4 w-100"
         />

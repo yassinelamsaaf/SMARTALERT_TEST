@@ -1,9 +1,12 @@
+import React from "react";
 import Sidebar from "../common/Sidebar";
-import Header from "../../../header/dashboard-header";
+import Header from "../../../header/header-1/index";
 import SettingsTabs from "./components/index";
-import Footer from "../common/Footer";
-
+import Footer from "../../../footer/footer-2/index";
+import t from "@/i18n/t";
+import { LanguageContext } from "@/i18n/LanguageProvider";
 const index = () => {
+  const { lang } = React.useContext(LanguageContext);
   return (
     <>
       {/*  */}
@@ -14,36 +17,22 @@ const index = () => {
       <Header />
       {/* End dashboard-header */}
 
-      <div className="dashboard">
-        <div className="dashboard__sidebar bg-white scroll-bar-1">
-          <Sidebar />
-          {/* End sidebar */}
-        </div>
-        {/* End dashboard__sidebar */}
-
-        <div className="dashboard__main">
-          <div className="dashboard__content bg-light-2">
-            <div className="row y-gap-20 justify-between items-end pb-60 lg:pb-40 md:pb-32">
-              <div className="col-12">
-                <h1 className="text-30 lh-14 fw-600">Settings</h1>
-                <div className="text-15 text-light-1">
-                  Lorem ipsum dolor sit amet, consectetur.
-                </div>
-              </div>
-              {/* End .col-12 */}
-            </div>
-            {/* End .row */}
-
-            <div className="py-30 px-30 rounded-4 bg-white shadow-3">
-              <SettingsTabs />
-            </div>
-
-            <Footer />
+      <div className="dashboard__content bg-light-2 pb-50">
+        <div className="col-12 mb-15">
+          <h1 className="text-30 lh-14 fw-600">
+            <i className="bi bi-gear"></i> {t[lang].accountSettings.pageTitle}
+          </h1>
+          <div className="text-15 text-light-1 mt-5">
+            {t[lang].accountSettings.pageSubtitle}
           </div>
-          {/* End .dashboard__content */}
         </div>
-        {/* End dashbaord content */}
+        <div className="py-30 px-30 rounded-4 bg-white shadow-3">
+          {/* End .col-12 */}
+          <SettingsTabs />
+        </div>
       </div>
+      {/* End .dashboard__content */}
+      <Footer />
       {/* End dashbaord content */}
     </>
   );

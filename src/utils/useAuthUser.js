@@ -1,7 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { delToken, getToken, getUserFromToken } from "./auth";
+import { getUserFromToken } from "./auth";
 
 export function useAuthUser() {
   const reduxUser = useSelector((state) => state.auth?.user);
@@ -13,7 +13,7 @@ export function useAuthUser() {
     if (reduxUser) {
       setUser(reduxUser);
     } else {
-      const token = getToken();
+      const token = localStorage.getItem("jwt");
       if (token) {
         try {
           const payload = JSON.parse(atob(token.split(".")[1]));
@@ -31,7 +31,10 @@ export function useAuthUser() {
 
   const handleLogout = (e) => {
     e?.preventDefault?.();
-    delToken();
+    localStorage.removeItem("jwt");
+    localStorage.removeItem("isSocialUser");
+    localStorage.removeItem("userName");
+    localStorage.removeItem("userEmail");
     dispatch({ type: "LOGOUT" });
     setUser(null);
     navigate("/");

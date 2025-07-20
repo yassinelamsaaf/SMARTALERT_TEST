@@ -28,6 +28,8 @@ import About from "./pages/others/about";
 import LogIn from "./pages/others/login";
 import SignUp from "./pages/others/signup";
 import Terms from "./pages/others/terms";
+import DBSettings from "./pages/dashboard/dashboard/db-settings";
+
 import { store } from "./store/store";
 import "./styles/index.scss";
 import CreateAlert from "./pages/alerts/createAlert";
@@ -37,12 +39,19 @@ if (typeof window !== "undefined") {
 }
 
 import ActivateAccount from "./pages/others/activate";
+import ForgotPassword from "./pages/others/ForgotPassword";
+import ResetPassword from "./pages/others/ResetPassword";
 import PhoneVerification from "./components/phoneVerification";
 import SettingsPage from "./pages/settings";
 import ChatbotFloatingButton from "./components/chatbot/ChatbotFloatingButton";
 
 import WishlistPage from "./pages/favoris/WishlistPage";
 import AnnoncePage from "./pages/annonce/AnnoncePage";
+import NotificationsPage from "./pages/notifications/NotificationsPage";
+import { loadFacebookSDK } from "./utils/facebook";
+import ActivatePhone from "./pages/others/activate-phone";
+
+// ...existing code...
 
 function App() {
   const dispatch = useDispatch();
@@ -57,14 +66,7 @@ function App() {
   }, [dispatch]);
 
   useEffect(() => {
-    window.fbAsyncInit = function () {
-      window.FB.init({
-        appId: import.meta.env.VITE_FACEBOOK_APP_ID,
-        cookie: true,
-        xfbml: true,
-        version: "v19.0",
-      });
-    };
+    loadFacebookSDK(import.meta.env.VITE_FACEBOOK_APP_ID, "v19.0");
     Aos.init({
       duration: 1200,
       once: true,
@@ -74,7 +76,7 @@ function App() {
   return (
     <main>
       <Provider store={store}>
-        <BrowserRouter>
+        <BrowserRouter basename={"/SMARTALERT_WEB"}>
           <Routes>
             <Route path="/" index element={<Home_2 />} />
 
@@ -92,17 +94,26 @@ function App() {
 
             <Route path="login" element={<LogIn />} />
             <Route path="signup" element={<SignUp />} />
-            <Route path="PhoneVerification" element={<PhoneVerification />} />
-            <Route path="reglages" element={<SettingsPage />}></Route>
+            <Route path="forgot-password" element={<ForgotPassword />} />
+            <Route path="reset-password" element={<ResetPassword />} />
+
+              <Route path="PhoneVerification" element={<PhoneVerification/>}/> 
+              {/* <Route path="reglages" element={<SettingsPage/>}></Route> */}
+              <Route path="reglages" element={<DBSettings />}></Route>
+
 
             <Route path="alerts" element={<AlertListPage />} />
             <Route path="alerts/:id" element={<AlertInfo />} />
             <Route path="alerts/add" element={<CreateAlert />} />
 
-            <Route path="favoris" element={<WishlistPage />} />
-            <Route path="vitrine" element={<AnnoncePage />} />
+              <Route path="favoris" element={<WishlistPage/>}/>
+              <Route path="vitrine" element={<AnnoncePage/>}/>
+              {/* <Route path="notifications" element={<NotificationsPage/>}/> */}
+
+
 
             <Route path="activate" element={<ActivateAccount />} />
+            <Route path="activate-phone" element={<ActivatePhone/>} />
           </Routes>
           <ScrollTopBehaviour />
           <ChatbotFloatingButton />

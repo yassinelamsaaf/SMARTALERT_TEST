@@ -64,8 +64,8 @@ const CreateAnnonce = ({ onClose, onSave }) => {
   return (
     <div className="annonce-form">
       <div className="container py-4" style={{ maxWidth: '600px' }}>
-        <div className="bg-white rounded-3 shadow-sm p-4">
-          <Header currentStep={currentStep} onPrevStep={prevStep} />
+    <div className="form-wrapper"  >
+          <Header currentStep={currentStep} onPrevStep={prevStep} onclose={onClose} />
           <StepIndicator currentStep={currentStep} />
           <StepLabels currentStep={currentStep} />
           {renderCurrentStep()}
@@ -74,13 +74,13 @@ const CreateAnnonce = ({ onClose, onSave }) => {
             onPrevStep={prevStep}
             onNextStep={nextStep}
             onSubmit={handleSubmit}
+            onclose={onClose}
+            prevTitle={t[lang].createAnnonce.previous}
+            nextTitle={t[lang].createAnnonce.next}
+            submitTitle={t[lang].createAnnonce.submit}
+            cancelTitle={t[lang].createAnnonce.cancel}
           />
-          <button
-            onClick={onClose}
-            style={{ marginTop: '1rem', backgroundColor: '#ccc', borderRadius: '5px', padding: '0.5rem 1rem' }}
-          >
-            {t[lang].createAnnonce.cancel}
-          </button>
+         
         </div>
       </div>
     </div>

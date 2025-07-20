@@ -241,7 +241,8 @@ const fr = {
     selectLanguage: "Choisir la langue",
     login: "Se connecter", 
     alert: "Alerte",        
-    vitrine: "Vitrine",    
+    vitrine: "Vitrine",  
+    notifications:"Notifications"  ,
     favoris: "Favoris",    
     settings: "Réglages",
     logout: "Se déconnecter",
@@ -307,24 +308,51 @@ const fr = {
     },
     rights: "Tous droits réservés.",
   },
+    authErrors: {
+    emailExists: "Cet email existe déjà.",
+    loginAlreadyUsed: "Ce nom d'utilisateur est déjà utilisé.",
+    invalidEmail: "Adresse email invalide.",
+    weakPassword: "Le mot de passe est trop faible.",
+    userNotFound: "Aucun utilisateur trouvé avec cet email.",
+    invalidCredentials: "Email ou mot de passe incorrect.",
+    signupError: "Erreur lors de la création du compte.",
+    default: "Une erreur est survenue. Veuillez réessayer."
+  },
   auth: {
     loginTitle: "Bienvenue",
     loginSubtitle: "Vous n'avez pas encore de compte ?",
     loginLink: "Inscrivez-vous gratuitement",
     email: "Email",
+    emailOrPhone: "Email ou numéro de téléphone",
+    phone: "Numéro de téléphone",
+    phoneFormatExample: "(ex: 0612345678)",
+    phoneSignupSubtitle: "Vous pouvez vous inscrire avec votre numéro de téléphone ou votre email.",
+    phoneActivationTitle: "Le code a été envoyé par SMS!",
+    phoneActivationDesc: "Entrez le code envoyé à votre téléphone.",
+    didntReceiveCodePhone: "Vous n'avez pas reçu le code ?",
+    resendCodePhone: "Renvoyer le code",
+    codeSentTitlePhone: "Le code a été envoyé par SMS!",
+    codeSentDescPhone: "Entrez le code envoyé à votre téléphone.",
     password: "Mot de passe",
     forgot: "Mot de passe oublié ?",
+    sendResetPassCode: "Envoyer",
     loginBtn: "Se connecter",
+    loginError: "Identifiants invalides",
+    loggingIn: "Connexion en cours...",
     signupTitle: "Créer un compte",
     signupSubtitle: "Vous avez déjà un compte ?",
     signupLink: "Se connecter",
     firstName: "Prénom",
+    Name: "Nom",
     lastName: "Nom",
     confirmPassword: "Confirmer le mot de passe",
     signupBtn: "S'inscrire",
     agree: "J'accepte les Conditions d'utilisation et la Politique de confidentialité.",
     or: "ou connectez-vous avec",
-    checkEmailMsg: "Vérifiez votre email pour activer votre compte.",
+    checkEmailMsg: "Entrez votre adresse email pour obtenir le code de réinitialisation du mot de passe.",
+    resetCodeBtn: "Envoyer",
+    resetCodeDesc: "Entrez le code reçu par email pour réinitialiser votre mot de passe.",
+    resetCodeSentMsg: "Le code de réinitialisation du mot de passe a été envoyé",
     agreeError: "Vous devez accepter les conditions.",
     passwordMismatch: "Les mots de passe ne correspondent pas.",
     signupError: "L'inscription a échoué. Veuillez réessayer.",
@@ -339,7 +367,8 @@ const fr = {
     resendCode: "Renvoyer le code",
     resending: "Renvoi...",
     resent: "Code renvoyé !",
-    resendError: "Échec de renvoi du code."
+    resendError: "Échec de renvoi du code.",
+    passwordResetSuccess: "Votre mot de passe a été réinitialisé avec succès.",
   },
   PhoneVerification: {
     title: "Ajouter un numéro de téléphone",
@@ -373,6 +402,11 @@ const fr = {
       confirm: "confirmer",
       createdOn: "crée le",
       searching: "chercher les alertes",
+      count: "Nombre d'alertes créées",
+      emptyTitle: "Aucune alerte créée",
+      emptyDescription: "Commencez par créer votre première alerte de voiture.",
+      createFirst: "Créer ma première alerte",
+      title: "Mes Alertes"
     },
     filter: {
       filter_title: "Filtrer les alertes",
@@ -384,8 +418,10 @@ const fr = {
       discard: "Annuler",
       apply: "Appliquer",
     },
-      info: {
+    info: {
       all: 'Tous',
+      createdAt: 'Créée le',
+      ranges: 'Préférences',
       brand: 'Marque',
       model: 'Modèle',
       city: 'Ville',
@@ -404,12 +440,23 @@ const fr = {
       annee: 'Année',
       mileage: 'Kilométrage',
       price: 'Prix',
+      regdate: 'date d\'inscription',
       min: 'min',
       max: 'max',
       vehicle_origin: 'Source ',
       first_owner: 'Premier propriétaire',
       gear_box: 'Boîte de vitesses',
       promo: 'Promotion',
+      source: 'Source',
+      notFound:{
+        main: 'alert non trouvée',
+        desc: 'l\'alerte demandé n\'est pas trouvée, veuillez verifier que cette alerte existe et verifier encore.'
+      },
+      loading: 'en cours de telechargement...',
+      head: {
+        main: 'Critere d\'alerte',
+        desc: 'Votre alerte personalisé, pour trouver votre vehicule preferé',
+      }
     },
     form: {
       brand: "Marque",
@@ -428,6 +475,30 @@ const fr = {
       goBack: "retour à la page des alertes",
       steps: ["Essentiels", "Filtres", "Curseurs", "Étiquette"],
       opfailed: "Opération échouée. Veuillez remplir à nouveau le formulaire.",
+      alertLabel: "Nom d'alerte",
+      next: "Suivant",
+      back: "Precedent",
+      submit: "Créer l'alerte",
+      noOptions: "Pas d'options",
+      preview: 'Aperçu',
+      quickStats: 'Statistiques rapides',
+      active: 'Avec Promo',
+      inactive: 'Sans Promo',
+      vehicle_origin: 'Origine du véhicule',
+      first_owner: 'Premier propriétaire',
+      gear_box: 'Boîte de vitesses',
+      promo: 'Promotion',
+      source: 'Source',
+      fuel: 'Carburant',
+      doors: 'Nombre des portes',
+      labelPlaceHolder: 'Entrer un label pour l\'alert',
+      to: 'jusqu\'à',
+      deleteConfirmTitle: 'Confirmer la suppression de l\'alerte',
+      deleteConfirmAllTitle: 'Confirmer la suppression de toutes vos l\'alertes',
+      deleteConfirmYes: 'Confirmer',
+      deleteConfirmNo: 'Annuler',
+      deleteAll: 'Supprimer tous',
+
     }
  
 }, 
@@ -556,7 +627,96 @@ annonceListing: {
   emptyDesc: "Créez votre première annonce pour commencer à vendre votre véhicule",
   emptyBtn: "Créer ma première annonce",
   deleteConfirm: "Supprimer cette annonce ?"
+},
+notifications: {
+  defaultName: 'Visiteur',
+  all: 'les notifications',
+  loading: 'en cours...',
+  noNotification: 'pas de notifications pour le moment',
+},
+
+// =====================
+// Paramètres du compte (Account Settings Page)
+// =====================
+// =====================
+// Paramètres du compte (Account Settings Page)
+// =====================
+accountSettings: {
+  pageSubtitle: "Gérez vos informations et préférences de compte.",
+  otherSettings: {
+    language: "Langue"
+  },
+  pageTitle: "Paramètres",
+  passwordInfo: {
+    current: "Mot de passe actuel",
+    new: "Nouveau mot de passe",
+    confirm: "Nouveau mot de passe (confirmation)",
+    save: "Sauvegarder les modifications",
+    show: "Afficher",
+    hide: "Masquer"
+  },
+  notificationSettings: {
+    instruction: "Gérez vos préférences de notification pour rester informé des alertes importantes. Vous pouvez choisir de recevoir les notifications par téléphone ou par email selon vos besoins.",
+    phone: "Téléphone",
+    email: "Email",
+    save: "Sauvegarder",
+    success: "Modifications enregistrées !"
+  },
+  logoutPanel: {
+    title: "Déconnexion",
+    message: "Vous êtes sur le point de vous déconnecter de votre compte SmartAlert ?",
+    button: "Se déconnecter"
+  },
+  addPhone: {
+    instruction: "Ajoutez votre numéro de téléphone pour renforcer la sécurité de votre compte et recevoir des alertes importantes.",
+    subInstruction: "Veuillez entrer votre numéro de téléphone mobile. Un code de vérification vous sera envoyé par SMS.",
+    label: "Numéro de téléphone",
+    example: "(ex: 0612345678)",
+    sendCode: "Envoyer le code",
+    resend: "Réessayez dans {countdown}s",
+    modify: "Modifier le numéro",
+    codeLabel: "Entrez le code reçu par SMS",
+    validate: "Valider",
+    verified: "Numéro vérifié et ajouté !",
+    errorFormat: "Veuillez entrer un numéro de téléphone valide au format 06XXXXXXXX ou 07XXXXXXXX.",
+    errorCode: "Veuillez entrer le code de vérification à 6 chiffres."
+  },
+  menu: {
+    alias: "Modifier l'alias",
+    phone: "Ajouter un téléphone",
+    logout: "Se déconnecter",
+    delete: "Supprimer le compte"
+  },
+  tabs: {
+    personalInfo: "Informations personnelles",
+    changePassword: "Changer le mot de passe",
+    notifications: "Notifications",
+    other: "Autres"
+  },
+  changeAlias: {
+    current: "Voici votre nom actuel :",
+    instruction: "Pour modifier votre nom d'utilisateur, veuillez entrer le nouvel alias ci-dessous. Ce nom sera affiché sur votre profil.",
+    label: "Nouvel alias",
+    saveBtn: "Sauvegarder",
+    success: "Alias modifié !",
+    error: "Veuillez entrer un alias valide."
+  },
+  deleteAccount: {
+    attentionTitle: "Attention :",
+    attentionText: "La suppression de votre compte est irréversible. Toutes vos données, historiques et informations personnelles seront définitivement effacées.",
+    instruction: "Pour continuer, veuillez entrer votre mot de passe et confirmer la suppression.",
+    passwordLabel: "Mot de passe",
+    show: "Afficher",
+    hide: "Masquer",
+    confirmLabel: "Tapez 'CONFIRMER' pour valider",
+    confirmText: "CONFIRMER",
+    confirmError: "Veuillez taper 'CONFIRMER' pour valider la suppression.",
+    warning: "La suppression du compte entraînera l'effacement définitif de toutes les données personnelles et historiques associées.",
+    deleteBtn: "Supprimer mon compte",
+    success: "Compte supprimé !"
+  }
 }
+// =====================
 }
 
 export default fr;

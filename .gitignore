@@ -22,3 +22,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+# Local certificates (do not commit SSL keys/certs)
+certs/

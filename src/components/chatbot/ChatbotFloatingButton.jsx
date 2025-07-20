@@ -40,6 +40,8 @@ const ChatbotFloatingButton = () => {
     setChatHistory(history);
   };
 
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <>
       {showButton && (
@@ -47,9 +49,14 @@ const ChatbotFloatingButton = () => {
           className="chatbot-floating-btn"
           onClick={handleclick}
           aria-label="Open Chatbot"
+          onMouseEnter={() => setIsHovered(true)}
+          onMouseLeave={() => setIsHovered(false)}
         >
-          <i
-            className="bi bi-robot chatbot-icon"
+          <img
+            src={isHovered ? "/img/icons/generalIcon/chatbot.png" : "/img/icons/generalIcon/chatbot-hovered.png"}
+            alt="Chatbot"
+            className="chatbot-icon"
+            style={{ width: 42, height: 42 }}
           />
         </button>
       )}

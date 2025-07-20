@@ -11,16 +11,16 @@ function formatDate(dateStr) {
     return `${d.getFullYear()}/${String(d.getMonth() + 1).padStart(2, "0")}/${String(d.getDate()).padStart(2, "0")}`;
   }
   
-  const CARD_COLORS = [
-    "#6bb7b7", "#f7b267", "#f4845f", "#4f98ca", "#a1c349", "#e05d5d", "#b07bac"
-  ];
-  
-  function getRandomColor(id) {
-    // Use idx to keep color stable per render, but random per card
-    // const id = Math.round(Math.random()*CARD_COLORS.length)
-    return CARD_COLORS[id % CARD_COLORS.length];
-  //   return CARD_COLORS[ % CARD_COLORS.length];
-  }
+const CARD_COLORS = [
+"#6bb7b7", "#f7b267", "#f4845f", "#4f98ca", "#a1c349", "#e05d5d", "#b07bac"
+];
+
+function getRandomColor(id) {
+// Use idx to keep color stable per render, but random per card
+// const id = Math.round(Math.random()*CARD_COLORS.length)
+return CARD_COLORS[id % CARD_COLORS.length];
+//   return CARD_COLORS[ % CARD_COLORS.length];
+}
 
 export const AlertCard = ({idx, alert, deleteMode, selected, handleCardClick}) => {
     const { lang } = useContext(LanguageContext);
@@ -37,6 +37,7 @@ export const AlertCard = ({idx, alert, deleteMode, selected, handleCardClick}) =
     } else {
         cardStyle.background = getRandomColor(idx);
     }
+
     
     // Check if there are unread announcements
     const unreadCount = alert.unreadAnnouncementsCount || 0;
@@ -49,13 +50,11 @@ export const AlertCard = ({idx, alert, deleteMode, selected, handleCardClick}) =
                 style={cardStyle}
                 onClick={() => handleCardClick(alert)}
             >
-                {/* Notification Badge */}
                 {hasUnread && (
                     <div className="alert-card__notification-badge">
                         {unreadCount > 99 ? '99+' : unreadCount}
                     </div>
                 )}
-                
                 <div className="alert-card__label fw-600 mb-16">
                 {alert.label || `alert-${idx + 1}`}
                 </div>

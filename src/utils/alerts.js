@@ -1,3 +1,5 @@
+export const default_value = ''
+
 const fromAlertsToData = () => {
     // used to create a data type object from an alert type object
 }
@@ -18,6 +20,7 @@ const fromAlertsToData = () => {
  * @returns {Object} Structured info object with { name: string, value: string|number } pairs
  */
 export const extractAlertInfo = (alert, lang) => {
+  console.log(alert);
   if (!alert || !alert.alert) {
     return {};
   }
@@ -48,10 +51,10 @@ export const extractAlertInfo = (alert, lang) => {
   /**
    * Helper to extract the value from a search object
    * @param {search|undefined} searchObj
-   * @returns {string|number} The translated value, a number, or 'any' if not found
+   * @returns {string|number} The translated value, a number, or default_value if not found
    */
   const getValue = (searchObj) => {
-    if (!searchObj) return "any";
+    if (!searchObj) return default_value;
     // If valeurObject.translations exists and has the lang, use it
     if (
       searchObj.valeurObject &&
@@ -76,8 +79,8 @@ export const extractAlertInfo = (alert, lang) => {
     ) {
       return searchObj.valeurObject.value;
     }
-    // Fallback to 'any' if no value found
-    return "any";
+    // Fallback to default value if no value found
+    return default_value;
   };
 
  
@@ -90,8 +93,8 @@ export const extractAlertInfo = (alert, lang) => {
   const info = {
     brand: getValue(searches.brand),
     model: getValue(searches.model),
-    city: alert.alert.city?.translations?.[lang] || alert.alert.city?.label || "any",
-    sector: alert.alert.secteur?.translations?.[lang] || alert.alert.secteur?.label || "any",
+    city: alert.alert.city?.translations?.[lang] || alert.alert.city?.label || default_value,
+    sector: alert.alert.secteur?.translations?.[lang] || alert.alert.secteur?.label || default_value,
     origin: getValue(searches.vehicle_origin),
     fuel: getValue(searches.fuel),
     transmission: getValue(searches.gear_box),
@@ -103,6 +106,7 @@ export const extractAlertInfo = (alert, lang) => {
     kilometragemax: getValue(searches.mileage_max),
     prixmin: getValue(searches.price_min),
     prixmax: getValue(searches.price_max),
+    source: alert?.alert?.sources ? alert?.alert.sources[0]?.label || '': '',
   };
 
   return info;

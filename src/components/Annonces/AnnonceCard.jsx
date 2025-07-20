@@ -36,13 +36,19 @@ export default function AnnonceCard({ item = {} ,handleDeleteAnnonce}) {
     }
     return (
         <div
-            className="col-lg-4 col-sm-6"
+            className="col-lg-4 col-sm-6 position-relative annonce-card"
             key={item.id}
             data-aos="fade"
             data-aos-delay={item.delayAnimation}
-        >
-          <button className="delete-btn" onClick={() => handleDeleteAnnonce(item.id)}>×</button>
-
+            >
+            <button
+                type="button"
+                className="delete-btn"
+                onClick={() => handleDeleteAnnonce(item.id)}
+                title="Supprimer l'annonce"
+            >
+                <i className="bi bi-x" />
+            </button>
             <Link
                 onClick={(e) => {
                     if (item?.tag)

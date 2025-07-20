@@ -1,6 +1,6 @@
 
 const StepIndicator = ({ currentStep }) => (
-  <div className="step-indicator d-flex justify-content-center mb-4">
+  <div className="step-indicator d-flex justify-content-center mb-3">
     {[1, 2, 3].map((step) => (
       <div key={step} className="d-flex align-items-center">
         <div 

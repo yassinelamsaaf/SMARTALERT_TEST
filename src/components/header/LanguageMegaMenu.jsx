@@ -1,4 +1,3 @@
-import { getImgPath } from "../../utils/imageUtils";
 import { useState } from "react";
 
 const LanguageMegaMenu = ({ textClass }) => {
@@ -44,7 +43,7 @@ const LanguageMegaMenu = ({ textClass }) => {
           onClick={handleCurrency}
         >
           <img
-            src={getImgPath("general/lang.png")}
+            src="/img/general/lang.png"
             alt="image"
             className="rounded-full mr-10"
           />

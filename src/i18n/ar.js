@@ -289,6 +289,7 @@ const ar = {
     login: "تسجيل الدخول",
     alert: "التنبيهات",
     vitrine: "المعرض",
+    notifications:"إشعارات",
     favoris: "المفضلة",
     settings: "الإعدادات",
     logout: "تسجيل الخروج",
@@ -307,24 +308,51 @@ const ar = {
     },
     rights: "كل الحقوق محفوظة.",
   }, 
+    authErrors: {
+    emailExists: "هذا البريد الإلكتروني مستخدم بالفعل.",
+    loginAlreadyUsed: "اسم المستخدم هذا مستخدم بالفعل.",
+    invalidEmail: "البريد الإلكتروني غير صالح.",
+    weakPassword: "كلمة المرور ضعيفة جدًا.",
+    userNotFound: "لا يوجد مستخدم بهذا البريد الإلكتروني.",
+    invalidCredentials: "البريد الإلكتروني أو كلمة المرور غير صحيحة.",
+    signupError: "حدث خطأ أثناء إنشاء الحساب.",
+    default: "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+  },
   auth: {
     loginTitle: "مرحبًا بعودتك",
     loginSubtitle: "ليس لديك حساب بعد؟",
     loginLink: "سجل مجانًا",
     email: "البريد الإلكتروني",
+    emailOrPhone: "البريد الإلكتروني أو رقم الهاتف",
+    phone: "رقم الهاتف",
+    phoneFormatExample: "(مثال: 0612345678)",
+    phoneSignupSubtitle: "يمكنك التسجيل باستخدام رقم هاتفك أو بريدك الإلكتروني.",
+    phoneActivationTitle: "تم إرسال الرمز عبر رسالة نصية!",
+    phoneActivationDesc: "أدخل الرمز المرسل إلى هاتفك.",
+    didntReceiveCodePhone: "لم تستلم الرمز؟",
+    resendCodePhone: "إعادة إرسال الرمز",
+    codeSentTitlePhone: "تم إرسال الرمز عبر رسالة نصية!",
+    codeSentDescPhone: "أدخل الرمز المرسل إلى هاتفك.",
     password: "كلمة المرور",
     forgot: "هل نسيت كلمة المرور؟",
+    sendResetPassCode: "إرسال",
     loginBtn: "تسجيل الدخول",
+    loginError: "بيانات غير صحيحة",
+    loggingIn: "جارٍ تسجيل الدخول...",
     signupTitle: "إنشاء حساب",
     signupSubtitle: "هل لديك حساب بالفعل؟",
     signupLink: "تسجيل الدخول",
     firstName: "الاسم الأول",
+    Name: "الاسم",
     lastName: "اسم العائلة",
     confirmPassword: "تأكيد كلمة المرور",
     signupBtn: "إنشاء حساب",
     agree: "أوافق على شروط الخدمة وسياسة الخصوصية.",
     or: "أو سجل الدخول عبر",
-    checkEmailMsg: "يرجى التحقق من بريدك الإلكتروني لتفعيل حسابك.",
+    checkEmailMsg: "أدخل بريدك الإلكتروني للحصول على رمز إعادة تعيين كلمة المرور.",
+    resetCodeBtn: "إرسال",
+    resetCodeDesc: "أدخل الرمز الذي وصلك عبر البريد الإلكتروني لإعادة تعيين كلمة المرور.",
+    resetCodeSentMsg: "تم إرسال رمز إعادة تعيين كلمة المرور.",
     agreeError: "يجب أن توافق على الشروط.",
     passwordMismatch: "كلمتا المرور غير متطابقتين.",
     signupError: "فشل في إنشاء الحساب. حاول مرة أخرى.",
@@ -339,7 +367,8 @@ const ar = {
     resendCode: "إعادة الإرسال",
     resending: "جارٍ الإرسال...",
     resent: "تم إرسال الرمز!",
-    resendError: "فشل في إعادة إرسال الرمز."
+    resendError: "فشل في إعادة إرسال الرمز.",
+    passwordResetSuccess: "تمت إعادة تعيين كلمة المرور بنجاح.",
   },
   alert: {
     show: {
@@ -350,6 +379,11 @@ const ar = {
       confirm: "تأكيد",
       createdOn: "أنشئ في",
       searching: "ابحث في التنبيهات",
+      count: "عدد التنبيهات المنشأة",
+      emptyTitle: "لا يوجد تنبيه حاليا",
+      emptyDescription: "انشئ تنبيهك الأول",
+      createFirst: "أنشئ تنبيهي الأول",
+      title: "تنبيهاتي"
     },
     filter: {
       filter_title: "تصفية التنبيهات",
@@ -363,6 +397,9 @@ const ar = {
     },
     info: {
       all: 'الكل',
+      createdAt: 'أنشئ بتاريخ',
+      ranges: 'تفضيلات',
+      source: 'مصدر',
       brand: 'العلامة التجارية',
       model: 'الموديل',
       city: 'المدينة',
@@ -381,12 +418,22 @@ const ar = {
       annee: 'السنة',
       mileage: 'عدد الكيلومترات',
       price: 'السعر',
+      regdate: 'تاريخ التسجيل',
       min: 'الحد الأدنى',
       max: 'الحد الأقصى',
       vehicle_origin: 'المصدر',
       first_owner: 'الاستخدام الاول',
       gear_box: 'علبة التروس',
       promo: 'تخفيض',
+      notFound: {
+        main: 'التنبيه غير موجود',
+        desc: 'لم يتم العثور على التنبيه المطلوب، تأكد من وجوده ثم أعد المحاولة لاحقا'
+      },
+      loading: 'جاري تحميل بيانات الصفحة...',
+      head: {
+        main: 'تفاصيل التنبيه',
+        desc: 'تنبيهاتك المفصلة، لايجاد عربتكم المفضلة',
+      }
     },
     form: {
       brand: "العلامة التجارية",
@@ -404,7 +451,29 @@ const ar = {
       step: "الخطوة",
       goBack: "العودة إلى صفحة التنبيهات",
       steps: ["الأساسيات", "الخيارات", "المنزلقات", "التسمية"],
-      opfailed: "فشلت العملية، المرجو إعادة ملء الاستمارة من جديد"
+      opfailed: "فشلت العملية، المرجو إعادة ملء الاستمارة من جديد",
+      alertLabel: "اسم التنبيه",
+      next: "التالي",
+      back: "السابق",
+      submit: "إنشاء التنبيه",
+      noOptions: "لا توجد خيارات",
+      preview: 'معاينة',
+      quickStats: 'إحصائيات سريعة',
+      active: 'تخفيض',
+      inactive: 'بدون تخفيض',
+      vehicle_origin: 'أصل السيارة',
+      first_owner: 'المالك الأول',
+      gear_box: 'ناقل الحركة',
+      promo: 'تخفيض',
+      fuel: 'نوع الوقود',
+      doors: 'عدد الأبواب',
+      labelPlaceHolder: 'أدخل اسم تنبيهك',
+      to: 'إلى',
+      deleteConfirmTitle: 'هل أنت متأكد من مسح التنبيه',
+      deleteConfirmAllTitle: 'هل أنت متأكد من مسح كل التنبيهات',
+      deleteConfirmYes: 'تأكيد',
+      deleteConfirmNo: 'إلغاء',
+      deleteAll: 'مسح الكل',
     }
   },
   PhoneVerification: {
@@ -552,7 +621,96 @@ annonceListing: {
   emptyDesc: "أنشئ أول إعلان لك لبدء بيع سيارتك",
   emptyBtn: "إنشاء أول إعلان",
   deleteConfirm: "هل تريد حذف هذا الإعلان؟"
+},
+notifications: {
+  defaultName: 'زائر',
+  all: 'الإشعارات',
+  loading: 'جاري التحميل...',
+  noNotification: 'لا توجد إشعارات حاليا',
+},
+
+// =====================
+// إعدادات الحساب (صفحة إعدادات الحساب)
+// =====================
+// =====================
+// إعدادات الحساب (صفحة إعدادات الحساب)
+// =====================
+accountSettings: {
+  pageSubtitle: "قم بإدارة معلوماتك وتفضيلات حسابك.",
+  otherSettings: {
+    language: "اللغة"
+  },
+  pageTitle: "الإعدادات",
+  passwordInfo: {
+    current: "كلمة المرور الحالية",
+    new: "كلمة مرور جديدة",
+    confirm: "تأكيد كلمة المرور الجديدة",
+    save: "حفظ التغييرات",
+    show: "إظهار",
+    hide: "إخفاء"
+  },
+  notificationSettings: {
+    instruction: "قم بإدارة تفضيلات الإشعارات للبقاء على اطلاع بالتنبيهات الهامة. يمكنك اختيار تلقي الإشعارات عبر الهاتف أو البريد الإلكتروني حسب احتياجك.",
+    phone: "الهاتف",
+    email: "البريد الإلكتروني",
+    save: "حفظ",
+    success: "تم حفظ التعديلات!"
+  },
+  logoutPanel: {
+    title: "تسجيل الخروج",
+    message: "أنت على وشك تسجيل الخروج من حسابك في SmartAlert؟",
+    button: "تسجيل الخروج"
+  },
+  addPhone: {
+    instruction: "أضف رقم هاتفك لتعزيز أمان حسابك واستقبال التنبيهات الهامة.",
+    subInstruction: "يرجى إدخال رقم هاتفك المحمول. سيتم إرسال رمز تحقق عبر رسالة نصية.",
+    label: "رقم الهاتف",
+    example: "(مثال: 0612345678)",
+    sendCode: "إرسال الرمز",
+    resend: "أعد المحاولة خلال {countdown}ث",
+    modify: "تعديل الرقم",
+    codeLabel: "أدخل الرمز المستلم عبر الرسائل النصية",
+    validate: "تحقق",
+    verified: "تم التحقق من الرقم وإضافته!",
+    errorFormat: "يرجى إدخال رقم هاتف صحيح بصيغة 06XXXXXXXX أو 07XXXXXXXX.",
+    errorCode: "يرجى إدخال رمز التحقق المكون من 6 أرقام."
+  },
+  menu: {
+    alias: "تغيير الاسم المستعار",
+    phone: "إضافة رقم هاتف",
+    logout: "تسجيل الخروج",
+    delete: "حذف الحساب"
+  },
+  tabs: {
+    personalInfo: "معلومات شخصية",
+    changePassword: "تغيير كلمة المرور",
+    notifications: "الإشعارات",
+    other: "أخرى"
+  },
+  changeAlias: {
+    current: "اسمك الحالي:",
+    instruction: "لتغيير اسم المستخدم الخاص بك، يرجى إدخال الاسم الجديد أدناه. سيظهر هذا الاسم في ملفك الشخصي.",
+    label: "اسم جديد",
+    saveBtn: "حفظ",
+    success: "تم تغيير الاسم!",
+    error: "يرجى إدخال اسم صالح."
+  },
+  deleteAccount: {
+    attentionTitle: "تنبيه:",
+    attentionText: "حذف حسابك نهائي ولا يمكن استرجاعه. سيتم حذف جميع بياناتك وسجلاتك ومعلوماتك الشخصية بشكل دائم.",
+    instruction: "للمتابعة، يرجى إدخال كلمة المرور وتأكيد الحذف.",
+    passwordLabel: "كلمة المرور",
+    show: "إظهار",
+    hide: "إخفاء",
+    confirmLabel: "اكتب 'CONFIRMER' للتأكيد",
+    confirmText: "CONFIRMER",
+    confirmError: "يرجى كتابة 'CONFIRMER' لتأكيد الحذف.",
+    warning: "سيؤدي حذف الحساب إلى إزالة جميع البيانات الشخصية والسجلات المرتبطة بشكل نهائي.",
+    deleteBtn: "حذف حسابي",
+    success: "تم حذف الحساب!"
+  }
 }
+// =====================
 }
 
 export default ar;

@@ -1,4 +1,3 @@
-import { getImgPath } from "../../../utils/imageUtils";
 const Subscribe = () => {
   return (
     <section className="layout-pt-md layout-pb-md" data-aos="fade-up">
@@ -7,7 +6,7 @@ const Subscribe = () => {
           <div className="col-xl-5 px-0">
             <img
               className="col-12 h-400"
-              src={getImgPath("newsletter/1.png")}
+              src="/img/newsletter/1.png"
               alt="image"
             />
           </div>

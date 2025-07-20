@@ -1,19 +1,14 @@
 import { LanguageContext } from "@/i18n/LanguageProvider";
 import t from "@/i18n/t";
 import { useContext } from "react";
-import { getImgPath } from "@/utils/imageUtils";
 
 const Index = () => {
-  const { lang } = useContext(LanguageContext);
-
+    const { lang } = useContext(LanguageContext);
+  
   return (
     <section className="masthead -type-2 z-2 mt-60">
       <div className="masthead__bg bg-dark-3">
-        <img
-          alt="image"
-          src={getImgPath("masthead/2/bg.png")}
-          className="js-lazy"
-        />
+        <img alt="image" src={`${import.meta.env.BASE_URL}/img/masthead/2/bg.png`} className="js-lazy" />
       </div>
       {/* End bg image */}
 
@@ -38,7 +33,7 @@ const Index = () => {
               <div className="masthead__images relative-1">
                 <div data-aos="fade" data-aos-delay="400">
                   <img
-                    src={getImgPath("masthead/2/01.jpg")}
+                    src={`${import.meta.env.BASE_URL}/img/masthead/2/01.jpg`}
                     alt="image"
                     className="js-mouse-move"
                   />
@@ -47,7 +42,7 @@ const Index = () => {
 
                 <div data-aos="fade" data-aos-delay="600">
                   <img
-                    src={getImgPath("masthead/2/02.jpg")}
+                    src={`${import.meta.env.BASE_URL}/img/masthead/2/02.jpg`}
                     alt="image"
                     className="js-mouse-move"
                   />
@@ -56,7 +51,7 @@ const Index = () => {
 
                 <div data-aos="fade" data-aos-delay="800">
                   <img
-                    src={getImgPath("masthead/2/03.jpg")}
+                    src={`${import.meta.env.BASE_URL}/img/masthead/2/03.jpg`}
                     alt="image"
                     className="js-mouse-move"
                   />

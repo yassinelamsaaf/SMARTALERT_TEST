@@ -1,0 +1,33 @@
+// Styles for LoginMenu dropdown and login button
+.login-hover-switch {
+  transition: all 0.2s;
+}
+.login-hover-switch:hover, .login-hover-switch:focus {
+  background: #fff !important;
+  color: var(--color-dark-3) !important;
+  border-color: var(--color-dark-3) !important;
+}
+
+// Fix dropdown item border radius and add active/hover style
+.dropdown-menu {
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+.dropdown-item {
+  border-radius: 0 !important;
+  transition: background 0.2s, color 0.2s;
+}
+.dropdown-item:hover, .dropdown-item:focus, .dropdown-item-active {
+  background: #f1f1f1 !important;
+  color: var(--color-dark-3) !important;
+}
+.dropdown-item-active {
+  background: #f1f1f1 !important;
+  font-weight: 600;
+}
+.dropdown-item:hover i,
+.dropdown-item:focus i,
+.dropdown-item-active i {
+  color: var(--color-dark-3) !important;
+  transition: color 0.2s;
+}

@@ -1,39 +1,38 @@
-import { getImgPath } from "../../utils/imageUtils";
 const HelpBlock = () => {
   const helpBlockContent = [
     {
       id: 1,
-      icon: getImgPath("pages/help/icons/1.svg"),
+      icon: "/img/pages/help/icons/1.svg",
       title: "Booking your activity",
       text: `Lorem ipsum is placeholder text commonly used in site.`,
     },
     {
       id: 2,
-      icon: getImgPath("pages/help/icons/2.svg"),
+      icon: "/img/pages/help/icons/2.svg",
       title: "Payment & receipts",
       text: `Lorem ipsum is placeholder text commonly used in site.`,
     },
     {
       id: 3,
-      icon: getImgPath("pages/help/icons/3.svg"),
+      icon: "/img/pages/help/icons/3.svg",
       title: "Booking changes & refunds",
       text: `Lorem ipsum is placeholder text commonly used in site.`,
     },
     {
       id: 4,
-      icon: getImgPath("pages/help/icons/4.svg"),
+      icon: "/img/pages/help/icons/4.svg",
       title: "Promo codes & credits",
       text: `Lorem ipsum is placeholder text commonly used in site.`,
     },
     {
       id: 5,
-      icon: getImgPath("pages/help/icons/5.svg"),
+      icon: "/img/pages/help/icons/5.svg",
       title: "On the participation day",
       text: `Lorem ipsum is placeholder text commonly used in site.`,
     },
     {
       id: 6,
-      icon: getImgPath("pages/help/icons/6.svg"),
+      icon: "/img/pages/help/icons/6.svg",
       title: "Value Packs",
       text: `Lorem ipsum is placeholder text commonly used in site.`,
     },

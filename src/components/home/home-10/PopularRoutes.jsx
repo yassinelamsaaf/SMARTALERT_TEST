@@ -2,14 +2,13 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import { Link } from "react-router-dom";
-import { getImgPath } from "../../../utils/imageUtils";
 
 const PopularRoutes = () => {
   const rentalRoutes = [
     {
       id: 1,
       tag: "",
-      img: getImgPath("rentals/1.png"),
+      img: "/img/rentals/1.png",
       destination: "Istanbul - New York",
       tripType: "Round-trip",
       data: "Wed, Jun 1 - Sun, Jun 5",
@@ -19,7 +18,7 @@ const PopularRoutes = () => {
     {
       id: 2,
       tag: "",
-      img: getImgPath("rentals/2.png"),
+      img: "/img/rentals/2.png",
       destination: "Istanbul - Paris",
       tripType: "Round-trip",
       data: "Wed, Jun 1 - Sun, Jun 5",
@@ -29,7 +28,7 @@ const PopularRoutes = () => {
     {
       id: 3,
       tag: "",
-      img: getImgPath("rentals/3.png"),
+      img: "/img/rentals/3.png",
       destination: "Istanbul - Antalya",
       tripType: "Round-trip",
       data: "Wed, Jun 1 - Sun, Jun 5",
@@ -39,7 +38,7 @@ const PopularRoutes = () => {
     {
       id: 4,
       tag: "",
-      img: getImgPath("rentals/4.png"),
+      img: "/img/rentals/4.png",
       destination: "Istanbul - London",
       tripType: "Round-trip",
       data: "Wed, Jun 1 - Sun, Jun 5",
@@ -49,7 +48,7 @@ const PopularRoutes = () => {
     {
       id: 5,
       tag: "",
-      img: getImgPath("rentals/1.png"),
+      img: "/img/rentals/1.png",
       destination: "Istanbul - New York",
       tripType: "Round-trip",
       data: "Wed, Jun 1 - Sun, Jun 5",
@@ -59,7 +58,7 @@ const PopularRoutes = () => {
     {
       id: 6,
       tag: "",
-      img: getImgPath("rentals/2.png"),
+      img: "/img/rentals/2.png",
       destination: "Istanbul - Paris",
       tripType: "Round-trip",
       data: "Wed, Jun 1 - Sun, Jun 5",

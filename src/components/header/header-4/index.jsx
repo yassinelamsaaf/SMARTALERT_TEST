@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import MainMenu from "../MainMenu";
 
 import MobileMenu from "../MobileMenu";
-import { getImgPath } from "../../../utils/imageUtils";
 
 const Header1 = () => {
   const [navbar, setNavbar] = useState(false);
@@ -41,8 +40,8 @@ const Header1 = () => {
 
             <div className="col-auto">
               <Link to="/" className="header-logo">
-                <img src={getImgPath("general/logo-light.svg")} alt="logo icon" />
-                <img src={getImgPath("general/logo-dark.svg")} alt="logo icon" />
+                <img src="/img/general/logo-light.svg" alt="logo icon" />
+                <img src="/img/general/logo-dark.svg" alt="logo icon" />
               </Link>
               {/* End logo */}
             </div>

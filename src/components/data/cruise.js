@@ -1,9 +1,8 @@
-import { getImgPath } from "../../utils/imageUtils";
 module.exports = [
   {
     id: 1,
     tag: "cruise only",
-    slideImg: [getImgPath("cruises/1.png")],
+    slideImg: ["/img/cruises/1.png"],
     title: "7 Night Cruise to the Western Mediterranean",
     ship: "Norwegian Getaway",
     date: "18/05/23",
@@ -19,9 +18,9 @@ module.exports = [
     id: 2,
     tag: "",
     slideImg: [
-      getImgPath("cruises/2.png"),
-      getImgPath("cruises/1.png"),
-      getImgPath("cruises/3.png"),
+      "/img/cruises/2.png",
+      "/img/cruises/1.png",
+      "/img/cruises/3.png",
     ],
     title: "12 Night Cruise to the British Isles & Western Europe",
     ship: "Norwegian Getaway",
@@ -38,7 +37,7 @@ module.exports = [
   {
     id: 3,
     tag: "best seller",
-    slideImg: [getImgPath("cruises/3.png")],
+    slideImg: ["/img/cruises/3.png"],
     title: "11 Night Cruise to the Eastern Mediterranean",
     ship: "Norwegian Getaway",
     date: "18/03/23",
@@ -53,7 +52,7 @@ module.exports = [
   {
     id: 4,
     tag: "top rated",
-    slideImg: [getImgPath("cruises/4.png")],
+    slideImg: ["/img/cruises/4.png"],
     title: "13 Night Cruise to the Baltic Sea Western Europe",
     ship: "Norwegian Getaway",
     date: "18/04/23",
@@ -68,7 +67,7 @@ module.exports = [
   {
     id: 5,
     tag: "cruise only",
-    slideImg: [getImgPath("cruises/5.png")],
+    slideImg: ["/img/cruises/5.png"],
     title: "7 Night Cruise to the Western Mediterranean",
     ship: "Norwegian Getaway",
     date: "18/05/23",
@@ -84,9 +83,9 @@ module.exports = [
     id: 6,
     tag: "",
     slideImg: [
-      getImgPath("cruises/2.png"),
-      getImgPath("cruises/1.png"),
-      getImgPath("cruises/3.png"),
+      "/img/cruises/2.png",
+      "/img/cruises/1.png",
+      "/img/cruises/3.png",
     ],
     title: "12 Night Cruise to the British Isles & Western Europe",
     ship: "Norwegian Getaway",
@@ -103,7 +102,7 @@ module.exports = [
   {
     id: 7,
     tag: "best seller",
-    slideImg: [getImgPath("cruises/3.png")],
+    slideImg: ["/img/cruises/3.png"],
     title: "11 Night Cruise to the Eastern Mediterranean",
     ship: "Norwegian Getaway",
     date: "18/03/23",
@@ -118,7 +117,7 @@ module.exports = [
   {
     id: 8,
     tag: "top rated",
-    slideImg: [getImgPath("cruises/4.png")],
+    slideImg: ["/img/cruises/4.png"],
     title: "13 Night Cruise to the Baltic Sea Western Europe",
     ship: "Norwegian Getaway",
     date: "18/04/23",
@@ -133,7 +132,7 @@ module.exports = [
   {
     id: 9,
     tag: "cruise only",
-    slideImg: [getImgPath("cruises/5.png")],
+    slideImg: ["/img/cruises/5.png"],
     title: "7 Night Cruise to the Western Mediterranean",
     ship: "Norwegian Getaway",
     date: "18/05/23",

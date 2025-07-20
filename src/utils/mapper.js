@@ -1,13 +1,12 @@
 import t from '@/i18n/t'
 import { getTime, priceFormat } from './helper'
-import { getImgPath } from './imageUtils'
 
 export function mapUsedCarToCarCard(carDTO, lang = "fr") {
     const nullVal = t[lang].cars.null
     return {
         id: carDTO.id,
         tag: carDTO.sold ? t[lang].cars.sold : '',
-        slideImg: (carDTO.carImages && carDTO.carImages.length > 0) ? carDTO.carImages : [getImgPath('cars/no-car.png')],
+        slideImg: (carDTO.carImages && carDTO.carImages.length > 0) ? carDTO.carImages : [`${import.meta.env.BASE_URL}/img/cars/no-car.png`],
         title: carDTO.label,
         location: carDTO.carCity?.translations[lang] ?? t[lang].cars.others,
         time: getTime(carDTO.datePosted) ?? '',
@@ -27,7 +26,7 @@ export function mapNewCarToCarCard(carDTO, lang = "fr") {
     return {
         id: carDTO.id,
         tag: carDTO.carVariations?.filter(variation => variation.carVariationPromo).length > 0 ? t[lang].cars.promo : '',
-        slideImg: (carDTO.carImages && carDTO.carImages.length > 0) ? carDTO.carImages : [getImgPath('cars/no-car.png')],
+        slideImg: (carDTO.carImages && carDTO.carImages.length > 0) ? carDTO.carImages : [`${import.meta.env.BASE_URL}/img/cars/no-car.png`],
         title: carDTO.carLabel ?? nullVal,
         price: priceFormat(carDTO.carMinPrice) + ' - ' + priceFormat(carDTO.carMaxPrice) + ' MAD',
         door: carDTO.carDoors ?? '-',
@@ -46,7 +45,7 @@ export function mapUsedCarToCarDetails(carDTO, lang = "fr") {
         id: carDTO.id,
         tag: carDTO.sold ? t[lang].cars.sold : '',
         carUri: carDTO.carUri,
-        slideImg: (carDTO.carImages && carDTO.carImages.length > 0) ? carDTO.carImages : [getImgPath('cars/no-car.png')],
+        slideImg: (carDTO.carImages && carDTO.carImages.length > 0) ? carDTO.carImages : [`${import.meta.env.BASE_URL}/img/cars/no-car.png`],
         title: carDTO.label,
         location: carDTO.carCity?.translations[lang] ?? t[lang].cars.others,
         time: getTime(carDTO.datePosted) ?? '',
@@ -73,8 +72,8 @@ export function mapNewCarToCarDetails(carDTO, lang = "fr") {
         id: carDTO.id,
         carUri: carDTO.carUri,
         tag: carDTO.carVariations?.filter(variation => variation.carVariationPromo).length > 0 ? t[lang].cars.promo : '',
-        slideImg: (carDTO.carImages && carDTO.carImages.length > 0) ? carDTO.carImages : [getImgPath('cars/no-car.png')],
-        img: (carDTO.carImages && carDTO.carImages.length > 0) ? carDTO.carImages[0] : getImgPath('cars/no-car.png'),
+        slideImg: (carDTO.carImages && carDTO.carImages.length > 0) ? carDTO.carImages : [`${import.meta.env.BASE_URL}/img/cars/no-car.png`],
+        img: (carDTO.carImages && carDTO.carImages.length > 0) ? carDTO.carImages[0] : `${import.meta.env.BASE_URL}/img/cars/no-car.png`,
         title: carDTO.carLabel ?? nullVal,
         price: priceFormat(carDTO.carMinPrice) + ' MAD',
         versions: carDTO.carVariations.map(version => {

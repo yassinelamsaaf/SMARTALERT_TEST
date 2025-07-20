@@ -4,18 +4,17 @@ import { Gallery, Item } from "react-photoswipe-gallery";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Thumbs, Navigation } from "swiper";
 import "swiper/css/thumbs";
-import { getImgPath } from "../../utils/imageUtils";
 
 const GalleryCruiseSlider = () => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   const galleryImage = [
-    getImgPath("cruises/6.png"),
-    getImgPath("cruises/1.png"),
-    getImgPath("cruises/2.png"),
-    getImgPath("cruises/3.png"),
-    getImgPath("cruises/4.png"),
-    getImgPath("cruises/5.png"),
+    "/img/cruises/6.png",
+    "/img/cruises/1.png",
+    "/img/cruises/2.png",
+    "/img/cruises/3.png",
+    "/img/cruises/4.png",
+    "/img/cruises/5.png",
   ];
 
   return (

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import Dropdown from './Dropdown';
-import RadioGroup from './RadioGroup';
+import OptionSelector from './OptionSelector';
 import PhotoUpload from './PhotoUpload';
 import { LanguageContext } from "@/i18n/LanguageProvider";
 import t from "@/i18n/t";
@@ -11,7 +11,8 @@ const AnnonceSteps = ({ currentStep, formData, onInputChange, dropdowns, onToggl
 
   const brands = ['Tout', 'Toyota', 'Renault', 'Peugeot', 'Volkswagen', 'BMW', 'Mercedes', 'Audi', 'Ford', 'Hyundai', 'Kia', 'Nissan'];
   const cities = ['Tout', 'Casablanca', 'Rabat', 'Marrakech', 'Fès', 'Tanger', 'Agadir', 'Meknès', 'Oujda', 'Kenitra', 'Tétouan', 'Safi'];
-
+  const currentYear = new Date().getFullYear();
+ const years = Array.from({ length: currentYear - 1979 }, (_, i) => currentYear - i);
   const brandModelsMap = {
     Toyota: ["Corolla", "Yaris", "Camry"],
     BMW: ["X1", "X3", "Series 3", "Series 5"],
@@ -25,6 +26,7 @@ const AnnonceSteps = ({ currentStep, formData, onInputChange, dropdowns, onToggl
     Kia: ["Picanto", "Rio", "Sportage"],
     Nissan: ["Micra", "Qashqai", "Juke"]
   };
+
 
   const typeOptions = [
     { value: 'Particulier', label: t[lang].createAnnonce.particulier },
@@ -112,7 +114,7 @@ const AnnonceSteps = ({ currentStep, formData, onInputChange, dropdowns, onToggl
           </div>
         </div>
 
-        <Dropdown
+        <Dropdown 
           label={t[lang].createAnnonce.brand + " *"}
           value={formData.brand}
           options={brands}
@@ -157,59 +159,70 @@ const AnnonceSteps = ({ currentStep, formData, onInputChange, dropdowns, onToggl
           icon="bi bi-geo-alt"
         />
 
-        <div className="mb-4">
+         <div className="mb-4">
           <label className="form-label fw-bold">{t[lang].createAnnonce.price}</label>
           <input
             type="number"
             className="form-control form-control-lg"
             placeholder={t[lang].createAnnonce.price}
             value={formData.price}
-            onChange={(e) => onInputChange('price', e.target.value)}
+            min={0}
+            onChange={(e) => onInputChange('price', Math.max(0, Number(e.target.value)))}
           />
         </div>
 
         <div className="mb-4">
-          <label className="form-label fw-bold">{t[lang].createAnnonce.year}</label>
-          <input
-            type="number"
-            className="form-control form-control-lg"
-            placeholder={t[lang].createAnnonce.year}
-            value={formData.year}
-            onChange={(e) => onInputChange('year', e.target.value)}
-          />
-        </div>
+  <label className="form-label fw-bold">{t[lang].createAnnonce.year}</label>
+  <select
+    className="form-select form-select-lg"
+    value={formData.year}
+    onChange={(e) => onInputChange('year', e.target.value)}
+  >
+    <option value="">{t[lang].createAnnonce.year}</option>
+    {years.map((year) => (
+      <option key={year} value={year}>{year}</option>
+    ))}
+  </select>
+</div>
       </div>
     );
   }
 
   if (currentStep === 2) {
     return (
-      <div className="annonce-step annonce-step-2">
-        <div className="mb-4">
-          <label className="form-label fw-bold d-flex justify-content-between">
-            {t[lang].createAnnonce.mileage}
-            <small className="text-muted">{t[lang].createAnnonce.min}: 0 {t[lang].createAnnonce.max}: 800000</small>
-          </label>
-          <input
-            type="range"
-            className="form-range"
-            min="0"
-            max="800000"
-            step="1000"
-            value={formData.mileage}
-            onChange={(e) => onInputChange('mileage', e.target.value)}
-            style={{ accentColor: '#dc3545' }}
-          />
-          <div className="text-center mt-2">
-            <span className="badge bg-danger">{formData.mileage.toLocaleString()} km</span>
-          </div>
-        </div>
+      <div className="annonce-form ">
+            <div className="range-wrapper mb-4">
+              <label className="form-label fw-bold d-flex justify-content-between align-items-center mb-2">
+                <span>{t[lang].createAnnonce.mileage}</span>
+                <small className="text-muted">
+                  {t[lang].createAnnonce.min}: 0 | {t[lang].createAnnonce.max}: 800,000
+                </small>
+              </label>
 
-        <RadioGroup label={t[lang].createAnnonce.origin} name="origin" value={formData.origin} options={originOptions} onChange={(v) => onInputChange('origin', v)} layout="vertical" />
-        <RadioGroup label={t[lang].createAnnonce.fuel} name="fuel" value={formData.fuel} options={fuelOptions} onChange={(v) => onInputChange('fuel', v)} layout="vertical" />
-        <RadioGroup label={t[lang].createAnnonce.doors} name="doors" value={formData.doors} options={doorOptions} onChange={(v) => onInputChange('doors', v)} />
-        <RadioGroup label={t[lang].createAnnonce.firstHand} name="firstHand" value={formData.firstHand} options={firstHandOptions} onChange={(v) => onInputChange('firstHand', v)} />
-        <RadioGroup label={t[lang].createAnnonce.transmission} name="transmission" value={formData.transmission} options={transmissionOptions} onChange={(v) => onInputChange('transmission', v)} />
+              <input
+                type="range"
+                className="form-range custom-range"
+                min="0"
+                max="800000"
+                step="1000"
+                value={formData.mileage}
+                onChange={(e) => onInputChange('mileage', e.target.value)}
+              />
+
+              <div className="text-center mt-2">
+                <span className="badge  rounded-pill px-3 py-2 fs-6 shadow-sm">
+                  {Number(formData.mileage).toLocaleString()} km
+                </span>
+              </div>
+            </div>
+
+
+
+        <OptionSelector label={t[lang].createAnnonce.origin} name="origin" value={formData.origin} options={originOptions} onChange={(v) => onInputChange('origin', v)}  />
+        <OptionSelector label={t[lang].createAnnonce.fuel} name="fuel" value={formData.fuel} options={fuelOptions} onChange={(v) => onInputChange('fuel', v)}  />
+        <OptionSelector label={t[lang].createAnnonce.doors} name="doors" value={formData.doors} options={doorOptions} onChange={(v) => onInputChange('doors', v)} />
+        <OptionSelector label={t[lang].createAnnonce.firstHand} name="firstHand" value={formData.firstHand} options={firstHandOptions} onChange={(v) => onInputChange('firstHand', v)} />
+        <OptionSelector label={t[lang].createAnnonce.transmission} name="transmission" value={formData.transmission} options={transmissionOptions} onChange={(v) => onInputChange('transmission', v)} />
       </div>
     );
   }

@@ -2,7 +2,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import MainFilterSearchBox from "./MainFilterSearchBox";
 import { Parallax } from "react-parallax";
-import { getImgPath } from "../../../utils/imageUtils";
 
 const index = () => {
   return (
@@ -21,7 +20,7 @@ const index = () => {
               <div className="masthead__bg bg-dark-3">
                 <Parallax
                   strength={300}
-                  bgImage=getImgPath("masthead/9/bg.png")
+                  bgImage="/img/masthead/9/bg.png"
                   bgImageAlt="amazing place"
                   bgClassName="object-fit-cover"
                   className="h-100"

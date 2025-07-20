@@ -1,11 +1,10 @@
 import { Link } from "react-router-dom";
-import { getImgPath } from "../../utils/imageUtils";
 
 const Slights = () => {
   const slightContent = [
     {
       id: 1,
-      img: getImgPath("backgrounds/1.png"),
+      img: "/img/backgrounds/1.png",
       title: "The British Museum",
       text: ` Learn about British history at the Tower of London, a medieval
             castle that was first built in 1066 by William the Conqueror.`,
@@ -13,7 +12,7 @@ const Slights = () => {
     },
     {
       id: 2,
-      img: getImgPath("backgrounds/2.png"),
+      img: "/img/backgrounds/2.png",
       title: "London Eye",
       text: ` Learn about British history at the Tower of London, a medieval
             castle that was first built in 1066 by William the Conqueror.`,
@@ -21,7 +20,7 @@ const Slights = () => {
     },
     {
       id: 3,
-      img: getImgPath("backgrounds/3.png"),
+      img: "/img/backgrounds/3.png",
       title: "Tower of London",
       text: ` Learn about British history at the Tower of London, a medieval
             castle that was first built in 1066 by William the Conqueror.`,
@@ -29,7 +28,7 @@ const Slights = () => {
     },
     {
       id: 4,
-      img: getImgPath("backgrounds/4.png"),
+      img: "/img/backgrounds/4.png",
       title: "Tower Bridge",
       text: ` Learn about British history at the Tower of London, a medieval
             castle that was first built in 1066 by William the Conqueror.`,

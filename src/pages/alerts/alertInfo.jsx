@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import INEButton from "@/components/common/MyButton";
 import "@/../public/sass/alerts/alertInfo.scss";
-import { getAlertInfo } from "@/apis/mockAPI/AlertsApi.js";
+import { getAlertInfo } from "@/apis/AlertsApi.js";
 import { getToken } from "@/utils/auth";
 import { extractAlertInfo } from "@/utils/alerts";
 import MetaComponent from "@/components/common/MetaComponent";
@@ -18,6 +18,25 @@ import ConfirmModal from "@/components/common/ConfirmModal";
 const metadata = {
     title: "Alert || SmartAlert",
   };
+
+// Icon mapping for each info key
+const icons = {
+  brand: "car-front",
+  model: "car-front-fill",
+  city: "geo-alt",
+  sector: "geo",
+  origin: "flag",
+  fuel: "fuel-pump",
+  transmission: "gear",
+  doors: "door-closed",
+  firsthand: "award",
+  anneemin: "calendar2-minus",
+  anneemax: "calendar2-plus",
+  kilometragemin: "speedometer2",
+  kilometragemax: "speedometer",
+  prixmin: "cash-coin",
+  prixmax: "cash-stack",
+};
 
 
 export const AlertInfo = () => {
@@ -82,7 +101,26 @@ export const AlertInfo = () => {
     const searchAlertId = alert.alert.id || alert.id || id;
     console.log('Navigating with alert ID:', searchAlertId);
     console.log('Alert object:', alert);
-    navigate(`/occasion?alert=${searchAlertId}`);
+    
+    // Check if the alert has a "first use" criteria specified
+    const hasFirstUseCriteria = info.firsthand && info.firsthand !== "any" && info.firsthand !== "---";
+    
+    // Check if the first use value indicates "yes" (new car)
+    const isNewCar = hasFirstUseCriteria && (
+      info.firsthand === "oui" || 
+      info.firsthand === "نعم" || 
+      info.firsthand.toLowerCase() === "oui" || 
+      info.firsthand.toLowerCase() === "نعم"
+    );
+    
+    // Navigate based on the first use criteria
+    if (isNewCar) {
+      // If first use is "yes" (oui/نعم), navigate to neuve page
+      navigate(`/neuve?alert=${searchAlertId}`);
+    } else {
+      // If no first use criteria or first use is "no" (non/لا), navigate to occasion page
+      navigate(`/occasion?alert=${searchAlertId}`);
+    }
   };
 
   // Helper to extract a value from searches or direct attribute
@@ -107,8 +145,22 @@ export const AlertInfo = () => {
     return val;
   };
 
-  if (loading) return <div className="alert-info-loading">Loading...</div>;
-  if (!alert) return <div className="alert-info-notfound">Alert not found.</div>;
+  if (loading) return (
+    <div className="alert-info-loading-container">
+      <div className="alert-info-loading-spinner"></div>
+      <p className="alert-info-loading-text">{t[lang].alert.info.loading}</p>
+    </div>
+  );
+  
+  if (!alert) return (
+    <div className="alert-info-notfound-container">
+      <div className="alert-info-notfound-icon">
+        <i className="bi bi-exclamation-triangle-fill"></i>
+      </div>
+      <h2 className="alert-info-notfound-title">{t[lang].alert.info.notFound.main}</h2>
+      <p className="alert-info-notfound-text">{t[lang].alert.info.notFound.desc}</p>
+    </div>
+  );
 
   // Format date as YYYY/MM/DD
   const formatDate = (dateStr) => {
@@ -120,88 +172,137 @@ export const AlertInfo = () => {
 
   return (
     <>
-        <MetaComponent meta={metadata} />
-        {/* End Page Title */}
-
-        <div className="header-margin"></div>
-        {/* header top margin */}
-
-        <Header1 />
-        {/* End Header 1 */}
-        <div className="alert-info-container">
-          {/* Alert Title and Creation Date */}
-          <div className="alert-info-title-block" style={{ textAlign: 'center', marginBottom: 32 }}>
-            <h2 className="alert-info-title" style={{ fontSize: '2.5rem', fontWeight: 700, marginBottom: 8, letterSpacing: 1 }}>{alert.label}</h2>
-            <div className="alert-info-date" style={{ fontSize: '1.2rem', color: '#2563eb', fontWeight: 500, letterSpacing: 1, background: 'rgba(37,99,235,0.07)', display: 'inline-block', padding: '6px 22px', borderRadius: 16, boxShadow: '0 2px 8px rgba(37,99,235,0.08)' }}>
-              {formatDate(alert.createdAt)}
+      <MetaComponent meta={metadata} />
+      <div className="header-margin"></div>
+      <Header1 />
+      
+      <div className="alert-info-page-container">
+        <div className="alert-info-main-card">
+          {/* Header Section */}
+          <div className="alert-info-header">
+            <div className="alert-info-header-content">
+              <div className="alert-info-title-section">
+                <h1 className="alert-info-main-title">{alert.label}</h1>
+                <div className="alert-info-subtitle">
+                  <span className="alert-info-date-badge">
+                    <i className="icon-calendar"></i>
+                    {formatDate(alert.createdAt)}
+                  </span>
+                  <span className="alert-info-id-badge">
+                    ID: #{id}
+                  </span>
+                </div>
+              </div>
+              <div className="alert-info-header-actions">
+                <INEButton
+                  icon="icon-trash"
+                  onClick={handleRemove}
+                  size={48}
+                  alt="Delete Alert"
+                  title="Delete Alert"
+                  className="alert-info-delete-btn"
+                  isIconClass={true}
+                />
+                <INEButton
+                  icon="icon-search"
+                  onClick={handleNavigate}
+                  size={48}
+                  alt="Search Cars"
+                  title="Search Cars"
+                  className="alert-info-search-btn"
+                  isIconClass={true}
+                />
+              </div>
             </div>
           </div>
-        <div className="alert-info-content alert-info-car-details">
-          {/* Render all other fields except the paired ones */}
-          {Object.keys(info).filter(key => !["anneemin","anneemax","kilometragemin","kilometragemax","prixmin","prixmax"].includes(key)).map((key) => (
-            <AlertInfoField
-              key={key}
-              label={t[lang].alert?.info?.[key] || key}
-              value={info[key] && info[key] !== "any" && info[key] !== "---" ? info[key] : <span className="alert-info-any">{t[lang].alert?.info?.all || "Tous"}</span>}
-            />
-          ))}
-          {/* Special paired fields: annee, mileage, price */}
-          <AlertInfoRangeField
-            label={t[lang].alert?.info?.annee || "Année"}
-            minLabel={t[lang].alert?.info?.min || "min"}
-            maxLabel={t[lang].alert?.info?.max || "max"}
-            minValue={info.anneemin && info.anneemin !== "any" && info.anneemin !== "---" ? info.anneemin : <span className="alert-info-any">{"1980"}</span>}
-            maxValue={info.anneemax && info.anneemax !== "any" && info.anneemax !== "---" ? info.anneemax : <span className="alert-info-any">{"2025"}</span>}
-          />
-          <AlertInfoRangeField
-            label={t[lang].alert?.info?.mileage || "Kilométrage"}
-            minLabel={t[lang].alert?.info?.min || "min"}
-            maxLabel={t[lang].alert?.info?.max || "max"}
-            minValue={info.kilometragemin && info.kilometragemin !== "any" && info.kilometragemin !== "---" ? info.kilometragemin : <span className="alert-info-any">{"0"}</span>}
-            maxValue={info.kilometragemax && info.kilometragemax !== "any" && info.kilometragemax !== "---" ? info.kilometragemax : <span className="alert-info-any">{"800.000"}</span>}
-          />
-          <AlertInfoRangeField
-            label={t[lang].alert?.info?.price || "Prix"}
-            minLabel={t[lang].alert?.info?.min || "min"}
-            maxLabel={t[lang].alert?.info?.max || "max"}
-            minValue={info.prixmin && info.prixmin !== "any" && info.prixmin !== "---" ? info.prixmin : <span className="alert-info-any">{"0"}</span>}
-            maxValue={info.prixmax && info.prixmax !== "any" && info.prixmax !== "---" ? info.prixmax : <span className="alert-info-any">{"1.000.000"}</span>}
-          />
+
+          {/* Content Section */}
+          <div className="alert-info-content-section">
+            
+
+            <div className="alert-info-fields-grid">
+              {(() => {
+                const keys = Object.keys(info).filter(key => !["anneemin","anneemax","kilometragemin","kilometragemax","prixmin","prixmax"].includes(key));
+                return keys.map((key, idx) => {
+                  const field = (
+                    <AlertInfoField
+                      key={key}
+                      keyName={key}
+                      icons={icons}
+                      label={t[lang].alert?.info?.[key] || key}
+                      value={info[key] && info[key] !== "any" && info[key] !== "---" ? info[key] : <span className="alert-info-any">{t[lang].alert?.info?.all || "Tous"}</span>}
+                    />
+                  );
+                  return field;
+                });
+              })()}
+            </div>
+            <div className="alert-info-ranges-grid">
+              <AlertInfoRangeField
+                label={t[lang].alert?.info?.annee || "Année"}
+                minLabel={t[lang].alert?.info?.min || "min"}
+                maxLabel={t[lang].alert?.info?.max || "max"}
+                minValue={info.anneemin && info.anneemin !== "any" && info.anneemin !== "---" ? info.anneemin : <span className="alert-info-any">{"1980"}</span>}
+                maxValue={info.anneemax && info.anneemax !== "any" && info.anneemax !== "---" ? info.anneemax : <span className="alert-info-any">{"2025"}</span>}
+              />
+              <AlertInfoRangeField
+                label={t[lang].alert?.info?.mileage || "Kilométrage"}
+                minLabel={t[lang].alert?.info?.min || "min"}
+                maxLabel={t[lang].alert?.info?.max || "max"}
+                minValue={info.kilometragemin && info.kilometragemin !== "any" && info.kilometragemin !== "---" ? info.kilometragemin : <span className="alert-info-any">{"0"}</span>}
+                maxValue={info.kilometragemax && info.kilometragemax !== "any" && info.kilometragemax !== "---" ? info.kilometragemax : <span className="alert-info-any">{"800.000"}</span>}
+              />
+              <AlertInfoRangeField
+                label={t[lang].alert?.info?.price || "Prix"}
+                minLabel={t[lang].alert?.info?.min || "min"}
+                maxLabel={t[lang].alert?.info?.max || "max"}
+                minValue={info.prixmin && info.prixmin !== "any" && info.prixmin !== "---" ? info.prixmin : <span className="alert-info-any">{"0"}</span>}
+                maxValue={info.prixmax && info.prixmax !== "any" && info.prixmax !== "---" ? info.prixmax : <span className="alert-info-any">{"1.000.000"}</span>}
+              />
+            </div>
+          </div>
+
+          {/* Footer Section */}
+          <div className="alert-info-footer">
+            <div className="alert-info-footer-content">
+              <div className="alert-info-footer-info">
+                <p className="alert-info-footer-text">
+                  Click the search button to find vehicles matching your criteria
+                </p>
+              </div>
+              <div className="alert-info-footer-actions">
+                <button 
+                  className="alert-info-secondary-btn"
+                  onClick={() => navigate("/alerts")}
+                >
+                  <i className="icon-arrow-left"></i>
+                  Back to Alerts
+                </button>
+                <button 
+                  className="alert-info-primary-btn"
+                  onClick={handleNavigate}
+                >
+                  <i className="icon-search"></i>
+                  Search Vehicles
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
-        {/* Fixed-position buttons */}
-        <div className="alert-info-remove-btn-wrapper">
-            <INEButton
-            icon="https://th.bing.com/th/id/R.27299b1faed2d63a3e9512bd8cd187ad?rik=%2fVRT3CdCaWVC3w&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fdelete-button-png-delete-icon-1600.png&ehk=mRIiUoExO9FPzeoYwqDk%2bfWDlxlcYGmfTbaQ2Pbwyak%3d&risl=&pid=ImgRaw&r=0"
-            onClick={handleRemove}
-            size={56}
-            alt="Remove"
-            title="Remove Alert"
-            className="shadow btn-danger my-squared-btn--scale"
-            />
-        </div>
-        <div className="alert-info-navigate-btn-wrapper">
-            <INEButton
-            icon="https://cdn-icons-png.flaticon.com/512/271/271228.png"
-            onClick={handleNavigate}
-            size={56}
-            alt="Navigate"
-            title="Go to..."
-            className="shadow btn-primary my-squared-btn--scale"
-            />
-        </div>
-        </div>
-        <ConfirmModal
-          show={showConfirm}
-          onConfirm={handleConfirmDelete}
-          onCancel={() => { setShowConfirm(false); setDeleteError(""); }}
-          title={t[lang].alert?.info?.confirmDeleteTitle || t[lang].alert?.info?.confirmDelete || "Confirm delete"}
-          message={t[lang].alert?.info?.confirmDelete || "Are you sure you want to delete this alert?"}
-          confirmText={t[lang].alert?.info?.deleteConfirmYes || "Yes"}
-          cancelText={t[lang].alert?.info?.deleteConfirmNo || "No"}
-          loading={deleteLoading}
-        >
-          {deleteError && <div className="alert alert-danger mt-2">{deleteError}</div>}
-        </ConfirmModal>
+      </div>
+
+      <ConfirmModal
+        show={showConfirm}
+        onConfirm={handleConfirmDelete}
+        onCancel={() => { setShowConfirm(false); setDeleteError(""); }}
+        title={t[lang].alert?.info?.confirmDeleteTitle || t[lang].alert?.info?.confirmDelete || "Confirm delete"}
+        message={t[lang].alert?.info?.confirmDelete || "Are you sure you want to delete this alert?"}
+        confirmText={t[lang].alert?.info?.deleteConfirmYes || "Yes"}
+        cancelText={t[lang].alert?.info?.deleteConfirmNo || "No"}
+        loading={deleteLoading}
+      >
+        {deleteError && <div className="alert alert-danger mt-2">{deleteError}</div>}
+      </ConfirmModal>
     </>
   );
 };

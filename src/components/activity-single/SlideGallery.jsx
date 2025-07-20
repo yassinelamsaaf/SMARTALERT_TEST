@@ -1,15 +1,14 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import { Gallery, Item } from "react-photoswipe-gallery";
-import { getImgPath } from "../../utils/imageUtils";
 
 const SlideGallery = () => {
   const sliderImg = [
-    getImgPath("activities/10.png"),
-    getImgPath("activities/11.png"),
-    getImgPath("activities/12.png"),
-    getImgPath("activities/13.png"),
-    getImgPath("activities/11.png"),
+    "/img/activities/10.png",
+    "/img/activities/11.png",
+    "/img/activities/12.png",
+    "/img/activities/13.png",
+    "/img/activities/11.png",
   ];
 
   return (

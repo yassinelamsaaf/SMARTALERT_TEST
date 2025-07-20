@@ -6,10 +6,11 @@ import MoreSettingsList from "@/components/settings/MoreSettingsList";
 import LanguageModal from "@/components/settings/LanguageModal";
 import LogoutModal from "@/components/settings/LogoutModal";
 import DeleteAccountModal from "@/components/settings/DeleteAccountModal";
-import { useEffect } from "react";
-import { getCurrentUser } from "@/apis/mockAPI/CurrentUserApi";
+import { useEffect, useState } from "react";
+import { getCurrentUser } from "@/apis/CurrentUserApi";
 import "@/../public/sass/components/settings.scss";
 import ChangeAliasModal from "@/components/settings/ChangeAliasModal";
+import NotificationsSettings from "./NotificationsSettings";
 
 const metadata = {
   title: "Settings || SMARTALERT",
@@ -17,10 +18,14 @@ const metadata = {
 };
 
 const SettingsPage = () => {
+  const [showNotificationsSettings, setShowNotificationsSettings] = useState(false);
   useEffect(() => {
     getCurrentUser().then((user) => {
       console.log("Current user from DB:", user);
     });
+    const openHandler = () => setShowNotificationsSettings(true);
+    window.addEventListener("openNotificationsSettings", openHandler);
+    return () => window.removeEventListener("openNotificationsSettings", openHandler);
   }, []);
 
   return (
@@ -60,6 +65,14 @@ const SettingsPage = () => {
       <LogoutModal />
       <DeleteAccountModal />
       <ChangeAliasModal/>
+      {showNotificationsSettings && (
+        <div className="settings-lang-modal">
+          <div className="settings-lang-modal-bg" onClick={() => setShowNotificationsSettings(false)} />
+          <div className="settings-lang-modal-content text-center">
+            <NotificationsSettings onClose={() => setShowNotificationsSettings(false)} />
+          </div>
+        </div>
+      )}
     </>
   );
 };

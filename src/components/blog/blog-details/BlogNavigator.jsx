@@ -1,4 +1,3 @@
-import { getImgPath } from "../../../utils/imageUtils";
 const BlogNavigator = () => {
   return (
     <div className="row y-gap-30 justify-between">
@@ -15,7 +14,7 @@ const BlogNavigator = () => {
         </a>
       </div>
       <div className="col-auto">
-        <img src={getImgPath("general/menu.svg")} alt="image" className="pt-20" />
+        <img src="/img/general/menu.svg" alt="image" className="pt-20" />
       </div>
       <div className="col-auto text-right">
         <a href="#">

@@ -1,8 +1,7 @@
-import { getImgPath } from "../../utils/imageUtils";
 module.exports = [
   {
     id: 1,
-    img: getImgPath("blog/1.png"),
+    img: "/img/blog/1.png",
     title: "10 European ski destinations you should visit this winter",
     date: "Jan 06, 2023",
     delayAnimation: "100",
@@ -12,7 +11,7 @@ module.exports = [
   },
   {
     id: 2,
-    img: getImgPath("blog/2.png"),
+    img: "/img/blog/2.png",
     title: "Booking travel during Corona: good advice in an uncertain time",
     date: "April 06, 2022",
     delayAnimation: "200",
@@ -22,7 +21,7 @@ module.exports = [
   },
   {
     id: 3,
-    img: getImgPath("blog/3.png"),
+    img: "/img/blog/3.png",
     title: "Where can I go? 5 amazing countries that open right now",
     date: "Jan 06, 2023",
     delayAnimation: "300",
@@ -32,7 +31,7 @@ module.exports = [
   },
   {
     id: 4,
-    img: getImgPath("blog/4.png"),
+    img: "/img/blog/4.png",
     title: "10 European ski destinations you should visit this winter",
     date: "April 06, 2022",
     delayAnimation: "400",
@@ -42,7 +41,7 @@ module.exports = [
   },
   {
     id: 5,
-    img: getImgPath("blog/5.png"),
+    img: "/img/blog/5.png",
     title: "Booking travel during Corona: good advice in an uncertain time",
     date: "Jan 06, 2023",
     delayAnimation: "100",
@@ -52,7 +51,7 @@ module.exports = [
   },
   {
     id: 6,
-    img: getImgPath("blog/6.png"),
+    img: "/img/blog/6.png",
     title: "Where can I go? 5 amazing countries that are open right now",
     date: "April 06, 2022",
     delayAnimation: "200",
@@ -62,7 +61,7 @@ module.exports = [
   },
   {
     id: 7,
-    img: getImgPath("blog/7.png"),
+    img: "/img/blog/7.png",
     title: "10 European ski destinations you should visit this winter",
     date: "Jan 06, 2023",
     delayAnimation: "300",
@@ -72,7 +71,7 @@ module.exports = [
   },
   {
     id: 8,
-    img: getImgPath("blog/8.png"),
+    img: "/img/blog/8.png",
     title: "Booking travel during Corona: good advice in an uncertain time",
     date: "April 06, 2022",
     delayAnimation: "200",
@@ -82,7 +81,7 @@ module.exports = [
   },
   {
     id: 9,
-    img: getImgPath("blog/9.png"),
+    img: "/img/blog/9.png",
     title: "Where can I go? 5 amazing countries that are open right now",
     date: "April 06, 2022",
     delayAnimation: "300",
@@ -92,7 +91,7 @@ module.exports = [
   },
   {
     id: 10,
-    img: getImgPath("blog/1.png"),
+    img: "/img/blog/1.png",
     title: "10 European ski destinations you should visit this winter",
     date: "April 06, 2022",
     delayAnimation: "100",
@@ -101,7 +100,7 @@ module.exports = [
   },
   {
     id: 11,
-    img: getImgPath("blog/2.png"),
+    img: "/img/blog/2.png",
     title: "Where can I go? 5 amazing countries that are open right now",
     date: "April 06, 2022",
     delayAnimation: "200",

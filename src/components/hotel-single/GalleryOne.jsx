@@ -1,7 +1,6 @@
 import ModalVideo from "react-modal-video";
 import { Gallery, Item } from "react-photoswipe-gallery";
 import { Link } from "react-router-dom";
-import { getImgPath } from "../../utils/imageUtils";
 import React, { useState } from "react";
 
 export default function GalleryOne({ hotel }) {
@@ -108,8 +107,8 @@ export default function GalleryOne({ hotel }) {
 
               <div className="galleryGrid__item">
                 <Item
-                  original=getImgPath("gallery/1/2.png")
-                  thumbnail=getImgPath("gallery/1/2.png")
+                  original="/img/gallery/1/2.png"
+                  thumbnail="/img/gallery/1/2.png"
                   width={450}
                   height={375}
                 >
@@ -117,7 +116,7 @@ export default function GalleryOne({ hotel }) {
                     <img
                       ref={ref}
                       onClick={open}
-                      src={getImgPath("gallery/1/2.png")}
+                      src="/img/gallery/1/2.png"
                       alt="image"
                       className="rounded-4"
                       role="button"
@@ -129,7 +128,7 @@ export default function GalleryOne({ hotel }) {
 
               <div className="galleryGrid__item relative d-flex">
                 <img
-                  src={getImgPath("gallery/1/3.png")}
+                  src="/img/gallery/1/3.png"
                   alt="image"
                   className="rounded-4"
                   role="button"
@@ -148,8 +147,8 @@ export default function GalleryOne({ hotel }) {
 
               <div className="galleryGrid__item">
                 <Item
-                  original=getImgPath("gallery/1/4.png")
-                  thumbnail=getImgPath("gallery/1/4.png")
+                  original="/img/gallery/1/4.png"
+                  thumbnail="/img/gallery/1/4.png"
                   width={450}
                   height={375}
                 >
@@ -157,7 +156,7 @@ export default function GalleryOne({ hotel }) {
                     <img
                       ref={ref}
                       onClick={open}
-                      src={getImgPath("gallery/1/4.png")}
+                      src="/img/gallery/1/4.png"
                       alt="image"
                       className="rounded-4"
                       role="button"
@@ -169,14 +168,14 @@ export default function GalleryOne({ hotel }) {
 
               <div className="galleryGrid__item relative d-flex">
                 <img
-                  src={getImgPath("gallery/1/5.png")}
+                  src="/img/gallery/1/5.png"
                   alt="image"
                   className="rounded-4"
                 />
                 <div className="absolute px-10 py-10 col-12 h-full d-flex justify-end items-end">
                   <Item
-                    original=getImgPath("gallery/1/5.png")
-                    thumbnail=getImgPath("gallery/1/5.png")
+                    original="/img/gallery/1/5.png"
+                    thumbnail="/img/gallery/1/5.png"
                     width={450}
                     height={375}
                   >

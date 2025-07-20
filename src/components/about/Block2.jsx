@@ -1,6 +1,5 @@
 import { useState } from "react";
 import ModalVideo from "react-modal-video";
-import { getImgPath } from "../../utils/imageUtils";
 
 const Block2 = () => {
   const [isOpen, setOpen] = useState(false);
@@ -8,19 +7,19 @@ const Block2 = () => {
   const expertContent = [
     {
       id: 1,
-      icon: getImgPath("featureIcons/1/1.svg"),
+      icon: "/img/featureIcons/1/1.svg",
       title: "Best Price Guarantee",
       text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
     },
     {
       id: 2,
-      icon: getImgPath("featureIcons/1/2.svg"),
+      icon: "/img/featureIcons/1/2.svg",
       title: "Easy & Quick Booking",
       text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
     },
     {
       id: 3,
-      icon: getImgPath("featureIcons/1/3.svg"),
+      icon: "/img/featureIcons/1/3.svg",
       title: "Customer Care 24/7",
       text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
     },
@@ -37,7 +36,7 @@ const Block2 = () => {
       />
 
       <div className="section-bg__item -right -image col-5 md:mb-60 sm:mb-40 d-flex z-2">
-        <img src={getImgPath("backgrounds/10.png")} alt="image" />
+        <img src="/img/backgrounds/10.png" alt="image" />
         <div className="absolute col-12 h-full flex-center z-1">
           <div
             onClick={() => setOpen(true)}

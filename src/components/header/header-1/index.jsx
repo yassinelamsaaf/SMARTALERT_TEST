@@ -8,12 +8,15 @@ import LoginMenu from "../../header/LoginMenu";
 import t from "../../../i18n/t";
 import { LanguageContext } from "../../../i18n/LanguageProvider";
 import AddAlertButton from "../AddAlertButton";
-import { getImgPath } from "../../../utils/imageUtils";
+import NotificationButton from "../../header/NotificationButton";
+import { useAuthUser } from "@/utils/useAuthUser";
+
 
 const Header1 = () => {
   const { lang } = useContext(LanguageContext);
   const [navbar, setNavbar] = useState(false);
-  const user = useSelector((state) => state.auth?.user);
+  // Use useAuthUser for user state, like LoginMenu
+  const { user } = useAuthUser();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const changeBackground = () => {
@@ -39,9 +42,7 @@ const Header1 = () => {
 
   return (
     <>
-      <header
-        className={`header ${navbar ? "bg-dark-3 is-sticky" : " bg-dark-3"}`}
-      >
+      <header className={`header ${navbar ? "bg-dark-3 is-sticky" : " bg-dark-3"}`}>
         <div className="header__container px-30 sm:px-20">
           <div className="row justify-between items-center">
             <div className="col-auto">
@@ -49,9 +50,7 @@ const Header1 = () => {
                 <Link to="/" className="header-logo mr-20">
                   <img
                     style={{ height: 39 }}
-                    src={getImgPath("general/logo-light.png")}
-                    alt="logo icon"
-                  />
+                    src={`${import.meta.env.BASE_URL}/img/general/logo-light.png`} alt="logo icon" />
                 </Link>
                 {/* End logo */}
 
@@ -61,6 +60,7 @@ const Header1 = () => {
                   </div>
                 </div>
                 {/* End header-menu */}
+
               </div>
               {/* End d-flex */}
             </div>
@@ -69,14 +69,16 @@ const Header1 = () => {
               <div className="d-flex items-center">
                 <div className="row x-gap-20 items-end" style={{ gap: 8 }}>
                   {/* Login button and language selector area, styled for better contrast and spacing */}
-                  <div
-                    className="d-flex align-items-center"
-                    style={{ gap: 20 }}
-                  >
-                    <div className="d-block lg:d-none">
+                  <div className="d-flex align-items-center" style={{ gap: 20 }}>
+                    <div className="d-block lg:d-none" style={{ marginRight: 12 }}>
                       <LoginMenu btnClass="btn btn-outline-light" />
                     </div>
-                    <AddAlertButton />
+
+                    {user && (
+                      <div style={{ marginRight: 1 }}>
+                        <NotificationButton />
+                      </div>
+                    )}
                     <LanguageMegaMenu textClass="text-white" />
                   </div>
                   {/* End Megamenu for Language */}

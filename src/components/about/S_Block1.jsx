@@ -1,6 +1,5 @@
 import { LanguageContext } from "@/i18n/LanguageProvider";
 import t from "@/i18n/t";
-import { getImgPath } from "../../utils/imageUtils";
 import { useContext } from "react";
 
 const Block1 = () => {
@@ -19,7 +18,7 @@ const Block1 = () => {
 
       <div className="col-lg-6">
         <img
-          src={`getImgPath('pages/about/about.png')`}
+          src={`${import.meta.env.BASE_URL}/img/pages/about/about.png`}
           alt="image"
           className="rounded-4 w-100"
         />

@@ -1,5 +1,6 @@
 import { useState, useCallback, useMemo, useContext } from "react";
-import CreateAnnonce from "./CreateAnnonce";
+//import CreateAnnonce from "./CreateAnnonce";
+import CreateAnnonce from "./CreateAnnonceForm";
 import AnnonceCard from "./AnnonceCard";
 import { LanguageContext } from "@/i18n/LanguageProvider";
 import t from "@/i18n/t";
@@ -9,6 +10,7 @@ const AnnoncesListing = () => {
   const [annonces, setAnnonces] = useState([]);
   const [showCreate, setShowCreate] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [isEditing, setIsEditing] = useState(false);
 
   const handleAddAnnonce = useCallback((newAnnonce) => {
     setIsLoading(true);
@@ -41,11 +43,12 @@ const AnnoncesListing = () => {
     }, 300);
   }, [lang]);
 
-  const handleCloseCreate = useCallback(() => setShowCreate(false), []);
+  const handleCloseCreate = useCallback(() =>{ setShowCreate(false);setIsEditing(!isEditing)}, [isEditing]);
   const handleSaveAnnonce = useCallback((data) => {
     handleAddAnnonce(data);
     setShowCreate(false);
-  }, [handleAddAnnonce]);
+    setIsEditing(!isEditing);
+  }, [handleAddAnnonce, isEditing]);
 
   const handleDeleteAnnonce = useCallback((id) => {
     if (window.confirm(t[lang].annonceListing.deleteConfirm)) {
@@ -55,15 +58,19 @@ const AnnoncesListing = () => {
 
   const EmptyState = useMemo(() => (
     <div className="empty-state">
-      <div className="emoji">🚗</div>
+      <div className="emoji"><i className="bi bi-car-front-fill fs-1"></i></div>
       <h2>{t[lang].annonceListing.emptyTitle}</h2>
       <p>{t[lang].annonceListing.emptyDesc}</p>
-      <button onClick={() => setShowCreate(true)}>{t[lang].annonceListing.emptyBtn}</button>
+      <button onClick={() => {
+            setShowCreate(true);
+            setIsEditing(!isEditing);
+      }}>{t[lang].annonceListing.emptyBtn}</button>
     </div>
   ), [lang]);
 
   return (
     <div className="annonces-wrapper">
+        {!isEditing &&
       <header className="annonces-header">
         <div>
           <h1>{t[lang].annonceListing.title}</h1>
@@ -71,12 +78,16 @@ const AnnoncesListing = () => {
         </div>
         <button
           className="add-btn"
-          onClick={() => setShowCreate(true)}
+          onClick={() => {
+            setShowCreate(true);
+            setIsEditing(!isEditing);
+          }
+          }
           disabled={isLoading}
         >
           {isLoading ? t[lang].annonceListing.loading : "+"} {t[lang].annonceListing.add}
         </button>
-      </header>
+      </header>}
 
       {showCreate ? (
         <div className="create-section">

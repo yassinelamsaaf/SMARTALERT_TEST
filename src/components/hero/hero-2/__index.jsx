@@ -1,7 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { addCurrentTab } from "../../../features/hero/findPlaceSlice";
 import MainFilterSearchBox from "./MainFilterSearchBox";
-import { getImgPath } from "../../../utils/imageUtils";
 
 const Index = () => {
   const { tabs, currentTab } = useSelector((state) => state.hero) || {};
@@ -10,7 +9,7 @@ const Index = () => {
   return (
     <section className="masthead -type-2 z-2">
       <div className="masthead__bg bg-dark-3">
-        <img alt="image" src={getImgPath("masthead/2/bg.png")} className="js-lazy" />
+        <img alt="image" src="/img/masthead/2/bg.png" className="js-lazy" />
       </div>
       {/* End bg image */}
 
@@ -58,7 +57,7 @@ const Index = () => {
               <div className="masthead__images relative-1">
                 <div data-aos="fade" data-aos-delay="400">
                   <img
-                    src={getImgPath("masthead/2/1.png")}
+                    src="/img/masthead/2/1.png"
                     alt="image"
                     className="js-mouse-move"
                   />
@@ -67,7 +66,7 @@ const Index = () => {
 
                 <div data-aos="fade" data-aos-delay="600">
                   <img
-                    src={getImgPath("masthead/2/2.png")}
+                    src="/img/masthead/2/2.png"
                     alt="image"
                     className="js-mouse-move"
                   />
@@ -76,7 +75,7 @@ const Index = () => {
 
                 <div data-aos="fade" data-aos-delay="800">
                   <img
-                    src={getImgPath("masthead/2/3.png")}
+                    src="/img/masthead/2/3.png"
                     alt="image"
                     className="js-mouse-move"
                   />

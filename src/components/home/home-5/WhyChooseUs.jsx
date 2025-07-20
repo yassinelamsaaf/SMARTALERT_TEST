@@ -1,21 +1,20 @@
-import { getImgPath } from "../../../utils/imageUtils";
 const WhyChooseUs = () => {
   const expertContent = [
     {
       id: 1,
-      icon: getImgPath("featureIcons/1/1.svg"),
+      icon: "/img/featureIcons/1/1.svg",
       title: "Best Price Guarantee",
       text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
     },
     {
       id: 2,
-      icon: getImgPath("featureIcons/1/2.svg"),
+      icon: "/img/featureIcons/1/2.svg",
       title: "Easy & Quick Booking",
       text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
     },
     {
       id: 3,
-      icon: getImgPath("featureIcons/1/3.svg"),
+      icon: "/img/featureIcons/1/3.svg",
       title: "Customer Care 24/7",
       text: `Lorem ipsum dolor sit amet, consectetur adipiscing elit.`,
     },
@@ -24,7 +23,7 @@ const WhyChooseUs = () => {
   return (
     <>
       <div className="section-bg__item -right -image col-5 md:mb-60 sm:mb-40">
-        <img src={getImgPath("backgrounds/5.png")} alt="image" />
+        <img src="/img/backgrounds/5.png" alt="image" />
       </div>
       {/* End right video popup icon with image */}
 

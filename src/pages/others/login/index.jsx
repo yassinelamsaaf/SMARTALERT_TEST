@@ -43,9 +43,6 @@ const LogIn = () => {
                 </div>
                 <LoginWithSocial />
                 <div className="col-12">
-                  <div className="text-center px-30">
-                    {t[lang].auth.agree}
-                  </div>
                 </div>
               </div>
               {/* End .row */}
