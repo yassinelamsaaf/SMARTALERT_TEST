@@ -76,7 +76,7 @@ function App() {
   return (
     <main>
       <Provider store={store}>
-        <BrowserRouter basename={"/SMARTALERT_WEB"}>
+        <BrowserRouter basename={"/SMARTALERT_TEST"}>
           <Routes>
             <Route path="/" index element={<Home_2 />} />
 
